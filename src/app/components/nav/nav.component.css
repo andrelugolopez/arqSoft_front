@@ -1,0 +1,19 @@
+
+nav ul li{
+    text-decoration: none;
+    padding: 3px 3px;
+    list-style: none;
+    text-align: left;
+}
+li a{
+    font-weight: bold;
+    font-family: Arial;
+    color:rgba(231, 112, 15, 0.87);
+}
+#viki{
+    display: flex;
+    justify-content: end;
+}
+.container-fluid{
+    background-color: rgb(4, 4, 24);
+}

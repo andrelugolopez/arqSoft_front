@@ -1,0 +1,37 @@
+.banner{
+	width:450px;
+	height:450px;
+	margin:40px auto;
+	background-size:100% 100%;
+	-moz-animation:banner 6s alternate 0 infinite;
+    -webkit-animation:banner 6s alternate 0 infinite;
+    animation:banner 6s infinite;
+	animation-direction:alternate;
+}
+@keyframes banner{
+	0%,30%{
+		background-image:url("/assets/imagenes/bannerT.png");
+		opacity:1;   
+	}
+	31%,34%{
+		opacity:0.1;
+	}
+	35%,65%{
+		background-image:url("/assets/imagenes/bannerC.png");
+		opacity:1;   
+	}
+	66%,69%{
+		opacity:0.1;
+	}
+	70%,100%{
+		opacity:1;
+        background-image:url("/assets/imagenes/bannerI.png");
+	}
+    66%,69%{
+		opacity:0.1;
+	}   
+	70%,100%{
+		opacity:1;
+        background-image:url("/assets/imagenes/bannerM.png");
+	}
+}

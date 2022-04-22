@@ -1,0 +1,21 @@
+<br>
+<div class="form_Login">
+  <div class="header-text">
+    <img class ="iconoU"src="/assets/imagenes/iconU.png">
+  </div>
+
+  <form  method="post">
+  <div class="mb-3">
+    <input name="correo" type="email" placeholder="Correo" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+  </div>
+  <div class="mb-3">
+   <input name="clave" type="password" placeholder="Contraseña" class="form-control" id="exampleInputPassword1">
+  </div>
+  <button type="submit" class="btn btn-primary">Ingresar</button>
+</form>
+
+    <form [routerLink]="['/registro']">
+        <div class="mb-3"></div>
+        <br><h4>¿No tienes una cuenta?</h4>
+        <button type="registrarse" class="btn btn-primary">Registrarse</button>
+    </form> 

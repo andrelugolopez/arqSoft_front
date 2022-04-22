@@ -1,0 +1,87 @@
+.iconoU{
+	margin: -20px 0px -5px;
+}
+.form_Registro {
+	background-color: rgba(232, 231, 231, 0.5);
+	margin: auto auto;
+	padding: 20px;
+	border-radius: 5px;
+	box-shadow: 0 0 10px #000;
+	position:static;
+	top: 250px; /*para bajar todo el recuadro del formulario*/
+	bottom: 0;
+	left: 0;
+	right: 0;
+	width: 500px;
+	height: 540px; /*tamaño del recuadro formulario*/
+}
+.form_Registro:before {
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+	content: "";
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	z-index: -1;
+	display: block;
+	filter: blur(2px);
+}
+.form_Registro .header-text {
+	font-size: 32px;
+	font-weight: 600;
+	text-align: center;
+}
+.form_Registro input {
+	margin: 1px 0px; /*espacio entre los label*/
+	border: none;
+	padding: 5px;/*tamaño del label*/
+	border-radius: 5px;
+	width: 100%;
+	font-size: 20px;/*tamaño de la letra*/
+	font-family: Arial;/*tipo de fuente*/
+}
+.form_Registro label {
+	position: relative;
+	margin-left: 5px;
+	margin-right: 10px;
+	top: 5px;
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	cursor: pointer;
+}
+.form_Registro label:before {
+	/*content: "";*/
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	border-radius: 5px;
+	position: absolute;
+	left: 0;
+	bottom: 1px;
+	background-color: rgb(164, 172, 174);
+}
+.form_Registro input[type=checkbox]:checked+label:before {
+	content: "\2713";
+	font-size: 20px;
+	color: #000;
+	text-align: center;
+	line-height: 20px;
+}
+.form_Registro span {
+	font-size: 20px;
+}
+.form_Registro button {
+	background-color: deepskyblue;
+	color: #fff;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	width: 100%;
+	font-size: 20px;
+	padding: 8px; /*tamaño del boton*/
+	margin: 35px 0px; /*distancia entre el checbox y el boton*/
+}

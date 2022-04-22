@@ -1,0 +1,38 @@
+<div class="form_Registro">
+    <div class="header-text">
+    <img src="/assets/imagenes/iconU.png">
+    </div>
+<form action="{#}" method="post">
+
+<div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label"></label>
+    <input name="nombres" type="text" placeholder="Nombres" class="form-control" id="exampleInputPassword1">
+</div>
+
+<div class="mb-3">
+  <label for="exampleInputPassword1" class="form-label"></label>
+  <input name="apellidos" type="text" placeholder="Apellidos" class="form-control" id="exampleInputPassword1">
+</div>
+
+<div class="mb-3">
+  <label for="exampleInputEmail1" class="form-label"></label>
+  <input name="documento" type="email" placeholder="Documento" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+</div>
+
+<div class="mb-3">
+  <label for="exampleInputEmail1" class="form-label"></label>
+  <input name="email" type="email" placeholder="Correo" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+</div>
+
+<div class="mb-3">
+  <label for="exampleInputPassword1" class="form-label"></label>
+  <input name="password" type="password" placeholder="Contraseña" class="form-control" id="exampleInputPassword1">
+</div>
+
+
+
+<button  type="submit"  class="btn btn-primary">Registrarse</button>
+<a class="nav-link" [routerLink]="['/login']">Cancelar</a>
+</form>
+
+</div>

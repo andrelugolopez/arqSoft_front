@@ -1,38 +1,73 @@
 <div class="form_Registro">
     <div class="header-text">
-    <img src="/assets/imagenes/iconU.png">
-    </div>
-<form action="{#}" method="post">
+    <img class ="iconoU" src="/assets/imagenes/iconU.png">
+</div>
 
-<div class="mb-3">
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="exampleInputEmail1">cedula</label>
+      <input type="text" class="form-control" formControlName="cedula" aria-describedby="emailHelp">
+    </div>
+<br>
+    <div class="form-group">
+      <label for="exampleInputEmail1">nombres</label>
+      <input type="text" class="form-control" formControlName="nombres" aria-describedby="emailHelp">
+    </div>
+<br>
+    <div class="form-group">
+      <label for="exampleInputPassword1">apellidos</label>
+      <input type="text" class="form-control" formControlName="apellidos">
+    </div>
+<br>
+    <div class="form-group">
+      <label for="exampleInputEmail1">correo</label>
+      <input type="email" class="form-control" formControlName="email" aria-describedby="emailHelp">
+    </div>
+<br>
+    <div class="form-group">
+      <label for="exampleInputEmail1">contraseña</label>
+      <input type="password" class="form-control" formControlName="password" aria-describedby="emailHelp">
+    </div>
+<br>
+<br>
+    <button type="submit" class="btn btn-primary">Enviar</button>
+</form>
+<br>
+
+<!-- <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+  <div class="form-group">
     <label for="exampleInputPassword1" class="form-label"></label>
     <input name="nombres" type="text" placeholder="Nombres" class="form-control" id="exampleInputPassword1">
 </div>
 
-<div class="mb-3">
+<div class="form-group">
   <label for="exampleInputPassword1" class="form-label"></label>
   <input name="apellidos" type="text" placeholder="Apellidos" class="form-control" id="exampleInputPassword1">
 </div>
 
-<div class="mb-3">
+<div class="form-group">
   <label for="exampleInputEmail1" class="form-label"></label>
-  <input name="documento" type="email" placeholder="Documento" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+  <input name="cedula" type="text" placeholder="Documento" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
 </div>
 
-<div class="mb-3">
+<div class="form-group">
   <label for="exampleInputEmail1" class="form-label"></label>
   <input name="email" type="email" placeholder="Correo" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
 </div>
 
-<div class="mb-3">
+<div class="form-group">
   <label for="exampleInputPassword1" class="form-label"></label>
   <input name="password" type="password" placeholder="Contraseña" class="form-control" id="exampleInputPassword1">
 </div>
 
 
 
-<button  type="submit"  class="btn btn-primary">Registrarse</button>
+<button type="submit" class="btn btn-primary">Enviar</button>
+
+
+
 <a class="nav-link" [routerLink]="['/login']">Cancelar</a>
 </form>
 
-</div>
+</div> -->

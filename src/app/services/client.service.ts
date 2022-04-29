@@ -11,4 +11,14 @@ export class ClientService {
   sendFormToJson(url:any,data:any){
     return this.http.post(url, data);
    }
+
+  //getRequestAllProducts(route: string, categoria: string) {
+  getRequestAllProducts(route: string) {
+    let config:any = {
+      responseType: "json"
+    }
+    const header = new HttpHeaders().set('Authorization', '57ydf544ljka559ahjkfgd1');
+    config["header"] = header;
+    return this.http.get(route);
+  }
 }

@@ -1,50 +1,21 @@
-<div class="cartas">
-    <div class="card1" style="width:400px">
-        <img class="card-img-top" src="/assets/imagenes/equipo7.jpg" alt="Card image">
-        <div class="card-body">
-            <h4 class="card-title">Portatil ASUS</h4>
-            <p class="card-text">$1.600.000</p>
-            <a [routerLink]="['/carrito']" class="btn btn-primary">Comprar</a>
-        </div>
-    </div>
-    <div class="card2" style="width:400px">
-        <img class="card-img-top" src="/assets/imagenes/equipo2.jpg" alt="Card image">
-        <div class="card-body">
-            <h4 class="card-title">PC escritorio</h4>
-            <p class="card-text">$2.500.000</p>
-            <a [routerLink]="['/carrito']" class="btn btn-primary">Comprar</a>
-        </div>
-    </div>
-    <div class="card3" style="width:400px">
-        <img class="card-img-top" src="/assets/imagenes/equipo3.jpg" alt="Card image">
-        <div class="card-body">
-            <h4 class="card-title">PC Gamer</h4>
-            <p class="card-text">$2.800.000</p>
-            <a [routerLink]="['/carrito']" class="btn btn-primary">Comprar</a>
-        </div>
-    </div>
-    <div class="card4" style="width:400px">
-        <img class="card-img-top" src="/assets/imagenes/equipo4.jpg" alt="Card image">
-        <div class="card-body">
-            <h4 class="card-title">PC Gamer</h4>
-            <p class="card-text">$3.000.000</p>
-            <a [routerLink]="['/carrito']" class="btn btn-primary">Comprar</a>
-        </div>
-    </div>
-    <div class="card5" style="width:400px">
-        <img class="card-img-top" height=400 src="/assets/imagenes/equipo5.jpg" alt="Card image">
-        <div class="card-body">
-        <h4 class="card-title">Portatil Lenovo</h4>
-        <p class="card-text">$200.000</p>
-        <a [routerLink]="['/carrito']" class="btn btn-primary">Comprar</a>
-        </div>
-    </div>
-    <div class="card6" style="width:400px">
-        <img class="card-img-top" height=400 src="/assets/imagenes/equipo6.jpg" alt="Card image">
-        <div class="card-body">
-        <h4 class="card-title">Portatil HP</h4>
-        <p class="card-text">$500.000</p>
-        <a [routerLink]="['/carrito']" class="btn btn-primary">Comprar</a>
-        </div>
-    </div>
+<div class="contenedor">
+  <div class="cartas" *ngFor="let producto of productos">
+      <div class="card1" style="width:400px">
+          <img class="card-img-top" src="/assets/imagenes/{{producto.imagen}}" alt="Card image">
+          <div class="card-body">
+              <h4 class="card-title">{{producto.nombre}}</h4>
+              <p class="card-text"> {{producto.precio}}</p>
+              <a [routerLink]="['/carrito']" class="btn btn-primary">Comprar</a>
+          </div>
+      </div>
+  </div>
 </div>
+
+
+
+  <!-- <h1>Directiva ngIf</h1>
+  <div *ngIf="mostrarparrafo">
+    <p>SOMOS ADSI RAPPI 2022</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates vero itaque facere officiis rerum quia totam, reiciendis ipsa recusandae tempore dolorum. Quidem asperiores totam error nulla quas molestias voluptate id?</p>
+  </div>
+  <button (click)="mostrarparrafo=!mostrarparrafo;">Ver Más</button> -->

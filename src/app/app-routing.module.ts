@@ -7,7 +7,7 @@ import { ContenedorFacturaComponent } from './components/contenedor-factura/cont
 import { ContenedorLoginComponent } from './components/contenedor-login/contenedor-login.component';
 import { ContenedorPerifericosComponent } from './components/contenedor-perifericos/contenedor-perifericos.component';
 import { ContenedorRegistroComponent } from './components/contenedor-registro/contenedor-registro.component';
-
+import { ContenedorRepuestosComponent } from './components/contenedor-repuestos/contenedor-repuestos.component';
 
 
 
@@ -18,7 +18,9 @@ const routes: Routes = [
   {path:'factura', component: ContenedorFacturaComponent },
   {path:'login', component: ContenedorLoginComponent },
   {path:'perifericos', component: ContenedorPerifericosComponent },
-  {path:'registro', component: ContenedorRegistroComponent }
+  {path:'registro', component: ContenedorRegistroComponent },
+  {path:'repuestos', component: ContenedorRepuestosComponent }
+
 
 ];
 

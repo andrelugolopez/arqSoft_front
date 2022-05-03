@@ -25,6 +25,8 @@ import { InfoTiendaComponent } from './components/info-tienda/info-tienda.compon
 import { BannerComponent } from './components/banner/banner.component';
 import { PerifericosComponent } from './components/perifericos/perifericos.component';
 import { ContenedorPerifericosComponent } from './components/contenedor-perifericos/contenedor-perifericos.component';
+import { RepuestosComponent } from './components/repuestos/repuestos.component';
+import { ContenedorRepuestosComponent } from './components/contenedor-repuestos/contenedor-repuestos.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +50,8 @@ import { ContenedorPerifericosComponent } from './components/contenedor-periferi
     BannerComponent,
     PerifericosComponent,
     ContenedorPerifericosComponent,
+    RepuestosComponent,
+    ContenedorRepuestosComponent,
   ],
   imports: [
     BrowserModule,

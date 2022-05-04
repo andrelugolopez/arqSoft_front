@@ -1,0 +1,21 @@
+.contenedor{
+    display: flex; 
+    flex-wrap: wrap;
+
+   
+}
+
+.cartas{
+    width: 33.33%;
+    height: 26%;
+    flex-direction: column;
+    align-items: baseline;
+ }
+
+ .card-img-top{
+     object-fit: contain;
+     max-width: 100%;
+     height: 300px;
+
+    
+ }

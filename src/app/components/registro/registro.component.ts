@@ -33,7 +33,7 @@ constructor(
         cedula:this.form.value.cedula
       }
 
-    this.client.sendFormToJson("http://127.0.0.1:5000/register",data
+    this.client.postRequest("http://127.0.0.1:5000/register",data
     ).subscribe(
     (response:any)=>console.log(response),
     (error:any)=>console.log(error)

@@ -1,5 +1,5 @@
 
-.iconoU{
+.iconU{
 	margin: -1px 0px -5px;
 	width: 20%;
 	height: 20%;
@@ -15,7 +15,7 @@
 	left: 0;
 	right: 0;
 	width: 500px;
-	height: 500px; /*tamaño del recuadro login*/
+	/*height: 500px; tamaño del recuadro login*/
 }
 .form_Login:before {
 	width: 100%;
@@ -37,7 +37,7 @@
 	text-align: center;
 }
 .form_Login input {
-	margin: 25px 0px; /*espacio entre los label*/
+	margin: 5px 0px; /*espacio entre los label*/
 	border: none;
 	padding: 5px;/*tamaño del label*/
 	border-radius: 5px;

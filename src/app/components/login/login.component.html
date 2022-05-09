@@ -1,27 +1,25 @@
 <br>
 <div class="form_Login">
     <div class="header-text">
-        <img class="iconoU" src="/assets/imagenes/iconU.png">
+        <img class="iconU" src="/assets/imagenes/iconU.png">
     </div>
     <div *ngIf="mostrarFormulario">
         <form *ngIf="!(autorizacion.isLoggedIn() | async)" [formGroup]="form" (ngSubmit)="onSubmit()" >
 
             <div class="form-group">
-                <label for="exampleInputEmail1">correo</label>
-                <input type="email" class="form-control" formControlName="email" aria-describedby="emailHelp">
+
+                <input type="email" placeholder="Correo" class="form-control" formControlName="email" aria-describedby="emailHelp">
             </div>
             <br>
             <div class="form-group">
-                <label for="exampleInputEmail1">contraseña</label>
-                <input type="password" class="form-control" formControlName="password" aria-describedby="emailHelp">
+                <input type="password" placeholder="Contraseña" class="form-control" formControlName="password" aria-describedby="emailHelp">
             </div>
 
-            <button type="submit" class="btn btn-primary">Enviar</button>
+            <button type="submit" class="btn btn-primary">Ingresar</button>
         </form>
         <form [routerLink]="['/registro']">
             <div class="mb-3"></div>
-            <br>
-            <h4>¿No tienes una cuenta?</h4>
+            <br> <h4>¿No tienes una cuenta?</h4>
             <button type="registrarse" class="btn btn-primary">Registrarse</button>
         </form>
         <h1 *ngIf="autorizacion.isLoggedIn() | async">Logueado exitosamente!</h1>

@@ -1,4 +1,8 @@
 
+.navbar{
+    padding-top: 0rem !important;
+}
+
 nav ul li{
     text-decoration: none;
     padding: 3px 3px;

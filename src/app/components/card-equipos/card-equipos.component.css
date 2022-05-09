@@ -1,0 +1,15 @@
+/* .cartas{
+    display: flex; 
+    height: 26%;
+    align-items: flex-end;
+} */
+
+.card3{
+    background-color: rgb(4, 4, 24);
+}
+
+.btn{
+    background-color:  rgba(231, 112, 15, 0.87);
+    font-weight: bold;
+    font-family: Arial;
+ } 

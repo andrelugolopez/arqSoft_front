@@ -17,7 +17,24 @@
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" [routerLink]="['/asistenciausuario']">Asistencia tecnica</a>
                 </li>
-
+                <nav>
+                  <div>
+                    <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+                      <ul class="navbar-nav">
+                        <li class="nav-item dropdown">
+                          <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Tienda
+                          </a>
+                          <ul class="dropdown-menu container-fluid " aria-labelledby="navbarDarkDropdownMenuLink">
+                            <li><a class="nav-link" [routerLink]="['/equipos']">Equipos</a></li>
+                            <li><a class="nav-link" [routerLink]="['/perifericos']">Periféricos</a></li>
+                            <li><a class="nav-link" [routerLink]="['/repuestos']">Repuestos </a></li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </nav>
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" [routerLink]="['/menu-tienda']">Tienda</a>
                   </li>
@@ -47,7 +64,6 @@
                   <li *ngIf="autorizacion.isLoggedIn() | async" class="nav-item active">
                     <a class="nav-link" [routerLink]="['/']" (click)="autorizacion.logout()">Cerrar sesion<span class="sr-only"></span></a>
                   </li>
-
             </ul>
         </div>
     </div>

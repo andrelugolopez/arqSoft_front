@@ -8,8 +8,8 @@ import { ContenedorLoginComponent } from './components/contenedor-login/contened
 import { ContenedorPerifericosComponent } from './components/contenedor-perifericos/contenedor-perifericos.component';
 import { ContenedorRegistroComponent } from './components/contenedor-registro/contenedor-registro.component';
 import { ContenedorRepuestosComponent } from './components/contenedor-repuestos/contenedor-repuestos.component';
-
-
+import { ContenedorMenutiendaComponent } from './components/contenedor-menutienda/contenedor-menutienda.component';
+import { ContenedorAsistenciausuarioComponent } from './components/contenedor-asistenciausuario/contenedor-asistenciausuario.component';
 
 const routes: Routes = [
   {path:'', component: ContenedorIndexComponent },
@@ -19,7 +19,10 @@ const routes: Routes = [
   {path:'login', component: ContenedorLoginComponent },
   {path:'perifericos', component: ContenedorPerifericosComponent },
   {path:'registro', component: ContenedorRegistroComponent },
-  {path:'repuestos', component: ContenedorRepuestosComponent }
+  {path:'repuestos', component: ContenedorRepuestosComponent },
+  {path:'menu-tienda', component: ContenedorMenutiendaComponent },
+  {path:'asistenciausuario', component: ContenedorAsistenciausuarioComponent}
+
 
 
 ];

@@ -21,6 +21,7 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
   mostrarSpinner: boolean = false;
   mostrarFormulario: boolean = true;
+  
 
   form: FormGroup = this.fb.group({/*se inicializa el form*/
   email: ['', Validators.required],

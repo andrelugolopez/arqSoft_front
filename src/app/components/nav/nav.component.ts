@@ -8,6 +8,8 @@ import { AutorizacionService } from '../../services/autorizacion.service';
 })
 export class NavComponent implements OnInit {
 
+  mostrarFormulario: boolean = true;
+
   constructor(public autorizacion: AutorizacionService) { }
 
   ngOnInit(): void {

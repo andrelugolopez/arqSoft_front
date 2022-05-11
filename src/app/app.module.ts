@@ -27,6 +27,16 @@ import { PerifericosComponent } from './components/perifericos/perifericos.compo
 import { ContenedorPerifericosComponent } from './components/contenedor-perifericos/contenedor-perifericos.component';
 import { RepuestosComponent } from './components/repuestos/repuestos.component';
 import { ContenedorRepuestosComponent } from './components/contenedor-repuestos/contenedor-repuestos.component';
+import { ContenedorMenutiendaComponent } from './components/contenedor-menutienda/contenedor-menutienda.component';
+import { CardAccesoriosComponent } from './components/card-accesorios/card-accesorios.component';
+import { CardEquiposComponent } from './components/card-equipos/card-equipos.component';
+import { CardRepuestosComponent } from './components/card-repuestos/card-repuestos.component';
+import { CardSoporteComponent } from './components/card-soporte/card-soporte.component';
+import { FranjaServiciosComponent } from './components/franja-servicios/franja-servicios.component';
+import { FranjaQuienesComponent } from './components/franja-quienes/franja-quienes.component';
+import { CardContactanosUComponent } from './components/card-contactanos-u/card-contactanos-u.component';
+import { CardConsultarUComponent } from './components/card-consultar-u/card-consultar-u.component';
+import { ContenedorAsistenciausuarioComponent } from './components/contenedor-asistenciausuario/contenedor-asistenciausuario.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +62,16 @@ import { ContenedorRepuestosComponent } from './components/contenedor-repuestos/
     ContenedorPerifericosComponent,
     RepuestosComponent,
     ContenedorRepuestosComponent,
+    ContenedorMenutiendaComponent,
+    CardAccesoriosComponent,
+    CardEquiposComponent,
+    CardRepuestosComponent,
+    CardSoporteComponent,
+    FranjaServiciosComponent,
+    FranjaQuienesComponent,
+    CardContactanosUComponent,
+    CardConsultarUComponent,
+    ContenedorAsistenciausuarioComponent
   ],
   imports: [
     BrowserModule,

@@ -14,40 +14,40 @@
                     <a class="nav-link active" aria-current="page" [routerLink]="['/']">Inicio </a>
                 </li>
 
-                <li *ngIf="autorizacion.isLoggedIn() | async" class="nav-item active">
-                    <a class="nav-link">|Bienvenid@ {{autorizacion.getCourrentUser()}}|<span class="sr-only"></span></a>
-                </li>
-
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" [routerLink]="['/login']">Asistencia tecnica</a>
+                    <a class="nav-link active" aria-current="page" [routerLink]="['/asistenciausuario']">Asistencia tecnica</a>
                 </li>
 
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" [routerLink]="['/menu-tienda']">Tienda</a>
                   </li>
 
-                <li class="nav-item">
+
+                <!-- <li class="nav-item">
                     <a class="nav-link active" aria-current="page" [routerLink]="['/login']">Iniciar sesion </a>
-                </li>
-<!-- 
-                <li class="nav-item">
-                    <a class="nav-link" [routerLink]="['/equipos']">Equipos</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" [routerLink]="['/perifericos']">Periféricos</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" [routerLink]="['/repuestos']">Repuestos </a>
                 </li> -->
+                <li *ngIf="!(autorizacion.isLoggedIn() | async)" class="nav-item active">
+                    <a class="nav-link" [routerLink]="['/login']" (click)="autorizacion.logout()">Iniciar sesion<span class="sr-only"></span></a>
+                  </li>
+
 
                 <li class="nav-item">
                     <a class="nav-link" [routerLink]="['/carrito']">Carrito</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" [routerLink]="['/']">Cerrar sesion</a>
-                </li>
+                    <div *ngIf="mostrarFormulario">
+                        <li *ngIf="autorizacion.isLoggedIn() | async" class="nav-item active">
+                            <a class="nav-link">Bienvenid@ {{autorizacion.getCourrentUser()}}<span class="sr-only"></span></a>
+                        </li>
+                </div>
+
+                <li *ngIf="autorizacion.isLoggedIn() | async" class="nav-item active">
+                    <a class="nav-link" [routerLink]="['/']"><span class="sr-only"></span></a>
+                  </li>
+
+                  <li *ngIf="autorizacion.isLoggedIn() | async" class="nav-item active">
+                    <a class="nav-link" [routerLink]="['/']" (click)="autorizacion.logout()">Cerrar sesion<span class="sr-only"></span></a>
+                  </li>
+
             </ul>
         </div>
     </div>

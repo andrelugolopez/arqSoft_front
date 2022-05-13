@@ -1,4 +1,9 @@
 <div class="form_fact">
+  <div class="header-text">
+    <img class ="IconCompras" src="/assets/imagenes/IconCompras.png">
+</div>
+
+<div class="form">
     <!-- <div>
       Productos a Facturar:<br>
       <br><tbody>
@@ -9,7 +14,7 @@
       {% endfor %}
     </tbody>
     </div> -->
-    <h6 id="CCompra"> Productos a Facturar:
+    <h6> Productos a Facturar:
     <br>Estamos por terminar, unos datos más y listo
     </h6>
 
@@ -17,7 +22,7 @@
     
   <div class="mb-3">
     <label for="exampleInputPassword1" class="form-label"></label>
-    <input name="telefono" type="text" placeholder="Número de teléfono" class="form-control" id="exampleInputPassword1">
+    <input name="telefono" type="text" placeholder="Telefono" class="form-control" id="exampleInputPassword1">
   </div>
 
     <div class="mb-3">
@@ -36,12 +41,21 @@
     </div>
 
     <div class="mb-3">
-      <label for="exampleInputEmail1" class="form-label"></label>
-      <input name="documento" type="text" placeholder="Documento" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+      <div>
+       <label for="exampleInputEmail1" class="form-label">Medios de pago</label>
+      </div>
+      <select class="custom-select" id="inputGroupSelect01">
+        <option selected>Qr...</option>
+        <option value="1">Paypal</option>
+        <option value="2">PSE</option>
+        <option value="3">Efectivo</option>
+      </select>
     </div>
 
-    <button type="submit" class="btn btn-primary">Pagar</button>
-    <a class="nav-link" href="{#}" id="CCompra">Cancelar Compra</a>
+    <div class="container-button-factura">
+      <button type="submit" class="btn btn-primary">Pagar</button>
+      <a class="nav-link" href="{#}" id="CCompra">Cancelar Compra</a>
+    </div>
   </form>
 
   </div>

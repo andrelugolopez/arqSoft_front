@@ -37,6 +37,8 @@ import { FranjaQuienesComponent } from './components/franja-quienes/franja-quien
 import { CardContactanosUComponent } from './components/card-contactanos-u/card-contactanos-u.component';
 import { CardConsultarUComponent } from './components/card-consultar-u/card-consultar-u.component';
 import { ContenedorAsistenciausuarioComponent } from './components/contenedor-asistenciausuario/contenedor-asistenciausuario.component';
+import { HistoricoComponent } from './components/historico/historico.component';
+import { ContenedorHistoricoComponent } from './components/contenedor-historico/contenedor-historico.component';
 
 @NgModule({
   declarations: [
@@ -71,7 +73,9 @@ import { ContenedorAsistenciausuarioComponent } from './components/contenedor-as
     FranjaQuienesComponent,
     CardContactanosUComponent,
     CardConsultarUComponent,
-    ContenedorAsistenciausuarioComponent
+    ContenedorAsistenciausuarioComponent,
+    HistoricoComponent,
+    ContenedorHistoricoComponent
   ],
   imports: [
     BrowserModule,

@@ -3,20 +3,17 @@
     <img class ="IconCompras" src="/assets/imagenes/IconCompras.png">
 </div>
 
+
 <div class="form">
-    <!-- <div>
-      Productos a Facturar:<br>
-      <br><tbody>
-      {% for producto in productos %}
-        <tr>
-          <td><div class="fondo_texto2">{{producto[1] }} $ {{ producto[0]}}</div></td><br>
-        </tr>
-      {% endfor %}
-    </tbody>
-    </div> -->
     <h6> Productos a Facturar:
     <br>Estamos por terminar, unos datos más y listo
     </h6>
+
+    <div class="container-button-factura">
+      <h6>{{autorizacion.getCourrentUser()}}</h6>
+      <h6>Documento</h6>
+    </div>
+    
 
 <form action="{#}" method="post">
     

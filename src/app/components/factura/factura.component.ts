@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { AutorizacionService } from '../../services/autorizacion.service';
 @Component({
   selector: 'app-factura',
   templateUrl: './factura.component.html',
@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FacturaComponent implements OnInit {
 
-  constructor() { }
+  constructor(public autorizacion: AutorizacionService) { }
 
   ngOnInit(): void {
   }

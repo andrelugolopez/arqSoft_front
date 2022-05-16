@@ -10,7 +10,7 @@ import { ContenedorRegistroComponent } from './components/contenedor-registro/co
 import { ContenedorRepuestosComponent } from './components/contenedor-repuestos/contenedor-repuestos.component';
 import { ContenedorMenutiendaComponent } from './components/contenedor-menutienda/contenedor-menutienda.component';
 import { ContenedorAsistenciausuarioComponent } from './components/contenedor-asistenciausuario/contenedor-asistenciausuario.component';
-
+import { ContenedorAsistenciatenicadminComponent } from './components/contenedor-asistenciatenicadmin/contenedor-asistenciatenicadmin.component';
 const routes: Routes = [
   {path:'', component: ContenedorIndexComponent },
   {path:'equipos', component: ContenedorEquiposComponent },
@@ -21,7 +21,8 @@ const routes: Routes = [
   {path:'registro', component: ContenedorRegistroComponent },
   {path:'repuestos', component: ContenedorRepuestosComponent },
   {path:'menu-tienda', component: ContenedorMenutiendaComponent },
-  {path:'asistenciausuario', component: ContenedorAsistenciausuarioComponent}
+  {path:'asistenciausuario', component: ContenedorAsistenciausuarioComponent},
+  {path:'asistenciatenicadmin', component: ContenedorAsistenciatenicadminComponent}
 
 
 

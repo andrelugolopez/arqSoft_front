@@ -39,6 +39,11 @@ import { CardConsultarUComponent } from './components/card-consultar-u/card-cons
 import { ContenedorAsistenciausuarioComponent } from './components/contenedor-asistenciausuario/contenedor-asistenciausuario.component';
 import { HistoricoComponent } from './components/historico/historico.component';
 import { ContenedorHistoricoComponent } from './components/contenedor-historico/contenedor-historico.component';
+import { CardArticulostiendaComponent } from './components/card-articulostienda/card-articulostienda.component';
+import { CardAdminrolesComponent } from './components/card-adminroles/card-adminroles.component';
+import { CardOrdenservicioComponent } from './components/card-ordenservicio/card-ordenservicio.component';
+import { CardHistoricosComponent } from './components/card-historicos/card-historicos.component';
+import { ContenedorAsistenciatenicadminComponent } from './components/contenedor-asistenciatenicadmin/contenedor-asistenciatenicadmin.component';
 
 @NgModule({
   declarations: [
@@ -75,7 +80,12 @@ import { ContenedorHistoricoComponent } from './components/contenedor-historico/
     CardConsultarUComponent,
     ContenedorAsistenciausuarioComponent,
     HistoricoComponent,
-    ContenedorHistoricoComponent
+    ContenedorHistoricoComponent,
+    CardArticulostiendaComponent,
+    CardAdminrolesComponent,
+    CardOrdenservicioComponent,
+    CardHistoricosComponent,
+    ContenedorAsistenciatenicadminComponent
   ],
   imports: [
     BrowserModule,

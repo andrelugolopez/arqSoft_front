@@ -37,6 +37,8 @@ import { FranjaQuienesComponent } from './components/franja-quienes/franja-quien
 import { CardContactanosUComponent } from './components/card-contactanos-u/card-contactanos-u.component';
 import { CardConsultarUComponent } from './components/card-consultar-u/card-consultar-u.component';
 import { ContenedorAsistenciausuarioComponent } from './components/contenedor-asistenciausuario/contenedor-asistenciausuario.component';
+import { HistoricoComponent } from './components/historico/historico.component';
+import { ContenedorHistoricoComponent } from './components/contenedor-historico/contenedor-historico.component';
 import { CardArticulostiendaComponent } from './components/card-articulostienda/card-articulostienda.component';
 import { CardAdminrolesComponent } from './components/card-adminroles/card-adminroles.component';
 import { CardOrdenservicioComponent } from './components/card-ordenservicio/card-ordenservicio.component';
@@ -77,6 +79,8 @@ import { ContenedorAsistenciatenicadminComponent } from './components/contenedor
     CardContactanosUComponent,
     CardConsultarUComponent,
     ContenedorAsistenciausuarioComponent,
+    HistoricoComponent,
+    ContenedorHistoricoComponent,
     CardArticulostiendaComponent,
     CardAdminrolesComponent,
     CardOrdenservicioComponent,

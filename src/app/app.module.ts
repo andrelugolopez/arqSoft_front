@@ -37,6 +37,11 @@ import { FranjaQuienesComponent } from './components/franja-quienes/franja-quien
 import { CardContactanosUComponent } from './components/card-contactanos-u/card-contactanos-u.component';
 import { CardConsultarUComponent } from './components/card-consultar-u/card-consultar-u.component';
 import { ContenedorAsistenciausuarioComponent } from './components/contenedor-asistenciausuario/contenedor-asistenciausuario.component';
+import { CardArticulostiendaComponent } from './components/card-articulostienda/card-articulostienda.component';
+import { CardAdminrolesComponent } from './components/card-adminroles/card-adminroles.component';
+import { CardOrdenservicioComponent } from './components/card-ordenservicio/card-ordenservicio.component';
+import { CardHistoricosComponent } from './components/card-historicos/card-historicos.component';
+import { ContenedorAsistenciatenicadminComponent } from './components/contenedor-asistenciatenicadmin/contenedor-asistenciatenicadmin.component';
 
 @NgModule({
   declarations: [
@@ -71,7 +76,12 @@ import { ContenedorAsistenciausuarioComponent } from './components/contenedor-as
     FranjaQuienesComponent,
     CardContactanosUComponent,
     CardConsultarUComponent,
-    ContenedorAsistenciausuarioComponent
+    ContenedorAsistenciausuarioComponent,
+    CardArticulostiendaComponent,
+    CardAdminrolesComponent,
+    CardOrdenservicioComponent,
+    CardHistoricosComponent,
+    ContenedorAsistenciatenicadminComponent
   ],
   imports: [
     BrowserModule,

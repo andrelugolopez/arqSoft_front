@@ -38,8 +38,6 @@
                     </div>
                   </div>
                 </nav>
-
-
                 <div *ngIf="mostrarFormulario">
                   <nav>
                   <li *ngIf="autorizacion.isLoggedIn() | async" class="nav-item active">
@@ -57,19 +55,16 @@
                         </li>
                     </nav> 
               </div>
-
-
-
                 <li *ngIf="!(autorizacion.isLoggedIn() | async)" class="nav-item active">
                     <a class="nav-link" [routerLink]="['/login']" (click)="autorizacion.logout()">Iniciar sesion<span class="sr-only"></span></a>
                   </li>
                 <li class="nav-item">
                     <a class="nav-link" [routerLink]="['/carrito']">Carrito</a>
                 </li>
-
                 <li *ngIf="autorizacion.isLoggedIn() | async" class="nav-item active">
                     <a class="nav-link" [routerLink]="['/']"><span class="sr-only"></span></a>
                   </li> 
+
             </ul>
         </div>
     </div>

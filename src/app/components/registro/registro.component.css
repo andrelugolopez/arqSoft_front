@@ -1,10 +1,10 @@
 .iconoU{
-	margin: -20px 0px -5px;
-	width: 10%;
-	height: 10%;
+	margin: -1px 0px -5px;
+	width: 20%;
+	height: 20%;
 }
 .form_Registro {
-	background-color: rgba(232, 231, 231, 0.5);
+	background-color: rgb(4, 4, 24);
 	margin: auto auto;
 	padding: 20px;
 	border-radius: 5px;
@@ -37,7 +37,7 @@
 	text-align: center;
 }
 .form_Registro input {
-	margin: 1px 0px; /*espacio entre los label*/
+	margin: 5px 0px; /*espacio entre los label*/
 	border: none;
 	padding: 5px;/*tamaño del label*/
 	border-radius: 5px;
@@ -56,7 +56,6 @@
 	cursor: pointer;
 }
 .form_Registro label:before {
-	/*content: "";*/
 	display: inline-block;
 	width: 20px;
 	height: 20px;
@@ -85,5 +84,12 @@
 	width: 100%;
 	font-size: 20px;
 	padding: 8px; /*tamaño del boton*/
-	margin: 35px 0px; /*distancia entre el checbox y el boton*/
+	margin: 15px 0px; /*distancia entre el checbox y el boton*/
+}
+h4{
+	color: white;
+}
+.header-text{
+	padding-bottom: 10%;
+	padding-top: 10%;
 }

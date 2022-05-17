@@ -30,6 +30,10 @@ export class AutorizacionService {
   setCourrentRol(rol:string) : void {
     localStorage.setItem('courrentRol', rol);
   }
+
+  setCourrentDoc(doc:string) : void {
+    localStorage.setItem('courrentDoc', doc);
+  }
   
     //método que nos permite recuperar el nombre del usuario
   getCourrentUser() {
@@ -38,6 +42,10 @@ export class AutorizacionService {
 
   getCourrentRol() {
     return localStorage.getItem('courrentRol');
+  }
+
+  getCourrentDoc() {
+    return localStorage.getItem('courrentDoc');
   }
   
     //método que nos permite eliminar el nombre de usuario
@@ -48,6 +56,10 @@ export class AutorizacionService {
   private deleteCourrentRol() : void {
     localStorage.removeItem('courrentRol');
   }
+
+  private deleteCourrentDoc() : void {
+    localStorage.removeItem('courrentDoc');
+  }
   
   
     //método que nos permite romover el token almacenado y el nombre del
@@ -57,6 +69,7 @@ export class AutorizacionService {
     localStorage.removeItem('into');
     this.deleteCourrentUser();
     this.deleteCourrentRol();
+    this.deleteCourrentDoc();
     this.isLogin.next(false);
   }
   

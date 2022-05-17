@@ -11,6 +11,8 @@ import { ContenedorRepuestosComponent } from './components/contenedor-repuestos/
 import { ContenedorMenutiendaComponent } from './components/contenedor-menutienda/contenedor-menutienda.component';
 import { ContenedorAsistenciausuarioComponent } from './components/contenedor-asistenciausuario/contenedor-asistenciausuario.component';
 import { ContenedorAsistenciatenicadminComponent } from './components/contenedor-asistenciatenicadmin/contenedor-asistenciatenicadmin.component';
+import { ContenedorHistoricoComponent } from './components/contenedor-historico/contenedor-historico.component';
+
 const routes: Routes = [
   {path:'', component: ContenedorIndexComponent },
   {path:'equipos', component: ContenedorEquiposComponent },
@@ -22,7 +24,9 @@ const routes: Routes = [
   {path:'repuestos', component: ContenedorRepuestosComponent },
   {path:'menu-tienda', component: ContenedorMenutiendaComponent },
   {path:'asistenciausuario', component: ContenedorAsistenciausuarioComponent},
-  {path:'asistenciatenicadmin', component: ContenedorAsistenciatenicadminComponent}
+  {path:'asistenciatenicadmin', component: ContenedorAsistenciatenicadminComponent},
+  {path:'historico', component: ContenedorHistoricoComponent},
+
 
 
 

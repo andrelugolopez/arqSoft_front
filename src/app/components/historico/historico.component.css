@@ -1,0 +1,83 @@
+
+.form_historico {
+	background-color: rgb(4, 4, 24);
+	margin: auto auto;
+	padding: 20px;
+	border-radius: 5px;
+	box-shadow: 0 0 10px #000;
+	position:static;
+	top: 250px;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	width: 700px;
+	/*height: 500px; tamaño del recuadro login*/
+}
+.form_historico:before {
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+	content: "";
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	z-index: -1;
+	display: block;
+	filter: blur(2px);
+}
+
+.form_historico label {
+	position: relative;
+	margin-left: 5px;
+	margin-right: 10px;
+	top: 5px;
+	display: inline-block;
+	width: 40%;
+	height: 20px;
+	cursor: pointer;
+    color: white;
+}
+
+
+.form_historico_button {
+	background-color: rgba(231, 112, 15, 0.87);
+	color: #fff;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	width: 100%;
+	font-size: 20px;
+	padding: 8px; /*tamaño del boton*/
+	margin: 15px 0px; /*distancia entre el checbox y el boton*/
+}
+h6{
+	color: white;
+    text-align: justify;
+}
+
+h1, h4{
+    color:white;
+    text-align: center;
+}
+
+
+
+.container-button-historico{
+	display: flex;
+	justify-content: space-between;
+    width: 40%;
+}
+
+.col{
+    color: white;
+    margin-bottom: 10px;
+}
+
+.container-historico-button{
+    display: flex;
+	justify-content: space-between;
+    width: 40%;
+
+}

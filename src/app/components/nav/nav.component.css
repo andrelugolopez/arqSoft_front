@@ -12,8 +12,19 @@ nav ul li{
 li a{
     font-weight: bold;
     font-family: Arial;
-    color:rgba(231, 112, 15, 0.87);
+    color: white;
+    transition: background-color .5s;
+    
+    /*  */
 }
+
+  
+  li a:hover {
+    color:rgba(231, 112, 15, 0.87);
+  }
+
+
+
 #viki{
     display: flex;
     justify-content: end;

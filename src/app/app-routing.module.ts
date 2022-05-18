@@ -29,6 +29,7 @@ const routes: Routes = [
   {path:'asistenciatenicadmin', component: ContenedorAsistenciatenicadminComponent},
   {path:'historico', component: ContenedorHistoricoComponent},
   {path:'ordenServicio', component: ContenedorOrdenServicioComponent},
+  {path:'asignacionTecnico', component: ContenedorAsignacionTecnicoComponent},
 
 
 

@@ -84,13 +84,56 @@
 
       <div class="w-100"></div>
 
+      <div class="col">Marca de dispositivo:</div>
+      <textarea class="form-control col" aria-label="With textarea"></textarea>
+      <div class="w-100"></div>
 
+      <div class="col">Accesorios:</div>
+        <div class="form-check col">
+          <label class="form-check-label col" for="flexRadioDefault1">
+            Mouse
+          </label>
+          <input class="form-check-input col" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+        </div>
 
+        <div class="form-check col">
+          <label class="form-check-label col" for="flexRadioDefault2">
+            Cable de energia
+          </label>
+          <input class="form-check-input col" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+        </div>
 
-      
+        <div class="form-check col">
+          <label class="form-check-label col" for="flexRadioDefault2">
+            Cargado
+          </label>
+          <input class="form-check-input col" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+        </div>
 
+        <div class="form-check col">
+          <label class="form-check-label col" for="flexRadioDefault2">
+            Teclado
+          </label>
+          <input class="form-check-input col" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+        </div>
 
-     
+        <div class="form-check col">
+          <label class="form-check-label col" for="flexRadioDefault2">
+            Otro
+          </label>
+          <input class="form-check-input col" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+          <textarea class="form-control col" aria-label="With textarea"></textarea>
+        </div>
+
+        <div>
+          <label for="exampleInputEmail1" class="form-label">Diagnostico detallado</label>
+          <textarea class="form-control" aria-label="With textarea"></textarea>
+        </div>
+
+        <div [routerLink]="['/asignacionTecnico']">
+          <div class="mb-3"></div>
+          <button type="registrarse" class="btn btn-primary">Guardar</button>
+        </div>
     </div>
   </div>
   <br>

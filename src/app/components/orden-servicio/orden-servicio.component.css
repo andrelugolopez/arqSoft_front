@@ -11,7 +11,7 @@
 	left: 0;
 	right: 0;
 	width: 900px;
-	height: 750px; /*tamaño del recuadro login*/
+	height: 1000px; /*tamaño del recuadro login*/
 }
 .form_orden-servicio:before {
 	width: 100%;

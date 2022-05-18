@@ -44,6 +44,10 @@ import { CardAdminrolesComponent } from './components/card-adminroles/card-admin
 import { CardOrdenservicioComponent } from './components/card-ordenservicio/card-ordenservicio.component';
 import { CardHistoricosComponent } from './components/card-historicos/card-historicos.component';
 import { ContenedorAsistenciatenicadminComponent } from './components/contenedor-asistenciatenicadmin/contenedor-asistenciatenicadmin.component';
+import { AsignacionTecnicoComponent } from './components/asignacion-tecnico/asignacion-tecnico.component';
+import { ContenedorAsignacionTecnicoComponent } from './components/contenedor-asignacion-tecnico/contenedor-asignacion-tecnico.component';
+import { ContenedorOrdenServicioComponent } from './components/contenedor-orden-servicio/contenedor-orden-servicio.component';
+import { OrdenServicioComponent } from './components/orden-servicio/orden-servicio.component';
 
 @NgModule({
   declarations: [
@@ -85,7 +89,11 @@ import { ContenedorAsistenciatenicadminComponent } from './components/contenedor
     CardAdminrolesComponent,
     CardOrdenservicioComponent,
     CardHistoricosComponent,
-    ContenedorAsistenciatenicadminComponent
+    ContenedorAsistenciatenicadminComponent,
+    AsignacionTecnicoComponent,
+    ContenedorAsignacionTecnicoComponent,
+    ContenedorOrdenServicioComponent,
+    OrdenServicioComponent
   ],
   imports: [
     BrowserModule,

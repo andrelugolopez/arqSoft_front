@@ -12,6 +12,7 @@ import { ContenedorMenutiendaComponent } from './components/contenedor-menutiend
 import { ContenedorAsistenciausuarioComponent } from './components/contenedor-asistenciausuario/contenedor-asistenciausuario.component';
 import { ContenedorAsistenciatenicadminComponent } from './components/contenedor-asistenciatenicadmin/contenedor-asistenciatenicadmin.component';
 import { ContenedorHistoricoComponent } from './components/contenedor-historico/contenedor-historico.component';
+import { ContenedorOrdenServicioComponent} from './components/contenedor-orden-servicio/contenedor-orden-servicio.component';
 
 const routes: Routes = [
   {path:'', component: ContenedorIndexComponent },
@@ -26,9 +27,7 @@ const routes: Routes = [
   {path:'asistenciausuario', component: ContenedorAsistenciausuarioComponent},
   {path:'asistenciatenicadmin', component: ContenedorAsistenciatenicadminComponent},
   {path:'historico', component: ContenedorHistoricoComponent},
-
-
-
+  {path:'orden-servicio', component: ContenedorOrdenServicioComponent},
 
 ];
 

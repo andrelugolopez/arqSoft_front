@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ClientService } from '../../services/client.service';
+import { AutorizacionService } from '../../autorizacion.service';
+
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -23,6 +25,8 @@ export class PerifericosComponent implements OnInit {
     }
 
 
+
+  
 
   ngOnInit(): void {
     this.pedirProductos();

@@ -42,13 +42,10 @@ constructor(/*inyeccion de independencias*/
           password: ['', Validators.required],
         });
       }
-
       async onSubmit(){
         this.mostrarSpinner = true;
         this.mostrarFormulario = false;
         if(this.form.valid){
-      
-
           // let data={/**/
           //   email:this.form.value.email,
           //   password:this.form.value.password,

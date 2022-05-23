@@ -60,6 +60,13 @@ export class AutorizacionService {
   private deleteCourrentDoc() : void {
     localStorage.removeItem('courrentDoc');
   }
+
+  getToken() {
+    if (this.checkToken()){
+      return localStorage.getItem('into')
+    }
+    return "No hay token";
+  }
   
   
     //método que nos permite romover el token almacenado y el nombre del

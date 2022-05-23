@@ -6,7 +6,6 @@ import { HttpClient, HttpParams, HttpHeaders} from '@angular/common/http';
 })
 export class ClientService {
 
-
   constructor(private http: HttpClient) { }
 
   // sendFormToJson(url:any,data:any){
@@ -28,10 +27,11 @@ export class ClientService {
   }
 
 
-  postRequest(route: string, data?:any, into?:string) {
+  postRequest(route: string, data?:any, into?:any) {
     let config:any = {
       responseType: "json"
     }
+
 
     if (into){
       const header = new HttpHeaders().set('Authorization', `Bearer ${into}`);

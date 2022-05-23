@@ -41,5 +41,10 @@ li a{
     justify-content: end;
 }
 .container-fluid{
-    background-color: rgb(4, 4, 24);
+    background-color: #163446;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+  margin-top: 0;
 }

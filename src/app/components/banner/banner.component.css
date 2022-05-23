@@ -7,6 +7,7 @@
     -webkit-animation:banner 6s alternate 0 infinite;
     animation:banner 6s infinite;
 	animation-direction:alternate;
+	
 }
 @keyframes banner{
 	0%,30%{

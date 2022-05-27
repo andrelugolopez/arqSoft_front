@@ -14,12 +14,32 @@
                     <a class="nav-link active" aria-current="page" [routerLink]="['/']">Inicio </a>
                 </li>
 
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" [routerLink]="['/asistenciausuario']">Asistencia usuario</a>
+                <!-- <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" [routerLink]="['/asistenciausuario']">Asistencia Tecnica</a>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" [routerLink]="['/asistenciatenicadmin']">Asistencia tecnica</a>
-              </li>
+            
+               <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" [routerLink]="['/asistenciatenicadmin']">Asistencia Tecnica</a>
+              </li> -->
+          
+            <!-- ------------------------------------ -->
+
+            <div *ngIf="mostrarFormulario">
+              <nav>
+              <li *ngIf="autorizacion.isAdmin() | async" class="nav-item active">
+                  <a class="nav-link" [routerLink]="['/asistenciatenicadmin']">Asistencia Tecnica</a>
+                </nav> 
+          </div>
+            <li *ngIf="!(autorizacion.isLoggedIn() | async)" class="nav-item active">
+                <a class="nav-link" [routerLink]="['/asistenciausuario']"(click)="autorizacion.logout()">Asistencia Tecnica<span class="sr-only"></span></a>
+
+            </li>
+            <li *ngIf="autorizacion.isLoggedIn() | async" class="nav-item active">
+                <a class="nav-link" [routerLink]="['/']"><span class="sr-only"></span></a>
+            </li> 
+              <!-- --------------------------------------- -->
+
+
                 <nav>
                   <div>
                     <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">

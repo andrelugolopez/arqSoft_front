@@ -31,8 +31,8 @@
     66%,69%{
 		opacity:0.1;
 	}   
-	70%,100%{
+	/* 70%,100%{
 		opacity:1;
         background-image:url("/assets/imagenes/bannerM.png");
-	}
+	} */
 }

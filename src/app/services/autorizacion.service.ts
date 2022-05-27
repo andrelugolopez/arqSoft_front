@@ -1,13 +1,22 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from "rxjs";
 
+// nombres usados para seguridad
+// envio de token = into
+// nombre de usuario = Nuat
+// rol =n3yB6PZnGE8n7F
+// admin=J8p4SBfJgRfZCo
+// tecnico=H7qm7gQr6DBGfM
+// usuario=hbh2jFVsQM7RUy
+
 @Injectable({
   providedIn: 'root'
 })
 export class AutorizacionService {
   isLogin = new BehaviorSubject<boolean>(this.checkToken());
-
-  //admin = new BehaviorSubject<boolean>(null);
+  
+  admin = new BehaviorSubject<boolean>(false);
+  tecnico = new BehaviorSubject<boolean>(false);
 
   private checkToken() : boolean {
     return !!localStorage.getItem('into');
@@ -16,7 +25,8 @@ export class AutorizacionService {
   login(into:string) : void {
 
     localStorage.setItem('into', into);
-    // this.admin.next(true);
+    this.admin.next(true);
+    this.tecnico.next(true);
     this.isLogin.next(true);
 
   }
@@ -29,6 +39,11 @@ export class AutorizacionService {
 
   setCourrentRol(rol:string) : void {
     localStorage.setItem('courrentRol', rol);
+      if (rol=="admin") {
+        this.admin.next(true);
+      }if (rol=="tecnico") {
+        this.tecnico.next(true);
+      }
   }
 
   setCourrentDoc(doc:string) : void {
@@ -85,16 +100,16 @@ export class AutorizacionService {
     return this.isLogin.asObservable();
     }
   
-     /*
-     isUser() : Observable<boolean> {
-      return this.user.asObservable();
-     }
-  */
   
-     //método que nos retorna el BehaviorSubject admin cómo un observable
-    // isAdmin() : Observable<boolean> {
-    //   return this.admin.asObservable();
-    //  }
+    // método que nos retorna el BehaviorSubject admin cómo un observable
+    isAdmin() : Observable<boolean> {
+     return this.admin.asObservable();
+     }
 
-  // constructor() { }
+     isTecni() : Observable<boolean> {
+      return this.tecnico.asObservable();
+     }
+ 
+
+    // constructor() { }
 }

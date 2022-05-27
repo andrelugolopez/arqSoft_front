@@ -1,10 +1,7 @@
 .card{
-    margin: 30px 42px 42px 0px;
-    padding: 30px 0px 42px 0px;
+    
     background-color: #163446;  
 }
-
-
 .btn{
     background-color:  rgba(231, 112, 15, 0.87);
     font-weight: bold;

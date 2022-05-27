@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AutorizacionService } from '../../services/autorizacion.service';
+
 
 @Component({
   selector: 'app-contenedor-asistenciausuario',
@@ -6,8 +8,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./contenedor-asistenciausuario.component.css']
 })
 export class ContenedorAsistenciausuarioComponent implements OnInit {
-
-  constructor() { }
+  mostrarFormulario: boolean = true;
+  
+  constructor(
+    public autorizacion: AutorizacionService
+  ) { }
 
   ngOnInit(): void {
   }

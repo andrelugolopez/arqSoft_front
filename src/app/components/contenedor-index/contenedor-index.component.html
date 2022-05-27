@@ -1,13 +1,24 @@
 <app-nav></app-nav>
 <app-banner></app-banner>
-<div class="container ">
-    <div class=" contenedor row ">
-        <app-card-accesorios class="col-6"></app-card-accesorios>
-        <app-card-repuestos  class="col-6"></app-card-repuestos>
-        <app-card-equipos    class="col-6"></app-card-equipos>
-        <app-card-soporte    class="col-6"></app-card-soporte>
+<div class=" container">
+    <div class="row">       
+        <div class="col-8">
+            <app-card-accesorios class="col"></app-card-accesorios>
+        </div>
+        <div class="col-4">
+            <app-card-repuestos  class="col"></app-card-repuestos>
+        </div>
+    </div>
+    <div class="row">       
+        <div class="col-4">
+            <app-card-equipos  class="col-8"></app-card-equipos>
+        </div>
+        <div class="col-8">
+            <app-card-soporte class="col-4"></app-card-soporte>
+        </div>
     </div>
 </div>
+
 <app-franja-quienes></app-franja-quienes>
 <app-quienesomos></app-quienesomos>
 <app-info-tienda></app-info-tienda>

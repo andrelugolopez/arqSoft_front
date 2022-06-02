@@ -48,6 +48,8 @@ import { ContenedorAsignacionTecnicoComponent } from './components/contenedor-as
 import { AsignacionTecnicoComponent } from './components/asignacion-tecnico/asignacion-tecnico.component';
 import { OrdenServicioComponent } from './components/orden-servicio/orden-servicio.component';
 import { ContenedorOrdenServicioComponent } from './components/contenedor-orden-servicio/contenedor-orden-servicio.component';
+import { DetalleProductoComponent } from './components/detalle-producto/detalle-producto.component';
+import { ContenedorDetalleProductoComponent } from './components/contenedor-detalle-producto/contenedor-detalle-producto.component';
 
 @NgModule({
   declarations: [
@@ -93,7 +95,9 @@ import { ContenedorOrdenServicioComponent } from './components/contenedor-orden-
     ContenedorAsignacionTecnicoComponent,
     AsignacionTecnicoComponent,
     OrdenServicioComponent,
-    ContenedorOrdenServicioComponent
+    ContenedorOrdenServicioComponent,
+    DetalleProductoComponent,
+    ContenedorDetalleProductoComponent
   ],
   imports: [
     BrowserModule,

@@ -14,6 +14,7 @@ import { ContenedorAsistenciatenicadminComponent } from './components/contenedor
 import { ContenedorHistoricoComponent } from './components/contenedor-historico/contenedor-historico.component';
 import { ContenedorOrdenServicioComponent } from './components/contenedor-orden-servicio/contenedor-orden-servicio.component';
 import { ContenedorAsignacionTecnicoComponent } from './components/contenedor-asignacion-tecnico/contenedor-asignacion-tecnico.component';
+import { ContenedorDetalleProductoComponent } from './components/contenedor-detalle-producto/contenedor-detalle-producto.component';
 
 const routes: Routes = [
   {path:'', component: ContenedorIndexComponent },
@@ -30,6 +31,7 @@ const routes: Routes = [
   {path:'historico', component: ContenedorHistoricoComponent},
   {path:'ordenServicio', component: ContenedorOrdenServicioComponent},
   {path:'asignacionTecnico', component: ContenedorAsignacionTecnicoComponent},
+  {path:'detalleProducto/:idproducto', component: ContenedorDetalleProductoComponent},
 
 
 

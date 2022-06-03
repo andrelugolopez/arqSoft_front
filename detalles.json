@@ -7,6 +7,14 @@
         "precio": 2000000,
         "imagen": "equipo1.jpg",
         "descripcion": "Caracteristicas destacadas  Almacenamiento en SSD. Arranca en segundos a toda velocidad Mousepad multitáctil, admite gestos de cuatro dedos HP Fast Charge. Carga de 0 a 50% en aproximadamente 45 minLector de tarjetas SD y Micro SD. Accede a contenido externo Conectividad, Interfaz de red LAN 10/100/1000 GbE integrada"
+      },
+      {
+        "id": "E019",
+        "nombre": "Computador prueba",
+        "cantidad": 4,
+        "precio": 2000000,
+        "imagen": "equipo1.jpg",
+        "descripcion": "Caracteristicas destacadas  Almacenamiento en SSD. Arranca en segundos a toda velocidad Mousepad multitáctil, admite gestos de cuatro dedos HP Fast Charge. Carga de 0 a 50% en aproximadamente 45 minLector de tarjetas SD y Micro SD. Accede a contenido externo Conectividad, Interfaz de red LAN 10/100/1000 GbE integrada"
       }
     ]
 }

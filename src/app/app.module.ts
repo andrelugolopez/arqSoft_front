@@ -50,6 +50,10 @@ import { OrdenServicioComponent } from './components/orden-servicio/orden-servic
 import { ContenedorOrdenServicioComponent } from './components/contenedor-orden-servicio/contenedor-orden-servicio.component';
 import { DetalleProductoComponent } from './components/detalle-producto/detalle-producto.component';
 import { ContenedorDetalleProductoComponent } from './components/contenedor-detalle-producto/contenedor-detalle-producto.component';
+import { ContenedorNuevaContrasenaComponent } from './components/contenedor-nueva-contrasena/contenedor-nueva-contrasena.component';
+import { NuevaContrasenaComponent } from './components/nueva-contrasena/nueva-contrasena.component';
+import { ContenedorOlvideContrasenaComponent } from './components/contenedor-olvide-contrasena/contenedor-olvide-contrasena.component';
+import { OlvideContrasenaComponent } from './components/olvide-contrasena/olvide-contrasena.component';
 
 @NgModule({
   declarations: [
@@ -97,7 +101,13 @@ import { ContenedorDetalleProductoComponent } from './components/contenedor-deta
     OrdenServicioComponent,
     ContenedorOrdenServicioComponent,
     DetalleProductoComponent,
-    ContenedorDetalleProductoComponent
+    ContenedorDetalleProductoComponent,
+    ContenedorNuevaContrasenaComponent,
+    NuevaContrasenaComponent,
+    ContenedorOlvideContrasenaComponent,
+    OlvideContrasenaComponent,
+
+   
   ],
   imports: [
     BrowserModule,

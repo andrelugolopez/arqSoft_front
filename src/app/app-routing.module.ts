@@ -34,7 +34,7 @@ const routes: Routes = [
   {path:'historico', component: ContenedorHistoricoComponent},
   {path:'ordenServicio', component: ContenedorOrdenServicioComponent},
   {path:'asignacionTecnico', component: ContenedorAsignacionTecnicoComponent},
-  {path:'detalleProducto', component: ContenedorDetalleProductoComponent},
+  {path:'detalleProducto/:idproducto', component: ContenedorDetalleProductoComponent},
   {path:'asignacionTecnico', component: ContenedorAsignacionTecnicoComponent},
   {path:'nuevaContrasena', component: ContenedorNuevaContrasenaComponent},
   {path:'olvideContrasena', component: ContenedorOlvideContrasenaComponent},

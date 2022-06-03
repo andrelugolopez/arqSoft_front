@@ -9,15 +9,27 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./detalle-producto.component.css']
 })
 export class DetalleProductoComponent implements OnInit {
-  productos: any;
+  producto: any;
+  idproducto: any;
+
 
   constructor(
     private client: ClientService,
+    private route: ActivatedRoute,
   ) { }
 
 
-
   ngOnInit() {
+    this.route.url
+      .subscribe(url => {
+        this.idproducto = url[1].path;
+      }
+    );
+    this.client.getRequestAllProducts('http://localhost:3000/producto/'+this.idproducto).subscribe(
+      (data: any) => this.producto = data,
+
+      error => console.log("Ha ocurrido un error en la llamada: ", error)
+      )
   }
 
 }

@@ -1,13 +1,16 @@
 <div class="container">
   <div class="row">
     <div class="col-12">
-      <h1>titulo</h1>
+      <h1>{{producto.nombre}}</h1>
+      <br>
+      <div class="card1" style="width:400px">
+        <img class="card-img-top" src="/assets/imagenes/{{producto.imagen}}" alt="Card image">
+        </div>
     </div>
   </div>
 
   <div class="row">
     <div class="col-lg-6 mb-4">
-      
       <div>
         <div class="main-product-image space">
           <div id="product-carousel" class="carousel slide">
@@ -33,7 +36,7 @@
         </div>
       </div>
 
-      <div class="col-sm-12 product-page-thumbs space mt-3">
+      <!-- <div class="col-sm-12 product-page-thumbs space mt-3">
         
         <a class="thumbs" data-image="1" href="#"><img src="https://cdnx.jumpseller.com/bootstrap/image/429444/thumb/120/150?1614272621" alt="Wacom Bamboo Tablet"></a>
         
@@ -41,7 +44,7 @@
         
         <a class="thumbs" data-image="3" href="#"><img src="https://cdnx.jumpseller.com/bootstrap/image/14896546/thumb/120/150?1614272621" alt="Wacom Bamboo Tablet"></a>
         
-      </div>
+      </div> -->
       
     </div>
 
@@ -49,6 +52,9 @@
       <form class="form-horizontal" action="/cart/add/224300" method="post" enctype="multipart/form-data" name="buy">
           <div class="form-group price_elem row">
             <label class="col-sm-3 col-md-3 form-control-label nopaddingtop">Precio:</label>
+            <div class="col-sm-8 col-md-9">      
+              <label>{{producto.precio}}</label>
+            </div>
             <div class="col-sm-8 col-md-9">
               <span class="product-form-price" id="product-form-price"></span>
             </div>
@@ -60,9 +66,9 @@
             </div>
           </div> 
           <div class="form-group row">
-            <label class="col-sm-3 col-md-3 form-control-label">Descricion:</label>
+            <label class="col-sm-3 col-md-3 form-control-label">Descripción:</label>
             <div class="col-sm-8 col-md-9 description">
-              <p>Just getting going with your art? Transitioning from paper to computer-based work? The Bamboo Splash is a great way to explore your interests, with a premium feel of the pen tablet and everything you need to get started in the box.Start something fun! Sketch, draw, paint, all on your computer with the new Bamboo Splash. You'll work both digitally and naturally, thanks to the feel of the Bamboo pen in your hand. Whenever your art and your computer come together, a Bamboo pen tablet is a must have!You can replicate pencils, chalks, oils and watercolors as you move the Bamboo pen naturally across the tablet. Create your own effects, experiment, and share your stuff with others digitally. Most of all, have some fun! </p>
+              <p>{{producto.descripcion}} </p>
             </div>
           </div> 
       <input type="hidden"></form>

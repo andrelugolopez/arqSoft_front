@@ -15,6 +15,9 @@ import { ContenedorHistoricoComponent } from './components/contenedor-historico/
 import { ContenedorOrdenServicioComponent } from './components/contenedor-orden-servicio/contenedor-orden-servicio.component';
 import { ContenedorAsignacionTecnicoComponent } from './components/contenedor-asignacion-tecnico/contenedor-asignacion-tecnico.component';
 import { ContenedorDetalleProductoComponent } from './components/contenedor-detalle-producto/contenedor-detalle-producto.component';
+import { ContenedorNuevaContrasenaComponent } from './components/contenedor-nueva-contrasena/contenedor-nueva-contrasena.component';
+import { ContenedorOlvideContrasenaComponent } from './components/contenedor-olvide-contrasena/contenedor-olvide-contrasena.component';
+
 
 const routes: Routes = [
   {path:'', component: ContenedorIndexComponent },
@@ -31,9 +34,12 @@ const routes: Routes = [
   {path:'historico', component: ContenedorHistoricoComponent},
   {path:'ordenServicio', component: ContenedorOrdenServicioComponent},
   {path:'asignacionTecnico', component: ContenedorAsignacionTecnicoComponent},
-  {path:'detalleProducto/:idproducto', component: ContenedorDetalleProductoComponent},
+  {path:'detalleProducto', component: ContenedorDetalleProductoComponent},
+  {path:'asignacionTecnico', component: ContenedorAsignacionTecnicoComponent},
+  {path:'nuevaContrasena', component: ContenedorNuevaContrasenaComponent},
+  {path:'olvideContrasena', component: ContenedorOlvideContrasenaComponent},
 
-
+ 
 
 
 ];

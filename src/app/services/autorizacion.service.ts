@@ -49,7 +49,15 @@ export class AutorizacionService {
   setCourrentDoc(doc:string) : void {
     localStorage.setItem('courrentDoc', doc);
   }
-  
+
+  setCourrentCodigoR(CodigoR:string) : void {
+    localStorage.setItem('courrentCodigoR', CodigoR);
+  }
+
+  setCourrentEmail(email:string) : void {
+    localStorage.setItem('courrentEmail', email);
+  }
+
     //método que nos permite recuperar el nombre del usuario
   getCourrentUser() {
     return localStorage.getItem('courrentUser');
@@ -61,6 +69,14 @@ export class AutorizacionService {
 
   getCourrentDoc() {
     return localStorage.getItem('courrentDoc');
+  }
+
+  getCourrentCodigoR() {
+    return localStorage.getItem('courrentCodigoR');
+  }
+
+  getCourrentEmail() {
+    return localStorage.getItem('courrentEmail');
   }
   
     //método que nos permite eliminar el nombre de usuario
@@ -74,6 +90,14 @@ export class AutorizacionService {
 
   private deleteCourrentDoc() : void {
     localStorage.removeItem('courrentDoc');
+  }
+
+  private deleteCourrentCodigoR() : void {
+    localStorage.removeItem('courrentCodigoR');
+  }
+
+  private deleteCourrentEmail() : void {
+    localStorage.removeItem('courrentEmail');
   }
 
   getToken() {
@@ -92,6 +116,9 @@ export class AutorizacionService {
     this.deleteCourrentUser();
     this.deleteCourrentRol();
     this.deleteCourrentDoc();
+    this.deleteCourrentCodigoR();
+    this.deleteCourrentEmail();
+
     this.isLogin.next(false);
   }
   

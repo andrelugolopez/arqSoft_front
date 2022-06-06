@@ -24,6 +24,7 @@ export class EquiposComponent implements OnInit {
 
     ngOnInit(): void{
       this.pedirProductos();
+      console.log(this.productos)
     }
 
 }

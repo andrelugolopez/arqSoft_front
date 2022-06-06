@@ -66,6 +66,9 @@ constructor(/*inyeccion de independencias*/
               this.autorizacion.setCourrentRol(response.rol)
               //doc
               this.autorizacion.setCourrentDoc(response.doc)
+              //CodigoR
+              this.autorizacion.setCourrentCodigoR(response.CodigoR)
+
               this.route.navigate(['/']);
 
           }),

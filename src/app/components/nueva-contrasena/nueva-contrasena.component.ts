@@ -9,7 +9,7 @@ import { ActivatedRoute , ParamMap } from '@angular/router';
   styleUrls: ['./nueva-contrasena.component.css']
 })
 export class NuevaContrasenaComponent implements OnInit {
-  tokenEmail: any
+  tokenEmail : any
 
   constructor(
     private client: ClientService,
@@ -24,9 +24,10 @@ export class NuevaContrasenaComponent implements OnInit {
       let email = + params.get('email')!;
       this.client.getRequestAllProducts(`http://localhost:5000/tokenContrasena?email=${email}`).subscribe(
         (response: any) => {
-          console.log("completo", response)
+          console.log("completo", response);
+          this.tokenEmail = response;
           //Email
-          this.autorizacion.setCourrentEmail(response.email)
+          this.autorizacion.setCourrentEmail(response.email);
           //CodigoR
           this.autorizacion.setCourrentCodigoR(response.CodigoR)
 

@@ -1,21 +1,21 @@
 <div class="form_olvide_contrasena">  
         <div>  
             <div>
-                <form >
-                    <div class="form-group">
+                <form (submit)="addTask(email)" >
                         <label>Correo electronico:</label>
-                        <input type="email" class="form-control" formControlName="email" aria-describedby="emailHelp">
-                    </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" #email>
+                        </div>
                     <br>
-                    <form>
+                    <div>
                         <div class="container_button">
-                            <a [routerLink]="['/nuevaContrasena']">Confirmar</a>
+                            <button class="btn btn-primary btn-lg">Confirmar</button>
                         </div>
                         <div class="container_button" >
                             <a [routerLink]="['/login']">Volver al inicio de sesión</a>
                         </div>
-                    </form>
-                </form>               
+                    </div>
+                </form>              
             </div>
         </div>
 </div>

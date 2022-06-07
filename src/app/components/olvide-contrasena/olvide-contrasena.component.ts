@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ClientService } from '../../services/client.service';
 import { AutorizacionService } from '../../services/autorizacion.service';
-import { Router } from '@angular/router';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute , ParamMap } from '@angular/router';
 
 @Component({
   selector: 'app-olvide-contrasena',
@@ -9,32 +10,49 @@ import { Router } from '@angular/router';
   styleUrls: ['./olvide-contrasena.component.css']
 })
 export class OlvideContrasenaComponent implements OnInit {
-  emailToken:any;
-  
+  form: FormGroup = this.fb.group({/*se inicializa el form*/
+  email: ['', Validators.required],
+
+});
+ 
+
   constructor(
     private client: ClientService,
     public autorizacion: AutorizacionService,
-    private route: Router
+    private fb: FormBuilder,
+    private route : ActivatedRoute
+
   ) { }
 
 
   ngOnInit(): void {
-    // this.recibirToken();
   }
 
-  // recibirToken(){
-  //   this.client.getRequestAllProducts('http://localhost:5000/tokenContrasena?email='+this.emailToken).subscribe(
-  //     (response:any)=>{
-  //       console.log(response),
-  //       //Email
-  //       this.autorizacion.setCourrentEmail(response.emailToken)
-  //       //CodigoR
-  //       this.autorizacion.setCourrentCodigoR(response.CodigoR)
- 
+  onSubmit(){
+    if(this.form.valid){
+      let data={/**/
+        email:this.form.value.email
+      }
 
-  //   }),
+    this.route.paramMap
+      .subscribe((params : ParamMap) => {
+      let email = + params.get('email')!;
 
-    // (error:any)=> {
-    //   console.log(error);
-    // };
+      this.client.getRequestAllProducts(`http://localhost:5000/tokenContrasena?correo=${email}`
+      ).subscribe(
+
+      (response:any)=>{
+      console.log(response),
+      //Email
+      this.autorizacion.setCourrentEmail(response.email)
+      //CodigoR
+      this.autorizacion.setCourrentCodigoR(response.CodigoR)},
+      (error:any)=>console.log(error)
+      )
+  });
+  }else{
+
+  }
+
+}
 }

@@ -36,7 +36,7 @@ const routes: Routes = [
   {path:'asignacionTecnico', component: ContenedorAsignacionTecnicoComponent},
   {path:'detalleProducto/:idproducto', component: ContenedorDetalleProductoComponent},
   {path:'asignacionTecnico', component: ContenedorAsignacionTecnicoComponent},
-  {path:'nuevaContrasena/:email', component: ContenedorNuevaContrasenaComponent},
+  {path:'nuevaContrasena/:correo', component: ContenedorNuevaContrasenaComponent},
   {path:'olvideContrasena', component: ContenedorOlvideContrasenaComponent},
 
  

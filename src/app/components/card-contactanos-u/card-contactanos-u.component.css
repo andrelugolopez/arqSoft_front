@@ -1,9 +1,15 @@
 .card{
-    
+    display: flex;
+    align-items: center;
     background-color: #163446;  
+    border-radius: 40px !important;
+    
 }
 .btn{
     background-color:  rgba(231, 112, 15, 0.87);
     font-weight: bold;
     font-family: Arial;
  } 
+ .card1{
+    width: 15%; ;
+}

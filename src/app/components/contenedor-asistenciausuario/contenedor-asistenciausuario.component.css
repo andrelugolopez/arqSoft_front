@@ -1,7 +1,8 @@
 .contenedor{
-    margin: 42px;
-    padding: 10px;
-    width: 100%;
-    height: 20%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 139px 0px 139px 0px;  
     
 }

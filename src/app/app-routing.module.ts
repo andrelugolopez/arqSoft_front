@@ -18,7 +18,6 @@ import { ContenedorDetalleProductoComponent } from './components/contenedor-deta
 import { ContenedorNuevaContrasenaComponent } from './components/contenedor-nueva-contrasena/contenedor-nueva-contrasena.component';
 import { ContenedorOlvideContrasenaComponent } from './components/contenedor-olvide-contrasena/contenedor-olvide-contrasena.component';
 
-
 const routes: Routes = [
   {path:'', component: ContenedorIndexComponent },
   {path:'equipos', component: ContenedorEquiposComponent },

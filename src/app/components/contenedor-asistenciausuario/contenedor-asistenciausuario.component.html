@@ -1,10 +1,12 @@
 <app-nav></app-nav>
 <div *ngIf="mostrarFormulario">
-    <div *ngIf="autorizacion.isTecni() | async" class="container ">
+    <div *ngIf="!(autorizacion.isLoggedIn() | async)"class="container ">
         <div class=" contenedor row ">
-            <app-card-contactanos-u class="col-4"></app-card-contactanos-u>
-            <app-card-consultar-u class="col-4"></app-card-consultar-u>
+            <app-card-contactanos-u class="col-6"></app-card-contactanos-u>
+            <app-card-consultar-u class="col-6"></app-card-consultar-u>
+            <app-principalesmarcas></app-principalesmarcas>   
         </div>
+        
     </div>
 </div>
 <app-footer></app-footer>

@@ -1,8 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ClientService } from '../../services/client.service';
-import { AutorizacionService } from '../../autorizacion.service';
-
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-perifericos',

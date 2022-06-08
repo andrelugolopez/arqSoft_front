@@ -1,0 +1,25 @@
+<div class="form_olvide_contrasena">  
+        <div>  
+            <div>
+                <form [formGroup]="form" (ngSubmit)="onSubmit()">
+                        <label>Correo electronico:</label>
+                        <div class="form-group">
+                            <input type="email" class="form-control" formControlName="email" aria-describedby="emailHelp">
+                        </div>
+                    <br>
+                    <div>
+                        <div class="container_button">
+                            <button class="btn btn-primary btn-lg">Confirmar</button>
+                        </div>
+                        <div class="container_button" >
+                            <a [routerLink]="['/login']">Volver al inicio de sesión</a>
+                        </div>
+                    </div>
+                </form>              
+            </div>
+        </div>
+</div>
+    
+
+
+    

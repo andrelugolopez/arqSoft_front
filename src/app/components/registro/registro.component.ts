@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ClientService } from '../../services/client.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-registro',
@@ -36,24 +35,10 @@ constructor(
 
     this.client.postRequest("http://127.0.0.1:5000/register",data
     ).subscribe(
-    (response:any)=>{
-      console.log(response),
-      Swal.fire({
-      position: 'top-end',
-      icon: 'success',
-      title: 'Registro exitoso',
-      showConfirmButton: false,
-      timer: 2000
-      })}
-    ,(error:any)=>{console.log(error),
-      Swal.fire({
-      position: 'top-end',
-      icon: 'error',
-      title: 'Algo salio mal intentalo de nuevo',
-      showConfirmButton: false,
-      timer: 2000
-      })}
+    (response:any)=>console.log(response),
+    (error:any)=>console.log(error)
   )
+      /*console.log("we",data)*/
     }else{
 
     }

@@ -3,7 +3,6 @@ import { ClientService } from '../../services/client.service';
 import { AutorizacionService } from '../../services/autorizacion.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import Swal from 'sweetalert2';
 
 
 // nombres usados para seguridad
@@ -67,27 +66,21 @@ constructor(/*inyeccion de independencias*/
               this.autorizacion.setCourrentRol(response.rol)
               //doc
               this.autorizacion.setCourrentDoc(response.doc)
+              //CodigoR
+              this.autorizacion.setCourrentCodigoR(response.CodigoR)
+
               this.route.navigate(['/']);
-              Swal.fire({
-              position: 'top-end',
-              icon: 'success',
-              title: 'Login exitoso',
-              showConfirmButton: false,
-              timer: 2000
-              })
-          }),(error:any)=>{console.log(error),
-              Swal.fire({
-              position: 'top-end',
-              icon: 'error',
-              title: 'Tenemos promemas para loguearte',
-              showConfirmButton: false,
-              timer: 2000
-              })
-          }
+
+          }),
+
+          (error:any)=> {
+            console.log(error);
+          };
     
           /*console.log("we",data)*/
         }else{
           console.log("Form error");
+
         }
      }
 

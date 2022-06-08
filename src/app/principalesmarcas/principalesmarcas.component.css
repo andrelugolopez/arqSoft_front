@@ -1,0 +1,17 @@
+.titulo{
+    border-top:rgba(231, 112, 15, 0.87) 2px solid;
+ 
+}
+.cartas{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 10px;
+    margin: 27px;
+}
+.borde1{
+    border-bottom: rgba(231, 112, 15, 0.87) 2px solid;  
+}
+

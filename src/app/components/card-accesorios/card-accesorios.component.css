@@ -6,10 +6,11 @@
 } */
 
 .card1{
-    margin: 30px 42px 42px 0px;
+    margin: 30px 42px 42px 30px;
     padding: 30px 0px 42px 0px;
     border-radius: 40px !important;
-    background-color: #163446; 
+    background-color: #163446;
+    height: 500px; 
 }
 .btn{
     background-color:  rgba(231, 112, 15, 0.87);
@@ -17,3 +18,15 @@
     font-weight: bold;
     font-family: Arial;
  } 
+ 
+ img{
+    height: 300px;
+}
+ 
+/* img{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+} */

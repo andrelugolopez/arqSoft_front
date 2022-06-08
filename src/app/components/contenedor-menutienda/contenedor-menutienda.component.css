@@ -1,4 +1,10 @@
-.contenedor{
+/* .contenedor{
     margin: 42px;
     padding: 10px;
+} */
+
+.contenedor{
+    display: flex;
+    flex-direction: row;
+    
 }

@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
 })
 export class OlvideContrasenaComponent implements OnInit {
 
+
   form: FormGroup = this.fb.group({/*se inicializa el form*/
   email: ['', Validators.required],
 
@@ -32,22 +33,27 @@ export class OlvideContrasenaComponent implements OnInit {
       
       onSubmit(){
         if(this.form.valid){
-          let data={/**/
+          let dataEmail= {
             email:this.form.value.email,
         }
 
+        console.log('-> ',dataEmail.email);
+        
 
-        this.client.postRequest("http://127.0.0.1:5000/tokenContrasena",data
+        this.client.postRequest("http://127.0.0.1:5000/tokenContrasena",dataEmail
           ).subscribe(
-
             (response:any)=>{
               console.log(response),
-              //token
-              this.autorizacion.login(response.into)
+              console.log("****",response.dataEmail)
+              let stringEmail: any = JSON.stringify(dataEmail)
+              console.log('# ',stringEmail);
+              
               //CodigoR
               this.autorizacion.setCourrentCodigoR(response.CodigoR)
+
               //Email
-              this.autorizacion.setCourrentCodigoR(response.email)
+              this.autorizacion.setCourrentEmail(response.dataEmail)
+              localStorage.setItem("email",dataEmail.email)
 
               this.route.navigate(['/nuevaContrasena']);
 

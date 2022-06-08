@@ -68,6 +68,8 @@ constructor(/*inyeccion de independencias*/
               this.autorizacion.setCourrentDoc(response.doc)
               //CodigoR
               this.autorizacion.setCourrentCodigoR(response.CodigoR)
+              //Email
+              this.autorizacion.setCourrentEmail(response.email)
 
               this.route.navigate(['/']);
 

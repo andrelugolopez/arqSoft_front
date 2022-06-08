@@ -54,8 +54,8 @@ export class AutorizacionService {
     localStorage.setItem('courrentCodigoR', CodigoR);
   }
 
-  setCourrentEmail(email:string) : void {
-    localStorage.setItem('courrentEmail', email);
+  setCourrentEmail(dataEmail:string) : void {
+    localStorage.setItem('courrentEmail', dataEmail);
   }
 
     //método que nos permite recuperar el nombre del usuario

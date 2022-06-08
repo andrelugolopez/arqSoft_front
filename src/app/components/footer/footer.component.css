@@ -1,11 +1,11 @@
 .footerL{
     color: white;
-    font-size: 12px; 
+    font-size: 16px; 
     display:flex; 
     flex-direction: column;
     justify-content: flex-start;
     align-items:  flex-start;
-    background-color: #163446;
+    background-color: #163446; 
     text-align: center;
     align-items: center;
  }

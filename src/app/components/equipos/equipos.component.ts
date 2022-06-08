@@ -1,6 +1,6 @@
 import { Component, OnInit} from '@angular/core';
 import { ClientService } from '../../services/client.service';
-
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-equipos',
@@ -15,6 +15,15 @@ export class EquiposComponent implements OnInit {
     ){}
 
   pedirProductos(){
+ //  this.client.getRequestAllProducts('http://localhost:5000/productos?tipo=E').subscribe(
+ //    (data: any) => {
+ //      this.productos = data["data"];
+ //      console.log("Hola mundo", this.productos);
+ //    },
+ //    error => console.log("Ha ocurrido un error en la llamada: ", error)
+ //  )
+ // }
+
     this.client.getRequestAllProducts('http://localhost:5000/productos?tipo=E').subscribe(
     (data: any) =>  this.productos = data["data"],
     error => console.log("Ha ocurrido un error en la llamada: ", error)
@@ -24,7 +33,6 @@ export class EquiposComponent implements OnInit {
 
     ngOnInit(): void{
       this.pedirProductos();
-      console.log(this.productos)
     }
 
 }

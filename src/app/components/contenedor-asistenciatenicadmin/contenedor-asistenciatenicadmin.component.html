@@ -1,12 +1,12 @@
 <app-nav></app-nav>
 <div *ngIf="mostrarFormulario">
     <div *ngIf="autorizacion.isAdmin() | async" class="container ">
-        <div class=" contenedor row">
-            <app-card-articulostienda class="col-6"></app-card-articulostienda>
-            <app-card-ordenservicio class="col-6"></app-card-ordenservicio>
+        <div class=" contenedor row justify-content-between">
+            <app-card-articulostienda class="col-3"></app-card-articulostienda>
+            <app-card-ordenservicio class="col-3"></app-card-ordenservicio>
 
-            <app-card-adminroles class="col-6"></app-card-adminroles>
-            <app-card-historicos class="col-6"></app-card-historicos>
+            <app-card-adminroles class="col-3"></app-card-adminroles>
+            <app-card-historicos class="col-3"></app-card-historicos>
         </div>
     </div>
 </div>

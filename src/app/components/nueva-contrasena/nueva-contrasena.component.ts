@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ClientService } from '../../services/client.service';
+import { AutorizacionService } from '../../services/autorizacion.service';
+import { ActivatedRoute , ParamMap } from '@angular/router';
 
 @Component({
   selector: 'app-nueva-contrasena',
@@ -7,9 +10,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NuevaContrasenaComponent implements OnInit {
 
-  constructor() { }
+
+  constructor(
+    private client: ClientService,
+    public autorizacion: AutorizacionService,
+    private route : ActivatedRoute
+    
+  ) { }
 
   ngOnInit(): void {
-  }
+        }
+      
 
-}
+  }    
+

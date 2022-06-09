@@ -4,22 +4,36 @@
 	margin-left: 30px;
 	margin-right: 30px;
 	background-size:100% 100%;
-	-moz-animation:banner 6s alternate 0 infinite;
-    -webkit-animation:banner 6s alternate 0 infinite;
-    animation:banner 6s infinite;
+	-moz-animation:banner 8s alternate 0 infinite;
+    -webkit-animation:banner 8s alternate 0 infinite;
+    animation:banner 8s infinite;
 	animation-direction:alternate;
 	
 }
 @keyframes banner{
-	0%,50%{
+	0%,30%{
 		background-image:url("/assets/imagenes/banner1.png");
 		opacity:1;   
 	}
-	51%,54%{
+	31%,34%{
 		opacity:0.1;
 	}
-	55%,100%{
-		background-image:url("/assets/imagenes/BANNER.jpg");
+	35%,65%{
+		background-image:url("/assets/imagenes/banner2.png");
 		opacity:1;   
 	}
+	66%,69%{
+		opacity:0.1;
+	}
+	70%,100%{
+		opacity:1;
+        background-image:url("/assets/imagenes/banner3.png");
+	}
+    /* 66%,69%{
+		opacity:0.1;
+	}   
+	70%,100%{
+		opacity:1;
+        background-image:url("/assets/imagenes/bannerM.png");
+	} */
 }

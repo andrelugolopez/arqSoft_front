@@ -43,16 +43,11 @@ export class OlvideContrasenaComponent implements OnInit {
         this.client.postRequest("http://127.0.0.1:5000/tokenContrasena",dataEmail
           ).subscribe(
             (response:any)=>{
-              console.log(response),
-              console.log("****",response.dataEmail)
-              let stringEmail: any = JSON.stringify(dataEmail)
-              console.log('# ',stringEmail);
-              
+              console.log(response),       
               //CodigoR
               this.autorizacion.setCourrentCodigoR(response.CodigoR)
 
               //Email
-              this.autorizacion.setCourrentEmail(response.dataEmail)
               localStorage.setItem("email",dataEmail.email)
 
               this.route.navigate(['/nuevaContrasena']);

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ClientService } from '../../services/client.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-asignacion-tecnico',
@@ -7,9 +9,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AsignacionTecnicoComponent implements OnInit {
 
-  constructor() { }
+
+
+
+
+
+
+
+
+
+
+  constructor(
+    private client: ClientService,
+    private fb: FormBuilder /*inyeccion de independencias*/
+  ) { }
 
   ngOnInit(): void {
   }
+
+
+
+
+
+
+  
 
 }

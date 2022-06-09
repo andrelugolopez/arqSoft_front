@@ -2,7 +2,7 @@
   <div class="header-text">
 </div>
 
-<div class="form">
+<div [formGroup]="form" (ngSubmit)="onSubmit()">
   <h1> Orden de servicio</h1>
   <br>
   <div class="container-button-orden-servicio">
@@ -11,39 +11,43 @@
   </div>
     
   <div class="container">
-    <div class="row">
+    <div class="row form-group">
       <div class="col">Nombre del cliente</div>
-      <textarea class="form-control col" aria-label="With textarea"></textarea>
+        <textarea type="text" class="form-control col" formControlName="nombre" aria-label="With textarea"></textarea>
       <div class="w-100"></div>
 
       <div class="col">Telefono</div>
-      <textarea class="form-control col" aria-label="With textarea"></textarea>
+        <textarea type="text" class="form-control col" formControlName="telefono" aria-label="With textarea"></textarea>
       <div class="w-100"></div>
 
       <div class="col">Documento</div>
-      <textarea class="form-control col" aria-label="With textarea"></textarea>
+        <textarea type="text" class="form-control col" formControlName="cedula" aria-label="With textarea"></textarea>
       <div class="w-100"></div>
 
-      <div class="col">Codigo del servicio:</div>
-      <textarea class="form-control col" aria-label="With textarea"></textarea>
+      <div class="col">Correo electronico:</div>
+        <textarea type="email" class="form-control col" formControlName="email" aria-label="With textarea"></textarea>
+      <div class="w-100"></div>
+
+      <div class="col">Serial equipo:</div>
+        <textarea type="text" class="form-control col" formControlName="serial_equipo" aria-label="With textarea"></textarea>
       <div class="w-100"></div>
 
       <div class="mb-3">
         <div>
-         <label for="exampleInputEmail1" class="form-label">cod_tecnico</label>
+         <label type="text" for="exampleInputEmail1" class="form-label">cod_tecnico</label>
         </div>
-        <select class="custom-select" id="inputGroupSelect01">
+        <select class="custom-select" id="inputGroupSelect01" formControlName="codtecnico" aria-label="With textarea">
           <option selected>Tecnico...</option>
         </select>
       </div>
 
       <div class="col">Marca de dispositivo:</div>
-      <textarea class="form-control col" aria-label="With textarea"></textarea>
+        <textarea class="form-control col" aria-label="With textarea" formControlName="marcadispositivo"></textarea>
       <div class="w-100"></div>
 
       <div class="col">Tipo de dispositivo:</div>
 
-        <div class="form-check col">
+        <div class=" form-control form-check col " formControlName="tipodispositivo" >
           <input class="form-check-input col" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
         </div>
         <div class="form-check col">
@@ -75,10 +79,10 @@
 
       <div class="w-100"></div>
 
-      <div class="col">Tipo de servicio:</div>
+      <div class=" col">Tipo de servicio:</div>
 
-        <div class="form-check col">
-          <input class="form-check-input col" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+        <div class=" form-control form-check col" >
+          <input class="form-check-input col" type="radio" name="flexRadioDefault" id="flexRadioDefault1" formControlName="tiposervicio">
         </div>
         <div class="form-check col">
           <label class="form-check-label col" for="flexRadioDefault1">
@@ -166,4 +170,4 @@
   </div>
   <br>
 
-  </div>
+</div>

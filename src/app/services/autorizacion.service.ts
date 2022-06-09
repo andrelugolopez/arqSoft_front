@@ -54,9 +54,7 @@ export class AutorizacionService {
     localStorage.setItem('courrentCodigoR', CodigoR);
   }
 
-  setCourrentEmail(dataEmail:string) : void {
-    localStorage.setItem('courrentEmail', dataEmail);
-  }
+
 
     //método que nos permite recuperar el nombre del usuario
   getCourrentUser() {
@@ -75,9 +73,6 @@ export class AutorizacionService {
     return localStorage.getItem('courrentCodigoR');
   }
 
-  getCourrentEmail() {
-    return localStorage.getItem('courrentEmail');
-  }
   
     //método que nos permite eliminar el nombre de usuario
   private deleteCourrentUser() : void {
@@ -96,9 +91,6 @@ export class AutorizacionService {
     localStorage.removeItem('courrentCodigoR');
   }
 
-  private deleteCourrentEmail() : void {
-    localStorage.removeItem('courrentEmail');
-  }
 
   getToken() {
     if (this.checkToken()){
@@ -117,7 +109,6 @@ export class AutorizacionService {
     this.deleteCourrentRol();
     this.deleteCourrentDoc();
     this.deleteCourrentCodigoR();
-    this.deleteCourrentEmail();
 
     this.isLogin.next(false);
   }

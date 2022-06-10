@@ -2,43 +2,50 @@
     <div class="header-text">
   </div>
   
-<<<<<<< HEAD
-  <form [formGroup]="form" (ngSubmit)="onSubmit()">
 
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
     <h1> Asignación de Técnico</h1>
     <br>
-    <div class="container-button-orden-servicio">
-      <h6>Fecha</h6>
-      <h6>Hora</h6>
+    <div class="container row">
+      <h6 class="col">Fecha</h6>
+      <h6 class="col">Hora</h6>
     </div>
-          <!-- <div>
-              <label>Tipo de dispositivo:</label>
-              <input type="text" class="form-control" formControlName="tipodispositivo" aria-describedby="emailHelp">
-          </div>
-  -->
+
     <div class="container">
+
       <div class="row">
-        <div class="col">Codigo Tecnico</div>
-        <input type="text" class="form-control" formControlName="codtecnico" aria-describedby="emailHelp">
+        <div class="col text">Tipo de dispositivo:</div>
+        <input type="text" class="form-control col" formControlName="tipodispositivo" aria-describedby="emailHelp">
         <div class="w-100"></div>
-  
-        <div class="col">Nombre Tecnico</div>
-        <input type="text" class="form-control" formControlName="nombretecnico" aria-describedby="emailHelp">
+      </div>
+
+      <div class="row">
+        <div class="col text">Código Tecnico:</div>
+        <input type="text" class="form-control col" formControlName="codtecnico" aria-describedby="emailHelp">
         <div class="w-100"></div>
-  
-        <div class="col">Codigo Servicio:</div>
-        <input type="text" class="form-control" formControlName="codservicio" aria-describedby="emailHelp">
+      </div>
+      
+      <div class="row text">
+        <div class="col">Nombre del Técnico:</div>
+        <input type="text" class="form-control col" formControlName="nombretecnico" aria-describedby="emailHelp">
         <div class="w-100"></div>
+      </div>
+
+      <div class="row text">
+        <div class="col">Código del servicio:</div>
+        <input type="text" class="form-control col" formControlName="codservicio" aria-describedby="emailHelp">
+        <div class="w-100"></div>
+      </div>
  
-        <div class="col">Escalar servicio:</div>
-        <div>
+        <div class="col text">Escalar servicio:</div>
+        <div class="text">
           <input type="radio" value="si" formControlName="escalarservicio"> Si
           <input type="radio" value="no" formControlName="escalarservicio"> No
         </div>
           
         <div class="mb-3">
           <div>
-           <label for="exampleInputEmail1" class="form-label">Tipo de especialidad a escalar </label>
+           <label for="exampleInputEmail1" class="form-label text">Tipo de especialidad a escalar </label>
           </div>
           <select class="custom-select" id="inputGroupSelect01" formControlName="tipoespeciescalar">
             <option selected>Manejo de frecuencia en tarjeta de red</option>
@@ -48,15 +55,15 @@
           </select>
         </div>
 
-        <div class="col">Diagnóstico:</div>
-        <input type="textarea" class="form-control" formControlName="diaginicial" aria-describedby="emailHelp">
+        <div class="col text">Diagnóstico:</div>
+        <input type="textarea" class="form-control textarea1" formControlName="diaginicial" aria-describedby="emailHelp">
         <div class="w-100"></div>
 
-        <div class="form_orden-servicio button">
-          <button type="submit" class="form_orden-servicio button">Guardar</button>
-          <a class="form_orden-servicio button" aria-current="page" [routerLink]="['/']">Atras</a>
+        <div class="container-button-orden-servicio">
+          <button type="submit" class="form_tecnico_button">Guardar</button>
+          <a class="form_tecnico_button" aria-current="page" [routerLink]="['/']">Atras</a>
         </div>    
     </div>
-    </div>
+
     <br>
   </form>

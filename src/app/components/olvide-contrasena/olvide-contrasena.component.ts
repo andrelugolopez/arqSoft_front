@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ClientService } from '../../services/client.service';
 import { AutorizacionService } from '../../services/autorizacion.service';
-import { ActivatedRoute , ParamMap } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
@@ -51,8 +50,7 @@ export class OlvideContrasenaComponent implements OnInit {
               localStorage.setItem("email",dataEmail.email)
 
               this.route.navigate(['/nuevaContrasena']);
-
-          }),
+             }),
 
           (error:any)=> {
             console.log(error);

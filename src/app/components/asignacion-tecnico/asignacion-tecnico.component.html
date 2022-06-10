@@ -2,83 +2,60 @@
     <div class="header-text">
   </div>
   
-  <div class="form">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
     <h1> Asignación de Técnico</h1>
     <br>
     <div class="container-button-orden-servicio">
       <h6>Fecha</h6>
       <h6>Hora</h6>
     </div>
-
-    <div class="col">Tipo de dispositivo:</div>
-          <div class="form-check col">
-            <label class="form-check-label col" for="flexRadioDefault1">
-              Pc
-            </label>
-            <input class="form-check-input col" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+          <!-- <div>
+              <label>Tipo de dispositivo:</label>
+              <input type="text" class="form-control" formControlName="tipodispositivo" aria-describedby="emailHelp">
           </div>
-  
-          <div class="form-check col">
-            <label class="form-check-label col" for="flexRadioDefault2">
-              Portatil
-            </label>
-            <input class="form-check-input col" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-          </div>
-  
-          <div class="form-check col">
-            <label class="form-check-label col" for="flexRadioDefault2">
-              Otro
-            </label>
-            <input class="form-check-input col" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-            <textarea class="form-control col" aria-label="With textarea"></textarea>
-          </div>
-  
+  -->
     <div class="container">
       <div class="row">
         <div class="col">Codigo Tecnico</div>
-        <textarea class="form-control col" aria-label="With textarea"></textarea>
+        <input type="text" class="form-control" formControlName="codtecnico" aria-describedby="emailHelp">
         <div class="w-100"></div>
   
         <div class="col">Nombre Tecnico</div>
-        <textarea class="form-control col" aria-label="With textarea"></textarea>
+        <input type="text" class="form-control" formControlName="nombretecnico" aria-describedby="emailHelp">
         <div class="w-100"></div>
   
         <div class="col">Codigo Servicio:</div>
-        <textarea class="form-control col" aria-label="With textarea"></textarea>
+        <input type="text" class="form-control" formControlName="codservicio" aria-describedby="emailHelp">
         <div class="w-100"></div>
  
-        <div class="col">Escolar servicio:</div>
-          <div class="form-check col">
-            <label class="form-check-label col" for="flexRadioDefault1">
-              Si
-            </label>
-            <input class="form-check-input col" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-          </div>
-  
-          <div class="form-check col">
-            <label class="form-check-label col" for="flexRadioDefault2">
-              No
-            </label>
-            <input class="form-check-input col" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-          </div>
-
-  
+        <div class="col">Escalar servicio:</div>
+        <div>
+          <input type="radio" value="si" formControlName="escalarservicio"> Si
+          <input type="radio" value="no" formControlName="escalarservicio"> No
+        </div>
+          
         <div class="mb-3">
           <div>
-           <label for="exampleInputEmail1" class="form-label">Tipo de especialidad o escolar </label>
+           <label for="exampleInputEmail1" class="form-label">Tipo de especialidad a escalar </label>
           </div>
-          <select class="custom-select" id="inputGroupSelect01">
+          <select class="custom-select" id="inputGroupSelect01" formControlName="tipoespeciescalar">
             <option selected>Manejo de frecuencia en tarjeta de red</option>
             <option selected>Niveles de transmision de redes</option>
+            <option selected>Reseteo de Bios</option>
+            <option selected>Instalación de software especializado</option>
           </select>
         </div>
+
+        <div class="col">Diagnóstico:</div>
+        <input type="textarea" class="form-control" formControlName="diaginicial" aria-describedby="emailHelp">
+        <div class="w-100"></div>
 
         <div class="form_orden-servicio button">
           <button type="submit" class="form_orden-servicio button">Guardar</button>
           <a class="form_orden-servicio button" aria-current="page" [routerLink]="['/']">Atras</a>
-        </div>
-      </div>
+        </div>    
+    </div>
     </div>
     <br>
-    </div>
+  </form>
   

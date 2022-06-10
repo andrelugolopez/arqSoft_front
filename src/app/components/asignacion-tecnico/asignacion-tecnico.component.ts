@@ -2,12 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ClientService } from 'src/app/services/client.service';
 
+
 @Component({
   selector: 'app-asignacion-tecnico',
   templateUrl: './asignacion-tecnico.component.html',
   styleUrls: ['./asignacion-tecnico.component.css']
 })
 export class AsignacionTecnicoComponent implements OnInit {
+
 
   form: FormGroup = this.fb.group({/*se inicializa el form*/
   codtecnico: ['', Validators.required],
@@ -17,6 +19,8 @@ export class AsignacionTecnicoComponent implements OnInit {
   tipoespeciescalar: ['', Validators.required],
   diaginicial: ['', Validators.required]
 });
+
+
 
 constructor(
   private client: ClientService,
@@ -47,4 +51,5 @@ constructor(
       console.log("Form error");
     }
   }
+
 }

@@ -32,7 +32,7 @@
 
       <div class="row text">
         <label class="col text">Correo electronico:</label>
-        <input type="email" class="form-control col" formControlName="email">
+        <input type="email" class="form-control col"(change)="changeInput()" formControlName="email">
         <div class="w-100"></div>
       </div>
 
@@ -78,11 +78,11 @@
         <label class="text">Tipo de servicio:</label> 
         <div class="col">
           <div class="form-check form-check-inline">
-            <input class="form-check-input " formControlName="tipodispositivo" type="radio"  id="inlineRadio1" value="Mantenimineto preventivo">
+            <input class="form-check-input " formControlName="tiposervicio" type="radio"  id="inlineRadio1" value="Mantenimineto preventivo">
             <label class="form-check-label" for="inlineRadio1">Mantenimineto preventivo</label>
           </div>
           <div class="form-check form-check-inline">
-            <input class="form-check-input" formControlName="tipodispositivo" type="radio" id="inlineRadio2" value="Mantenimiento correctivo">
+            <input class="form-check-input" formControlName="tiposervicio" type="radio" id="inlineRadio2" value="Mantenimiento correctivo">
             <label class="form-check-label" for="inlineRadio2">Mantenimiento correctivo</label>
           </div>     
         </div>
@@ -93,23 +93,23 @@
         <label class="text">Accesorios:</label> 
         <div class="col">
           <div class="form-check form-check-inline">
-            <input class="form-check-input " formControlName="tipodispositivo" type="radio"  id="inlineRadio1" value="Mouse">
+            <input class="form-check-input " formControlName="accesorios" type="radio"  id="inlineRadio1" value="Mouse">
             <label class="form-check-label" for="inlineRadio1">Mouse</label>
           </div>
           <div class="form-check form-check-inline">
-            <input class="form-check-input" formControlName="tipodispositivo" type="radio" id="inlineRadio2" value="Cable de energia">
+            <input class="form-check-input" formControlName="accesorios" type="radio" id="inlineRadio2" value="Cable de energia">
             <label class="form-check-label" for="inlineRadio2">Cable de energia</label>
           </div>
           <div class="form-check form-check-inline">
-            <input class="form-check-input" formControlName="tipodispositivo" type="radio" id="inlineRadio2" value="cargador">
+            <input class="form-check-input" formControlName="accesorios" type="radio" id="inlineRadio2" value="cargador">
             <label class="form-check-label" for="inlineRadio2">Cargador</label>
           </div> 
           <div class="form-check form-check-inline">
-            <input class="form-check-input" formControlName="tipodispositivo" type="radio" id="inlineRadio2" value="Teclado">
+            <input class="form-check-input" formControlName="accesorios" type="radio" id="inlineRadio2" value="Teclado">
             <label class="form-check-label" for="inlineRadio2">Teclado</label>
           </div>
           <div class="form-check form-check-inline">
-            <input class="form-check-input " formControlName="tipodispositivo" type="radio"  id="inlineRadio1" value="Otro">
+            <input class="form-check-input " formControlName="accesorios" type="radio"  id="inlineRadio1" value="Otro">
             <label class="form-check-label" for="inlineRadio1">Otro</label>
             <input type="text" class="form-control col" formControlName="tipodispositivo">
           </div>        
@@ -118,7 +118,7 @@
       </div>
       <div>
         <label for="exampleInputEmail1" class="form-label">Diagnostico Inicial</label>
-        <textarea class="form-control" aria-label="With textarea"></textarea>
+        <textarea class="form-control" formControlName="diaginicial" aria-label="With textarea"></textarea>
       </div>
 
         <div>

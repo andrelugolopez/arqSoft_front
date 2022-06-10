@@ -1,10 +1,10 @@
 
 .form_orden-servicio {
-	background-color: rgb(4, 4, 24);
+	background-color: #163446;
 	margin: auto auto;
 	padding: 20px;
 	border-radius: 5px;
-	box-shadow: 0 0 10px #000;
+	box-shadow: 0 0 10px 163446;
 	position: static;/*  se cambio para evitar que se salda del recuadro*/
 	top: 250px;
 	bottom: 0;
@@ -24,13 +24,12 @@
 	width: 100%;
 	height: 20px;
 	cursor: pointer;
-	color: white;
 }
 
 .form_orden-servicio input[type=checkbox]:checked+label:before {
 	content: "\2713";
 	font-size: 20px;
-	color: #000;
+	color: 163446;
 	text-align: center;
 	line-height: 20px;
 }
@@ -39,7 +38,6 @@
 }
 .form_orden-servicio button {
 	background-color: rgba(231, 112, 15, 0.87);
-	color: #fff;
 	border: none;
 	border-radius: 5px;
 	cursor: pointer;
@@ -64,13 +62,12 @@ select{
 
 
 h1, h4, h6{
-    color:white;
     text-align: center;
+	color: white;
 }
 
 
 .col{
-    color: white;
     margin-bottom: 10px;
 }
 
@@ -84,5 +81,12 @@ h1, h4, h6{
 .form-control{
 	height: 9px;
 
+}
+input{
+	color:black;
+}
+
+.text{
+	color: white;
 }
 

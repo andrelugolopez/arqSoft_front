@@ -2,172 +2,130 @@
   <div class="header-text">
 </div>
 
-<div [formGroup]="form" (ngSubmit)="onSubmit()">
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
   <h1> Orden de servicio</h1>
   <br>
-  <div class="container-button-orden-servicio">
-    <h6>Fecha</h6>
-    <h6>Hora</h6>
+  <div class="container row">
+    <h6 class="col">Fecha</h6>
+    <h6 class="col">Hora</h6>
   </div>
     
   <div class="container">
-    <div class="row form-group">
-      <div class="col">Nombre del cliente</div>
-        <textarea type="text" class="form-control col" formControlName="nombre" aria-label="With textarea"></textarea>
-      <div class="w-100"></div>
-
-      <div class="col">Telefono</div>
-        <textarea type="text" class="form-control col" formControlName="telefono" aria-label="With textarea"></textarea>
-      <div class="w-100"></div>
-
-      <div class="col">Documento</div>
-        <textarea type="text" class="form-control col" formControlName="cedula" aria-label="With textarea"></textarea>
-      <div class="w-100"></div>
-
-      <div class="col">Correo electronico:</div>
-        <textarea type="email" class="form-control col" formControlName="email" aria-label="With textarea"></textarea>
-      <div class="w-100"></div>
-
-      <div class="col">Serial equipo:</div>
-        <textarea type="text" class="form-control col" formControlName="serial_equipo" aria-label="With textarea"></textarea>
-      <div class="w-100"></div>
-
-      <div class="mb-3">
-        <div>
-         <label type="text" for="exampleInputEmail1" class="form-label">cod_tecnico</label>
-        </div>
-        <select class="custom-select" id="inputGroupSelect01" formControlName="codtecnico" aria-label="With textarea">
-          <option selected>Tecnico...</option>
-        </select>
+    <div>
+      <div class="row text">
+        <label class="col">Nombre del cliente</label>
+        <input type="text" class=" col form-control" formControlName="nombre" >
+        <div class="w-100"></div>
       </div>
 
-      <div class="col">Marca de dispositivo:</div>
-        <textarea class="form-control col" aria-label="With textarea" formControlName="marcadispositivo"></textarea>
-      <div class="w-100"></div>
-
-      <div class="col">Tipo de dispositivo:</div>
-
-        <div class=" form-control form-check col " formControlName="tipodispositivo" >
-          <input class="form-check-input col" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-        </div>
-        <div class="form-check col">
-          <label class="form-check-label col" for="flexRadioDefault1">
-          Pc
-          </label>
-        </div>
-
-        <div class="form-check col">
-          <input class="form-check-input col" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-        </div>
-        <div class="form-check col">
-          <label class="form-check-label col" for="flexRadioDefault1">
-          Portatil
-          </label>
-        </div>
-
-        <div class="form-check col">
-          <input class="form-check-input col" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-        </div>
-        <div class="form-check col">
-          <label class="form-check-label col" for="flexRadioDefault1">
-          Otro
-          </label>
-        </div>
-        <div class="form-check col">
-          <textarea class="form-control col" aria-label="With textarea"></textarea>
-        </div>
-
-      <div class="w-100"></div>
-
-      <div class=" col">Tipo de servicio:</div>
-
-        <div class=" form-control form-check col" >
-          <input class="form-check-input col" type="radio" name="flexRadioDefault" id="flexRadioDefault1" formControlName="tiposervicio">
-        </div>
-        <div class="form-check col">
-          <label class="form-check-label col" for="flexRadioDefault1">
-          Mantenimiento Preventivo
-          </label>
-        </div>
-
-        <div class="form-check col">
-          <input class="form-check-input col" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-        </div>
-        <div class="form-check col">
-          <label class="form-check-label col" for="flexRadioDefault1">
-          Mantenimiento Correctivo
-          </label>
-        </div>
-
-      <div class="w-100"></div>
-
-
-      <div class="col">Accesorios:</div>
-
-        <div class="form-check col">
-          <input class="form-check-input col" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-        </div>
-        <div class="form-check col">
-          <label class="form-check-label col" for="flexRadioDefault1">
-          Mouse
-          </label>
-        </div>
-
-        <div class="form-check col">
-          <input class="form-check-input col" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-        </div>
-        <div class="form-check col">
-          <label class="form-check-label col" for="flexRadioDefault1">
-          Cable de energia
-          </label>
-        </div>
-
-        <div class="form-check col">
-          <input class="form-check-input col" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-        </div>
-        <div class="form-check col">
-          <label class="form-check-label col" for="flexRadioDefault1">
-          Cargador
-          </label>
-        </div>
-
-        <div class="form-check col">
-          <input class="form-check-input col" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-        </div>
-        <div class="form-check col">
-          <label class="form-check-label col" for="flexRadioDefault1">
-          Teclado
-          </label>
-        </div>
-
+      <div class="row text">
+        <label class="col text">Telefono</label>
+        <input type="text" class="form-control col" formControlName="telefono">
         <div class="w-100"></div>
+      </div>
 
+      <div class="row text">
+        <label class="col text">Documento</label>
+        <input type="text" class="form-control col" formControlName="cedula">
+        <div class="w-100"></div>
+      </div>
 
+      <div class="row text">
+        <label class="col text">Correo electronico:</label>
+        <input type="email" class="form-control col" formControlName="email">
+        <div class="w-100"></div>
+      </div>
 
-        <div class="form-check col">
-          <input class="form-check-input col" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+      <div class="row text">
+        <label class="col text">serial_equipo:</label>
+        <input type="email" class="form-control col" formControlName="serial_equipo">
+        <div class="w-100"></div>
+      </div>
+
+      <div class="row text">
+        <label class="col text">Codigo Tecnico:</label>
+        <input type="text" class="form-control col" formControlName="codtecnico">
+        <div class="w-100"></div>
+      </div>
+
+      <div class="row text">
+        <label class="col text">Marca dispositivo:</label>
+        <input type="text" class="form-control col" formControlName="serial_equipo">
+        <div class="w-100"></div>
+      </div>
+
+      <div class="row text">
+        <label class="text">Tipos de disposivos:</label> 
+        <div class="col">
+          <div class="form-check form-check-inline">
+            <input class="form-check-input " formControlName="tipodispositivo" type="radio"  id="inlineRadio1" value="Pc">
+            <label class="form-check-label" for="inlineRadio1">Pc</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" formControlName="tipodispositivo" type="radio" id="inlineRadio2" value="Portatil">
+            <label class="form-check-label" for="inlineRadio2">Portatil</label>
+          </div> 
+          <div class="form-check form-check-inline">
+            <input class="form-check-input " formControlName="tipodispositivo" type="radio"  id="inlineRadio1" value="Otro">
+            <label class="form-check-label" for="inlineRadio1">Otro</label>
+            <input type="text" class="form-control col" formControlName="tipodispositivo">
+          </div>        
         </div>
-        <div class="form-check col">
-          <label class="form-check-label col" for="flexRadioDefault1">
-          Otro
-          </label>
-        </div>
-        <div class="form-check col">
-          <textarea class="form-control col" aria-label="With textarea"></textarea>
-        </div>
+        <div class="w-100"></div>  
+      </div>
 
+      <div class="row text">
+        <label class="text">Tipo de servicio:</label> 
+        <div class="col">
+          <div class="form-check form-check-inline">
+            <input class="form-check-input " formControlName="tipodispositivo" type="radio"  id="inlineRadio1" value="Mantenimineto preventivo">
+            <label class="form-check-label" for="inlineRadio1">Mantenimineto preventivo</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" formControlName="tipodispositivo" type="radio" id="inlineRadio2" value="Mantenimiento correctivo">
+            <label class="form-check-label" for="inlineRadio2">Mantenimiento correctivo</label>
+          </div>     
+        </div>
+        <div class="w-100"></div>  
+      </div>
+
+      <div class="row text">
+        <label class="text">Accesorios:</label> 
+        <div class="col">
+          <div class="form-check form-check-inline">
+            <input class="form-check-input " formControlName="tipodispositivo" type="radio"  id="inlineRadio1" value="Mouse">
+            <label class="form-check-label" for="inlineRadio1">Mouse</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" formControlName="tipodispositivo" type="radio" id="inlineRadio2" value="Cable de energia">
+            <label class="form-check-label" for="inlineRadio2">Cable de energia</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" formControlName="tipodispositivo" type="radio" id="inlineRadio2" value="cargador">
+            <label class="form-check-label" for="inlineRadio2">Cargador</label>
+          </div> 
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" formControlName="tipodispositivo" type="radio" id="inlineRadio2" value="Teclado">
+            <label class="form-check-label" for="inlineRadio2">Teclado</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input " formControlName="tipodispositivo" type="radio"  id="inlineRadio1" value="Otro">
+            <label class="form-check-label" for="inlineRadio1">Otro</label>
+            <input type="text" class="form-control col" formControlName="tipodispositivo">
+          </div>        
+        </div>
+        <div class="w-100"></div>  
+      </div>
+      <div>
+        <label for="exampleInputEmail1" class="form-label">Diagnostico Inicial</label>
+        <textarea class="form-control" aria-label="With textarea"></textarea>
+      </div>
 
         <div>
-          <label for="exampleInputEmail1" class="form-label">Diagnostico Inicial</label>
-          <textarea class="form-control" aria-label="With textarea"></textarea>
-        </div>
-
-        <div [routerLink]="['/asignacionTecnico']">
           <div class="mb-3"></div>
-          <button type="registrarse" class="btn btn-primary">Guardar</button>
+          <button type="submit" class="btn btn-primary">Enviar</button>
         </div>
-    </div>
+    </div> 
   </div>
-  <br>
+</form>
 
-</div>

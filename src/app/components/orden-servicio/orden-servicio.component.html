@@ -13,19 +13,19 @@
   <div class="container">
     <div>
       <div class="row text">
-        <label class="col">Nombre del cliente</label>
+        <label class="col">Nombre del cliente:</label>
         <input type="text" class=" col form-control" formControlName="nombre" >
         <div class="w-100"></div>
       </div>
 
       <div class="row text">
-        <label class="col text">Telefono</label>
+        <label class="col text">Telefono:</label>
         <input type="text" class="form-control col" formControlName="telefono">
         <div class="w-100"></div>
       </div>
 
       <div class="row text">
-        <label class="col text">Documento</label>
+        <label class="col text">Documento de identidad:</label>
         <input type="text" class="form-control col" formControlName="cedula">
         <div class="w-100"></div>
       </div>
@@ -37,7 +37,7 @@
       </div>
 
       <div class="row text">
-        <label class="col text">serial_equipo:</label>
+        <label class="col text">Serial del equipo:</label>
         <input type="email" class="form-control col" formControlName="serial_equipo">
         <div class="w-100"></div>
       </div>
@@ -53,71 +53,66 @@
         <input type="text" class="form-control col" formControlName="serial_equipo">
         <div class="w-100"></div>
       </div>
+      <br>
 
-      <div class="row text">
-        <label class="text">Tipos de disposivos:</label> 
-        <div class="col">
-          <div class="form-check form-check-inline">
-            <input class="form-check-input " formControlName="tipodispositivo" type="radio"  id="inlineRadio1" value="Pc">
-            <label class="form-check-label" for="inlineRadio1">Pc</label>
-          </div>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" formControlName="tipodispositivo" type="radio" id="inlineRadio2" value="Portatil">
-            <label class="form-check-label" for="inlineRadio2">Portatil</label>
-          </div> 
-          <div class="form-check form-check-inline">
-            <input class="form-check-input " formControlName="tipodispositivo" type="radio"  id="inlineRadio1" value="Otro">
-            <label class="form-check-label" for="inlineRadio1">Otro</label>
-            <input type="text" class="form-control col" formControlName="tipodispositivo">
-          </div>        
-        </div>
-        <div class="w-100"></div>  
-      </div>
 
-      <div class="row text">
-        <label class="text">Tipo de servicio:</label> 
-        <div class="col">
-          <div class="form-check form-check-inline">
-            <input class="form-check-input " formControlName="tiposervicio" type="radio"  id="inlineRadio1" value="Mantenimineto preventivo">
-            <label class="form-check-label" for="inlineRadio1">Mantenimineto preventivo</label>
-          </div>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" formControlName="tiposervicio" type="radio" id="inlineRadio2" value="Mantenimiento correctivo">
-            <label class="form-check-label" for="inlineRadio2">Mantenimiento correctivo</label>
-          </div>     
-        </div>
-        <div class="w-100"></div>  
-      </div>
 
-      <div class="row text">
-        <label class="text">Accesorios:</label> 
-        <div class="col">
-          <div class="form-check form-check-inline">
-            <input class="form-check-input " formControlName="accesorios" type="radio"  id="inlineRadio1" value="Mouse">
-            <label class="form-check-label" for="inlineRadio1">Mouse</label>
-          </div>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" formControlName="accesorios" type="radio" id="inlineRadio2" value="Cable de energia">
-            <label class="form-check-label" for="inlineRadio2">Cable de energia</label>
-          </div>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" formControlName="accesorios" type="radio" id="inlineRadio2" value="cargador">
-            <label class="form-check-label" for="inlineRadio2">Cargador</label>
-          </div> 
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" formControlName="accesorios" type="radio" id="inlineRadio2" value="Teclado">
-            <label class="form-check-label" for="inlineRadio2">Teclado</label>
-          </div>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input " formControlName="accesorios" type="radio"  id="inlineRadio1" value="Otro">
-            <label class="form-check-label" for="inlineRadio1">Otro</label>
-            <input type="text" class="form-control col" formControlName="tipodispositivo">
-          </div>        
-        </div>
-        <div class="w-100"></div>  
+      <label>Tipo de dispositivo:</label>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input " formControlName="tipodispositivo" type="radio"  id="inlineRadio1" value="Pc">
+        <label class="form-check-label" for="inlineRadio1">Pc</label>
       </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" formControlName="tipodispositivo" type="radio" id="inlineRadio2" value="Portatil">
+        <label class="form-check-label" for="inlineRadio2">Portatil</label>
+      </div> 
+      <div class="form-check form-check-inline container_filas">
+        <input class="form-check-input " formControlName="tipodispositivo" type="radio"  id="inlineRadio1" value="Otro">
+        <label class="form-check-label" for="inlineRadio1">Otro</label>
+      </div> 
+      <br>
+      <br>
+
+      <label class="text">Tipo de servicio:</label> 
+        <div class="form-check form-check-inline">
+          <input class="form-check-input " formControlName="tiposervicio" type="radio"  id="inlineRadio1" value="Mantenimineto preventivo">
+          <label class="form-check-label" for="inlineRadio1">Mantenimineto preventivo</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" formControlName="tiposervicio" type="radio" id="inlineRadio2" value="Mantenimiento correctivo">
+          <label class="form-check-label" for="inlineRadio2">Mantenimiento correctivo</label>     
+      </div>
+      <br>
+      <br>
+
+      <label class="text">Accesorios</label> 
+        <div class="form-check form-check-inline">
+          <input class="form-check-input " formControlName="accesorios" type="radio"  id="inlineRadio1" value="Mouse">
+          <label class="form-check-label" for="inlineRadio1">Mouse</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" formControlName="accesorios" type="radio" id="inlineRadio2" value="Cable de energia">
+          <label class="form-check-label" for="inlineRadio2">Cable de energia</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" formControlName="accesorios" type="radio" id="inlineRadio2" value="cargador">
+          <label class="form-check-label" for="inlineRadio2">Cargador</label>
+        </div> 
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" formControlName="accesorios" type="radio" id="inlineRadio2" value="Teclado">
+          <label class="form-check-label" for="inlineRadio2">Teclado</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input " formControlName="accesorios" type="radio"  id="inlineRadio1" value="Otro">
+          <label class="form-check-label" for="inlineRadio1">Otro</label>
+        </div> 
+        
+      <br>
+      <br>
       <div>
-        <label for="exampleInputEmail1" class="form-label">Diagnostico Inicial</label>
+        <label class="form-label">Diagnostico Inicial</label>
+        <br>
+        <br>
         <textarea class="form-control" formControlName="diaginicial" aria-label="With textarea"></textarea>
       </div>
 
@@ -125,7 +120,10 @@
           <div class="mb-3"></div>
           <button type="submit" class="btn btn-primary">Enviar</button>
         </div>
+ 
     </div> 
   </div>
 </form>
+
+
 

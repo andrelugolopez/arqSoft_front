@@ -4,16 +4,15 @@
 	margin: auto auto;
 	padding: 20px;
 	border-radius: 5px;
-	box-shadow: 0 0 10px 163446;
+	box-shadow: 0 0 10px #000;
 	position: static;/*  se cambio para evitar que se salda del recuadro*/
 	top: 250px;
 	bottom: 0;
 	left: 0;
 	right: 0;
-	width: 900px;
-	height: 1000px; /*tamaño del recuadro login*/
+	width: 800px;
+	height: 900px; /*tamaño del recuadro login*/
 }
-
 
 .form_orden-servicio label {
 	position: relative;
@@ -24,6 +23,38 @@
 	width: 100%;
 	height: 20px;
 	cursor: pointer;
+}
+
+.form_orden-servicio input {
+	margin: 5px 0px; /*espacio entre los label*/
+	border: none;
+	padding: 5px;/*tamaño del label*/
+	border-radius: 5px;
+	width: 100%;
+	height: 30px;
+	font-size: 20px;/*tamaño de la letra*/
+	font-family: Arial;/*tipo de fuente*/
+}
+
+.form_orden-servicio label {
+	position: relative;
+	margin-left: 5px;
+	margin-right: 10px;
+	top: 5px;
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	cursor: pointer;
+}
+.form_orden-servicio label:before {
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	border-radius: 5px;
+	position: absolute;
+	left: 0;
+	bottom: 1px;
+	background-color: rgb(164, 172, 174);
 }
 
 .form_orden-servicio input[type=checkbox]:checked+label:before {
@@ -81,9 +112,6 @@ h1, h4, h6{
 .form-control{
 	height: 9px;
 
-}
-input{
-	color:black;
 }
 
 .text{

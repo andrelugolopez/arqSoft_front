@@ -15,8 +15,14 @@ export class OrdenServicioComponent implements OnInit {
   telefono: ['', Validators.required],
   cedula: ['', Validators.required],
   email: ['', Validators.required],
+  codtecnico: ['', Validators.required],
   serial_equipo: ['', Validators.required],
   tipodispositivo: ['', Validators.required],
+  tiposervicio: ['', Validators.required],
+  accesorios: ['', Validators.required],
+  diaginicial: ['', Validators.required],
+
+
 });
 
   constructor(
@@ -38,11 +44,18 @@ export class OrdenServicioComponent implements OnInit {
           tipodispositivo:this.form.value.tipodispositivo,
           codtecnico:this.form.value.codtecnico,
           marcadispositivo:this.form.value.marcadispositivo,
+          tiposervicio:this.form.value.tiposervicio,
+          accesorios:this.form.value.accesorios,
+          diaginicial:this.form.value.diaginicial,
+          codservicio:this.form.value.codservicio,
 
-          // tiposervicio:this.form.value.tiposervicio,
-          // accesorios:this.form.value.accesorios,
-          // diaginicial:this.form.value.diaginicial,
-          // codservicio:this.form.value.codservicio,
+
+
+
+
+
+
+
 
         }
 
@@ -64,5 +77,9 @@ export class OrdenServicioComponent implements OnInit {
           console.log("Form error");
         }
       }
+      changeInput(){      
+        console.log("pruebita")
+      }
+
 
 }

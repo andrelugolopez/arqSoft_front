@@ -11,8 +11,10 @@
 	left: 0;
 	right: 0;
 	width: 800px;
-	height: 900px; /*tamaño del recuadro login*/
+	height: 910px; /*tamaño del recuadro login*/
 }
+
+
 
 .form_orden-servicio label {
 	position: relative;
@@ -23,29 +25,9 @@
 	width: 100%;
 	height: 20px;
 	cursor: pointer;
+	color: white;
 }
 
-.form_orden-servicio input {
-	margin: 5px 0px; /*espacio entre los label*/
-	border: none;
-	padding: 5px;/*tamaño del label*/
-	border-radius: 5px;
-	width: 100%;
-	height: 30px;
-	font-size: 20px;/*tamaño de la letra*/
-	font-family: Arial;/*tipo de fuente*/
-}
-
-.form_orden-servicio label {
-	position: relative;
-	margin-left: 5px;
-	margin-right: 10px;
-	top: 5px;
-	display: inline-block;
-	width: 20px;
-	height: 20px;
-	cursor: pointer;
-}
 .form_orden-servicio label:before {
 	display: inline-block;
 	width: 20px;
@@ -54,16 +36,10 @@
 	position: absolute;
 	left: 0;
 	bottom: 1px;
+	color: white;
 	background-color: rgb(164, 172, 174);
 }
 
-.form_orden-servicio input[type=checkbox]:checked+label:before {
-	content: "\2713";
-	font-size: 20px;
-	color: 163446;
-	text-align: center;
-	line-height: 20px;
-}
 .form_orden-servicio span {
 	font-size: 14px;
 }
@@ -82,15 +58,6 @@
 }
 
 
-select{
-	position: relative;
-	top: 5px;
-	width: 100%;
-	height: 40px;
-	cursor: pointer;
-	border-radius: 5px;
-}
-
 
 h1, h4, h6{
     text-align: center;
@@ -98,9 +65,6 @@ h1, h4, h6{
 }
 
 
-.col{
-    margin-bottom: 10px;
-}
 
 .container-button-orden-servicio{
     display: flex;
@@ -109,12 +73,19 @@ h1, h4, h6{
 
 }
 
-.form-control{
-	height: 9px;
 
-}
 
 .text{
 	color: white;
 }
 
+.container2{
+	width: 100%;
+
+
+
+}
+
+input{
+	margin: 5px;
+}

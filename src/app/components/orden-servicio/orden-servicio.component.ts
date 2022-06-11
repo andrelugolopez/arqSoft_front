@@ -10,6 +10,8 @@ import { Router } from '@angular/router';
 })
 export class OrdenServicioComponent implements OnInit {
 
+  data: any
+
   form: FormGroup = this.fb.group({/*se inicializa el form*/
   nombre: ['', Validators.required],
   telefono: ['', Validators.required],
@@ -32,7 +34,9 @@ export class OrdenServicioComponent implements OnInit {
   ) { }
 
     ngOnInit(): void {
+      this.changeInput()
     }
+
     onSubmit(){
       if(this.form.valid){
         let data={/**/
@@ -48,15 +52,6 @@ export class OrdenServicioComponent implements OnInit {
           accesorios:this.form.value.accesorios,
           diaginicial:this.form.value.diaginicial,
           codservicio:this.form.value.codservicio,
-
-
-
-
-
-
-
-
-
         }
 
         console.log('-> ',data);
@@ -77,7 +72,19 @@ export class OrdenServicioComponent implements OnInit {
           console.log("Form error");
         }
       }
-      changeInput(){      
+      changeInput(){ 
+  
+          this.client.postRequest("http://127.0.0.1:5000/consultaOrden"
+          ).subscribe(
+            (response:any)=>{
+              console.log(response)
+
+            }),
+          
+          (error:any)=>console.log(error),
+          
+          
+             
         console.log("pruebita")
       }
 

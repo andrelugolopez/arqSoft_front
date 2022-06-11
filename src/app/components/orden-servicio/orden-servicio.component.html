@@ -14,19 +14,19 @@
     <div>
       <div class="row text">
         <label class="col">Nombre del cliente:</label>
-        <input type="text" class=" col form-control" formControlName="nombre" >
+        <input type="email" class="form-control col"(change)="changeInput()" formControlName="nombre" >
         <div class="w-100"></div>
       </div>
 
       <div class="row text">
         <label class="col text">Telefono:</label>
-        <input type="text" class="form-control col" formControlName="telefono">
+        <input type="email" class="form-control col"(change)="changeInput()" formControlName="telefono">
         <div class="w-100"></div>
       </div>
 
       <div class="row text">
         <label class="col text">Documento de identidad:</label>
-        <input type="text" class="form-control col" formControlName="cedula">
+        <input type="email" class="form-control col"(change)="changeInput()" formControlName="cedula">
         <div class="w-100"></div>
       </div>
 

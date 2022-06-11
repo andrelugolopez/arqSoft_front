@@ -74,8 +74,12 @@ export class OrdenServicioComponent implements OnInit {
       }
       changeInput(){ 
   
-          this.client.postRequest("http://127.0.0.1:5000/consultaOrden"
-          ).subscribe(
+          this.client.postRequest("http://127.0.0.1:5000/consultaOrden",{     
+            nombre:this.form.value.nombre,
+            telefono:this.form.value.telefono,
+            cedula:this.form.value.cedula,
+            email:this.form.value.email,
+          }).subscribe(
             (response:any)=>{
               console.log(response)
 

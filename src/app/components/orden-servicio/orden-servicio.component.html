@@ -14,25 +14,25 @@
     <div>
       <div class="row text">
         <label class="col">Nombre del cliente:</label>
-        <input type="text" class="form-control col"(change)="changeInput()" formControlName="nombre" >
+        <input type="text" class="form-control col"(change)="changeInput()" formControlName="nombre">
         <div class="w-100"></div>
       </div>
 
       <div class="row text">
         <label class="col text">Telefono:</label>
-        <input type="text" class="form-control col"(change)="changeInput()" formControlName="telefono">
+        <input type="text" class="form-control col"(change)="changeInput()" formControlName="telefono">{{usuarios.telefono}}
         <div class="w-100"></div>
       </div>
 
       <div class="row text">
         <label class="col text">Documento de identidad:</label>
-        <input type="text" class="form-control col"(change)="changeInput()" formControlName="cedula">
+        <input type="text" class="form-control col"(change)="changeInput()" formControlName="cedula">{{usuarios.documento}}
         <div class="w-100"></div>
       </div>
 
       <div class="row text">
         <label class="col text">Correo electronico:</label>
-        <input type="email" class="form-control col"(change)="changeInput()" formControlName="email">
+        <input type="email" class="form-control col"(change)="changeInput()" formControlName="email">{{usuarios.correo}}
         <div class="w-100"></div>
       </div>
 

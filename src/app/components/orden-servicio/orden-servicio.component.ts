@@ -11,11 +11,12 @@ import { Router } from '@angular/router';
 export class OrdenServicioComponent implements OnInit {
 
   data: any
-  usuarios : any
+  usuarios: any
  
 
   form: FormGroup = this.fb.group({/*se inicializa el form*/
   nombre: ['', Validators.required],
+  apellidos: ['', Validators.required],
   telefono: ['', Validators.required],
   cedula: ['', Validators.required],
   email: ['', Validators.required],
@@ -36,7 +37,6 @@ export class OrdenServicioComponent implements OnInit {
   ) { }
 
     ngOnInit(): void {
-      this.changeInput()
     }
 
     onSubmit(){
@@ -44,6 +44,7 @@ export class OrdenServicioComponent implements OnInit {
         let data={/**/
           nombre:this.form.value.nombre,
           telefono:this.form.value.telefono,
+          apellidos:this.form.value.apellidos,
           cedula:this.form.value.cedula,
           email:this.form.value.email,
           serial_equipo:this.form.value.serial_equipo,
@@ -77,18 +78,13 @@ export class OrdenServicioComponent implements OnInit {
       changeInput(){ 
   
           this.client.postRequest("http://127.0.0.1:5000/consultaOrden",{     
-            nombre:this.form.value.nombre,
             telefono:this.form.value.telefono,
             cedula:this.form.value.cedula,
             email:this.form.value.email,
-          }).subscribe(
-            (data:any)=> {
-              this.usuarios= data["data"]
-              console.log("data",data.correo);
-            }),
-            (error:any) => console.log("Ha ocurrido un error en la llamada: ", error)
+          }).subscribe({
+            next: (data:any) => console.log(data["data"]),
+            error: (error) => console.log("Ha ocurrido un error en la llamada: ", error)
+          }
+          )}
     
-    }
 }
-
-             

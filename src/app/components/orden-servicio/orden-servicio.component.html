@@ -11,28 +11,36 @@
   </div>
     
   <div class="container">
-    <div>
+
+    <div class="row text">
+      <label class="col text">Documento de identidad:</label>
+      <input type="text" class="form-control col"(change)="changeInput()" formControlName="cedula">
+      <div class="w-100"></div>
+    </div>
+
       <div class="row text">
-        <label class="col">Nombre del cliente:</label>
+        <label class="col">Nombres:</label>
         <input type="text" class="form-control col"(change)="changeInput()" formControlName="nombre">
         <div class="w-100"></div>
       </div>
 
       <div class="row text">
-        <label class="col text">Telefono:</label>
-        <input type="text" class="form-control col"(change)="changeInput()" formControlName="telefono">{{usuarios.telefono}}
+        <label class="col text">Apellidos:</label>
+        <input type="text" class="form-control col"(change)="changeInput()" formControlName="apellidos">
         <div class="w-100"></div>
       </div>
 
       <div class="row text">
-        <label class="col text">Documento de identidad:</label>
-        <input type="text" class="form-control col"(change)="changeInput()" formControlName="cedula">{{usuarios.documento}}
+        <label class="col text">Telefono:</label>
+        <input type="text" class="form-control col"(change)="changeInput()" formControlName="telefono">
         <div class="w-100"></div>
       </div>
+
+
 
       <div class="row text">
         <label class="col text">Correo electronico:</label>
-        <input type="email" class="form-control col"(change)="changeInput()" formControlName="email">{{usuarios.correo}}
+        <input type="email" class="form-control col"(change)="changeInput()" formControlName="email">
         <div class="w-100"></div>
       </div>
 
@@ -121,7 +129,6 @@
           <button type="submit" class="btn btn-primary">Enviar</button>
         </div>
  
-    </div> 
   </div>
 </form>
 

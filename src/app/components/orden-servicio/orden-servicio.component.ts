@@ -11,6 +11,8 @@ import { Router } from '@angular/router';
 export class OrdenServicioComponent implements OnInit {
 
   data: any
+  usuarios : any
+ 
 
   form: FormGroup = this.fb.group({/*se inicializa el form*/
   nombre: ['', Validators.required],
@@ -80,17 +82,13 @@ export class OrdenServicioComponent implements OnInit {
             cedula:this.form.value.cedula,
             email:this.form.value.email,
           }).subscribe(
-            (response:any)=>{
-              console.log(response)
-
+            (data:any)=> {
+              this.usuarios= data["data"]
+              console.log("data",data.correo);
             }),
-          
-          (error:any)=>console.log(error),
-          
-          
-             
-        console.log("pruebita")
-      }
-
-
+            (error:any) => console.log("Ha ocurrido un error en la llamada: ", error)
+    
+    }
 }
+
+             

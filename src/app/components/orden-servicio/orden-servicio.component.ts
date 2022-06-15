@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ClientService } from '../../services/client.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { of } from 'rxjs';
 
 @Component({
   selector: 'app-orden-servicio',
@@ -12,7 +13,10 @@ export class OrdenServicioComponent implements OnInit {
   valor: any=  "qqqqqqqqqqq";
   data: any
   tecnicos: any
- 
+
+  date = new Date().toLocaleString().split(',')
+  fecha = this.date[0].replace(/\//g, "-")
+  hora = this.date[1]
 
   form: FormGroup = this.fb.group({/*se inicializa el form*/
   nombre: ['', Validators.required],
@@ -34,7 +38,11 @@ export class OrdenServicioComponent implements OnInit {
     private client: ClientService,
     private fb: FormBuilder,
     private route: Router /*inyeccion de independencias*/
-  ) { }
+  ) {
+    setInterval(() => {
+      this.hora = new Date().toLocaleString().split(',')[1]
+    }, 1)
+  }
 
     ngOnInit(): void {
       this.listTech();
@@ -86,13 +94,6 @@ export class OrdenServicioComponent implements OnInit {
           error => console.log("Ha ocurrido un error en la llamada: ", error)
           )
         }
-
-
-
-
-
-
-
 
 
       changeInput(){ 

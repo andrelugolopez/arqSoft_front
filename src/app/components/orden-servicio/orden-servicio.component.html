@@ -13,7 +13,7 @@
   <div class="container">
 
     <div class="row text">
-      <label class="col text">Documento de identidad:</label>
+      <label class="col text">Documento:</label>
       <input type="text" class="form-control col"(change)="changeInput()" formControlName="cedula">
       <div class="w-100"></div>
     </div>
@@ -50,10 +50,12 @@
         <div class="w-100"></div>
       </div>
 
-      <div class="row text">
-        <label class="col text">Codigo Tecnico:</label>
-        <input type="text" class="form-control col" formControlName="codtecnico">
-        <div class="w-100"></div>
+      <div class="mb-3 row text">
+         <label for="exampleInputEmail1" class="form-label text col">Nombre de Tecnico: </label>
+         <select class="custom-select col" id="inputGroupSelect01" formControlName="nombtecnico" >
+           <option *ngFor="let tecnico of tecnicos">{{tecnico}}</option>
+         </select>
+         <div class="w-100"></div>
       </div>
 
       <div class="row text">
@@ -62,8 +64,6 @@
         <div class="w-100"></div>
       </div>
       <br>
-
-
 
       <label>Tipo de dispositivo:</label>
       <div class="form-check form-check-inline">

@@ -9,9 +9,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./orden-servicio.component.css']
 })
 export class OrdenServicioComponent implements OnInit {
-
+  valor: any=  "qqqqqqqqqqq";
   data: any
-  usuarios: any
+  tecnicos: any
  
 
   form: FormGroup = this.fb.group({/*se inicializa el form*/
@@ -20,7 +20,7 @@ export class OrdenServicioComponent implements OnInit {
   telefono: ['', Validators.required],
   cedula: ['', Validators.required],
   email: ['', Validators.required],
-  codtecnico: ['', Validators.required],
+  nombtecnico: ['', Validators.required],
   serial_equipo: ['', Validators.required],
   tipodispositivo: ['', Validators.required],
   tiposervicio: ['', Validators.required],
@@ -37,6 +37,7 @@ export class OrdenServicioComponent implements OnInit {
   ) { }
 
     ngOnInit(): void {
+      this.listTech();
     }
 
     onSubmit(){
@@ -49,7 +50,7 @@ export class OrdenServicioComponent implements OnInit {
           email:this.form.value.email,
           serial_equipo:this.form.value.serial_equipo,
           tipodispositivo:this.form.value.tipodispositivo,
-          codtecnico:this.form.value.codtecnico,
+          nombtecnico:this.form.value.codtecnico,
           marcadispositivo:this.form.value.marcadispositivo,
           tiposervicio:this.form.value.tiposervicio,
           accesorios:this.form.value.accesorios,
@@ -75,6 +76,25 @@ export class OrdenServicioComponent implements OnInit {
           console.log("Form error");
         }
       }
+
+      listTech(){
+        this.client.getRequest('http://127.0.0.1:5000/consultaTecnicos').subscribe(    
+          (data: any) => {
+          this.tecnicos = data["data"],
+          console.log(data)
+          },
+          error => console.log("Ha ocurrido un error en la llamada: ", error)
+          )
+        }
+
+
+
+
+
+
+
+
+
       changeInput(){ 
   
           this.client.postRequest("http://127.0.0.1:5000/consultaOrden",{     

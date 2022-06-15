@@ -57,23 +57,16 @@
 	
 }
 
-
-
 h1, h4, h6{
     text-align: center;
 	color: white;
 }
 
-
-
 .container-button-orden-servicio{
     display: flex;
 	justify-content: space-between;
     width: 100%;
-
 }
-
-
 
 .text{
 	color: white;
@@ -81,11 +74,9 @@ h1, h4, h6{
 
 .container2{
 	width: 100%;
-
-
-
 }
 
 input{
-	margin: 5px;
+	margin: 4px;
+	
 }

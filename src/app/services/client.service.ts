@@ -40,31 +40,19 @@ export class ClientService {
 
     return this.http.post(route, data, config);
   }
+
+
+  getRequest(route: string, into?:string) {
+
+    let config:any = {
+      responseType: "json"
+    }
+    if (into){
+      const header = new HttpHeaders().set('Authorization', `Bearer ${into}`);
+      config["headers"] = header;
+    }
+    console.log(config);
+
+    return this.http.get(route, config);
+  }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

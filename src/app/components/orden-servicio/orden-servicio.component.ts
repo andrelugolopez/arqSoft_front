@@ -50,7 +50,7 @@ export class OrdenServicioComponent implements OnInit {
 
     onSubmit(){
       if(this.form.valid){
-        let data={/**/
+        let data={
           nombres:this.form.value.nombres,
           telefono:this.form.value.telefono,
           apellidos:this.form.value.apellidos,
@@ -58,7 +58,7 @@ export class OrdenServicioComponent implements OnInit {
           email:this.form.value.email,
           serial_equipo:this.form.value.serial_equipo,
           tipodispositivo:this.form.value.tipodispositivo,
-          nombtecnico:this.form.value.codtecnico,
+          nombtecnico:this.form.value.nombtecnico,
           marcadispositivo:this.form.value.marcadispositivo,
           tiposervicio:this.form.value.tiposervicio,
           accesorios:this.form.value.accesorios,

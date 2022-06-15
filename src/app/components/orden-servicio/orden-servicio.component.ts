@@ -67,21 +67,18 @@ export class OrdenServicioComponent implements OnInit {
 
         this.client.postRequest("http://127.0.0.1:5000/ordenServicio",data
         ).subscribe(
-        (response:any)=>{
-          console.log("hola",response),
-          this.route.navigate(['/asignacionTecnico']);
-        }),
-
-        (error:any)=>{
-          console.log(error)
-        };
-      
-          /*console.log("we",data)*/
+          (data:any) => {
+            console.log(data["data"]),
+            this.route.navigate(['/asignacionTecnico']);
+          },
+          (error:any)=>{
+            console.log(error)
+          });
         }else{
           console.log("Form error");
         }
-      }
-
+    }    
+    
       listTech(){
         this.client.getRequest('http://127.0.0.1:5000/consultaTecnicos').subscribe(    
           (data: any) => {

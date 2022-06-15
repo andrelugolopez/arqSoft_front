@@ -19,7 +19,7 @@ export class OrdenServicioComponent implements OnInit {
   hora = this.date[1]
 
   form: FormGroup = this.fb.group({/*se inicializa el form*/
-  nombre: ['', Validators.required],
+  nombres: ['', Validators.required],
   apellidos: ['', Validators.required],
   telefono: ['', Validators.required],
   cedula: ['', Validators.required],
@@ -51,7 +51,7 @@ export class OrdenServicioComponent implements OnInit {
     onSubmit(){
       if(this.form.valid){
         let data={/**/
-          nombre:this.form.value.nombre,
+          nombres:this.form.value.nombres,
           telefono:this.form.value.telefono,
           apellidos:this.form.value.apellidos,
           cedula:this.form.value.cedula,
@@ -62,16 +62,13 @@ export class OrdenServicioComponent implements OnInit {
           marcadispositivo:this.form.value.marcadispositivo,
           tiposervicio:this.form.value.tiposervicio,
           accesorios:this.form.value.accesorios,
-          diaginicial:this.form.value.diaginicial,
-          codservicio:this.form.value.codservicio,
+          diaginicial:this.form.value.diaginicial
         }
-
-        console.log('-> ',data);
 
         this.client.postRequest("http://127.0.0.1:5000/ordenServicio",data
         ).subscribe(
         (response:any)=>{
-          console.log(response),
+          console.log("hola",response),
           this.route.navigate(['/asignacionTecnico']);
         }),
 
@@ -96,16 +93,25 @@ export class OrdenServicioComponent implements OnInit {
         }
 
 
-      changeInput(){ 
-  
+      changeInput(){
           this.client.postRequest("http://127.0.0.1:5000/consultaOrden",{     
             telefono:this.form.value.telefono,
             cedula:this.form.value.cedula,
             email:this.form.value.email,
-          }).subscribe({
-            next: (data:any) => console.log(data["data"]),
+          }).pipe()
+          .subscribe({
+            next: (data:any) => this.fillForm(data["data"]),
             error: (error) => console.log("Ha ocurrido un error en la llamada: ", error)
           }
           )}
+
+    public fillForm(values: any) {
+      this.form.patchValue({
+        nombres: values.nombres,
+        apellidos: values.apellidos,
+        email: values.correo,
+        telefono: values.telefono,
+      })
+    }
     
 }

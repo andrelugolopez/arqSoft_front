@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ClientService } from '../../services/client.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-registro',
@@ -18,7 +19,8 @@ export class RegistroComponent implements OnInit {
 
 constructor(
   private client: ClientService,
-  private fb: FormBuilder /*inyeccion de independencias*/
+  private fb: FormBuilder, /*inyeccion de independencias*/
+  private route: Router /*inyeccion de independencias*/
   ){}
   ngOnInit(): void{
   }
@@ -35,9 +37,13 @@ constructor(
 
     this.client.postRequest("http://127.0.0.1:5000/register",data
     ).subscribe(
-    (response:any)=>console.log(response),
-    (error:any)=>console.log(error)
-  )
+    (response:any)=>{
+      console.log(response),
+      this.route.navigate(['/login']);
+    }),
+    (error:any)=>{
+      console.log(error)
+    };
       /*console.log("we",data)*/
     }else{
       console.log("Form error");

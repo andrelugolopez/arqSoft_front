@@ -19,18 +19,20 @@ export class OrdenServicioComponent implements OnInit {
   hora = this.date[1]
 
   form: FormGroup = this.fb.group({/*se inicializa el form*/
+  fecha: ['', Validators.required],
+  hora: ['', Validators.required],
+  cedula: ['', Validators.required],
   nombres: ['', Validators.required],
   apellidos: ['', Validators.required],
   telefono: ['', Validators.required],
-  cedula: ['', Validators.required],
   email: ['', Validators.required],
-  nombtecnico: ['', Validators.required],
   serial_equipo: ['', Validators.required],
+  nombtecnico: ['', Validators.required],
+  marcadispositivo: ['', Validators.required],
   tipodispositivo: ['', Validators.required],
   tiposervicio: ['', Validators.required],
   accesorios: ['', Validators.required],
   diaginicial: ['', Validators.required],
-
 
 });
 
@@ -69,7 +71,7 @@ export class OrdenServicioComponent implements OnInit {
         ).subscribe(
           (data:any) => {
             console.log(data["data"]),
-            this.route.navigate(['/asignacionTecnico']);
+            this.route.navigate(['/']);
           },
           (error:any)=>{
             console.log(error)

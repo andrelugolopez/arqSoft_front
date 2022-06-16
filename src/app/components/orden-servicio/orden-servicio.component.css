@@ -1,7 +1,31 @@
+select{
+	height: 35px;
+	width: 49%;
+	padding: 0px 0px 0px 5px;
+	margin: 0px 10px 0px 0px;
+	border-radius: 0.25rem;
+}
+
+.tamano_input{
+	width: 10px !important;
+	height: 35px;
+	padding: 0px 0px 0px 9px;
+}
+
+
+
+.lbl1{
+	background-color: transparent !important;
+	border-color: transparent !important;
+}
+
+.form-check-input{
+	padding: 0px;
+}
 
 .form_orden-servicio {
 	background-color: #163446;
-	margin: auto auto;
+	margin: 20px auto 20px auto;
 	padding: 20px;
 	border-radius: 5px;
 	box-shadow: 0 0 10px #000;
@@ -11,15 +35,12 @@
 	left: 0;
 	right: 0;
 	width: 800px;
-	height: 950px; /*tamaño del recuadro login*/
+	height: min-content; /*tamaño del recuadro login*/
 }
-
-
 
 .form_orden-servicio label {
 	position: relative;
-	margin-left: 5px;
-	margin-right: 10px;
+	margin: 0px 0px 0px 0px;
 	top: 5px;
 	display: inline-block;
 	width: 100%;
@@ -64,12 +85,14 @@ h1, h4, h6{
 
 .container-button-orden-servicio{
     display: flex;
-	justify-content: space-between;
-    width: 100%;
+	justify-content: baseline;
+	padding: 0px;
+	width: auto;
 }
 
 .text{
 	color: white;
+	
 }
 
 .container2{
@@ -78,5 +101,5 @@ h1, h4, h6{
 
 input{
 	margin: 4px;
-	
+	background-color: white;
 }

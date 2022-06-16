@@ -7,11 +7,31 @@
     <h1> Asignación de Técnico</h1>
     <br>
     <div class="container row">
-      <h6 class="col">Fecha</h6>
-      <h6 class="col">Hora</h6>
+      <h6 class="col">Fecha {{fecha}}</h6>
+      <h6 class="col">Hora {{hora}}</h6>
     </div>
 
     <div class="container">
+
+      <div class="row">
+        <div class="col text">Código Tecnico:</div>
+        <!-- <input type="text" class="form-control col" formControlName="codtecnico" aria-describedby="emailHelp"> -->
+        <label class="col text" class="form-control col" formControlName="codtecnico">{{fecha}}</label>
+        <div class="w-100"></div>
+      </div>
+
+      <div class="row text">
+        <div class="col">Nombre del Técnico:</div>
+        <input type="text" class="form-control col" formControlName="nombretecnico" aria-describedby="emailHelp">
+        <div class="w-100"></div>
+      </div>
+      
+
+      <div class="row text">
+        <div class="col">Código del servicio:</div>
+        <input type="text" class="form-control col" formControlName="codservicio" aria-describedby="emailHelp">
+        <div class="w-100"></div>
+      </div>
 
       <div class="row">
         <div class="col text">Tipo de dispositivo:</div>
@@ -19,23 +39,6 @@
         <div class="w-100"></div>
       </div>
 
-      <div class="row">
-        <div class="col text">Código Tecnico:</div>
-        <input type="text" class="form-control col" formControlName="codtecnico" aria-describedby="emailHelp">
-        <div class="w-100"></div>
-      </div>
-      
-      <div class="row text">
-        <div class="col">Nombre del Técnico:</div>
-        <input type="text" class="form-control col" formControlName="nombretecnico" aria-describedby="emailHelp">
-        <div class="w-100"></div>
-      </div>
-
-      <div class="row text">
-        <div class="col">Código del servicio:</div>
-        <input type="text" class="form-control col" formControlName="codservicio" aria-describedby="emailHelp">
-        <div class="w-100"></div>
-      </div>
  
         <div class="col text">Escalar servicio:</div>
         <div class="text">
@@ -61,7 +64,7 @@
 
         <div class="container-button-orden-servicio">
           <button type="submit" class="form_tecnico_button">Guardar</button>
-          <a class="form_tecnico_button" aria-current="page" [routerLink]="['/']">Atras</a>
+          <!-- <a class="form_tecnico_button" aria-current="page" [routerLink]="['/']">Atras</a> -->
         </div>    
     </div>
 

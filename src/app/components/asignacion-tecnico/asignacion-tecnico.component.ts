@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 
 
 
+
 @Component({
   selector: 'app-asignacion-tecnico',
   templateUrl: './asignacion-tecnico.component.html',
@@ -21,8 +22,8 @@ export class AsignacionTecnicoComponent implements OnInit {
   form: FormGroup = this.fb.group({/*se inicializa el form*/
   fecha: ['', Validators.required],
   hora: ['', Validators.required],
-  codtecnico: ['', Validators.required],
-  nombretecnico: ['', Validators.required],
+  codtecnico: this.fb.control({value: localStorage.getItem('courrentDoc') ?? '', disabled: true}, [Validators.required]),
+  nombretecnico: this.fb.control({value: localStorage.getItem('courrentUser') ?? '', disabled: true}, [Validators.required]),
   codservicio: ['', Validators.required],
   tipodispositivo: ['', Validators.required],
   escalarservicio: ['', Validators.required],
@@ -45,10 +46,8 @@ constructor(
 
 
   ngOnInit(): void{
-    let infot = {
-        codte: localStorage.getItem("courrentDoc"),  
-      }
-      console.log("documento tecnico",infot)  
+    
+
   }
 
 

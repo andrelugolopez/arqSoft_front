@@ -37,11 +37,11 @@ export class AutorizacionService {
     localStorage.setItem('courrentUser', user);
   }
 
-  setCourrentRol(rol:string) : void {
-    localStorage.setItem('courrentRol', rol);
-      if (rol=="admin") {
+  setCourrentRol(n3yB6PZnGE8n7F:string) : void {
+    localStorage.setItem('courrentRol', n3yB6PZnGE8n7F);
+      if (n3yB6PZnGE8n7F=="admin") {
         this.admin.next(true);
-      }if (rol=="tecnico") {
+      }if (n3yB6PZnGE8n7F=="tecnico") {
         this.tecnico.next(true);
       }
   }

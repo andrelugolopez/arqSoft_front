@@ -17,6 +17,7 @@ import { ContenedorAsignacionTecnicoComponent } from './components/contenedor-as
 import { ContenedorDetalleProductoComponent } from './components/contenedor-detalle-producto/contenedor-detalle-producto.component';
 import { ContenedorNuevaContrasenaComponent } from './components/contenedor-nueva-contrasena/contenedor-nueva-contrasena.component';
 import { ContenedorOlvideContrasenaComponent } from './components/contenedor-olvide-contrasena/contenedor-olvide-contrasena.component';
+import { ContenedorContactoUsuarioComponent } from './components/contenedor-contacto-usuario/contenedor-contacto-usuario.component';
 
 const routes: Routes = [
   {path:'', component: ContenedorIndexComponent },
@@ -37,6 +38,7 @@ const routes: Routes = [
   {path:'asignacionTecnico', component: ContenedorAsignacionTecnicoComponent},
   {path:'nuevaContrasena', component: ContenedorNuevaContrasenaComponent},
   {path:'olvideContrasena', component: ContenedorOlvideContrasenaComponent},
+  {path:'contacto-usuario', component: ContenedorContactoUsuarioComponent},
 
  
 

@@ -1,60 +1,65 @@
-/* .cartas{
+/* / .cartas{
     display: flex; 
     height: 26%;
-    align-items: flex-end;
+    align-items: flex-start;
+
 } */
 
 .card3{
-
-    margin: 30px 42px 42px 0px;
-    padding: 30px 0px 42px 0px;
-    border-radius: 40px !important;
-    background-color: #163446; 
-    height: 459px;
-    /* width: 359px;    */
-} 
-
-.btn {
-    border-radius: 4px;
-    background-color:  rgba(231, 112, 15, 0.87);
-    font-weight: bold;
-    font-family: Arial; 
-    border: none;
-    color: #FFFFFF;
-    text-align: center;
-    transition: all 0.5s;
-    cursor: pointer;
-   
-  }
-  
-  .btn span {
-    cursor: pointer;
-    display: inline-block;
-    position: relative;
-    transition: 0.5s;
-  }
-  
-  .btn span:after {
-    content: '\00bb';
-    position: absolute;
-    opacity: 0;
-    top: 0;
-    right: -20px;
-    transition: 0.5s;
-  }
-  
-  .btn:hover span {
-    padding-right: 25px;
-  }
-  
-  .btn:hover span:after {
-    opacity: 1;
-    right: 0;
-  }
- img{
-    height: 260px;
+  margin: 30px 42px 42px 30px;
+  padding: 30px 0px 42px 0px;
+  border-radius: 40px !important;
+  background-color: #163446;
+  height: 459px;
+  /* width: 359px;   */
 }
- /* img{
-     width: 100%;
-    height: 60%;
+.btn {
+  border-radius: 4px;
+  background-color:  rgba(231, 112, 15, 0.87);
+  font-weight: bold;
+  font-family: Arial; 
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  transition: all 0.5s;
+  cursor: pointer;
+ 
+}
+
+.btn span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.btn span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.btn:hover span {
+  padding-right: 25px;
+}
+
+.btn:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+
+img{
+height: 260px;
+}
+
+/* img{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
 } */

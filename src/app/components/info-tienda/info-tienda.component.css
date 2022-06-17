@@ -4,6 +4,9 @@
     grid-gap: 50px;
     margin: 5px;
     padding: 10px;
+    
+    
+    
 }
 .card1{
 
@@ -31,7 +34,6 @@
     background-color: transparent;
     width: 300px;
     height: 200px;
-    border: 1px solid #f1f1f1;
     perspective: 1000px;
   }
   
@@ -57,12 +59,18 @@
   }
   
   .flip-box-front {
+    /* border-radius: 40px !important; */
     background-color: white;
     color: black;
   }
   
   .flip-box-back {
+    border-radius: 40px !important;
     background-color: #163446;
     color: white;
     transform: rotateY(180deg);
   }
+
+  .cartas{
+    max-width: 1820px !important;
+}

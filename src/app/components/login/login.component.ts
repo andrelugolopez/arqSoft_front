@@ -23,11 +23,7 @@ export class LoginComponent implements OnInit {
   mostrarFormulario: boolean = true;
   
 
-  form: FormGroup = this.fb.group({/*se inicializa el form*/
-  email: ['', Validators.required],
-  password: ['', Validators.required]
-
-});
+  form!: FormGroup;
   
 constructor(/*inyeccion de independencias*/
   private fb: FormBuilder,
@@ -38,7 +34,7 @@ constructor(/*inyeccion de independencias*/
 
       ngOnInit(): void {
         this.form = this.fb.group({/*se inicializa el form*/
-          email: ['', Validators.required],
+          email: ['', [Validators.required, Validators.email]],
           password: ['', Validators.required],
         });
       }
@@ -83,6 +79,12 @@ constructor(/*inyeccion de independencias*/
 
         }
      }
+     inputIsValid(llave: string): boolean {
+      return !this.form.controls[llave].valid
+     }
 
+     getInputError(llave: string): true | undefined {
+      return this.form.controls['email'].getError(llave)
+     }
 }
 

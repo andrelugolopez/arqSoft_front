@@ -40,6 +40,7 @@ export class ClientService {
 
     return this.http.post(route, data, config);
   }
+  
 }
 
 

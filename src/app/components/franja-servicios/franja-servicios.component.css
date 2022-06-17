@@ -4,3 +4,6 @@
     font-weight: bold;
     font-family: Arial;
  } 
+ .container{
+    margin-right: 0px !important;
+ }

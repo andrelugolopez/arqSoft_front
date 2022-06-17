@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ClientService } from '../../services/client.service';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { of } from 'rxjs';
 
@@ -10,7 +10,6 @@ import { of } from 'rxjs';
   styleUrls: ['./orden-servicio.component.css']
 })
 export class OrdenServicioComponent implements OnInit {
-  valor: any=  "qqqqqqqqqqq";
   data: any
   tecnicos: any
 
@@ -19,25 +18,27 @@ export class OrdenServicioComponent implements OnInit {
   hora = this.date[1]
 
   form: FormGroup = this.fb.group({/*se inicializa el form*/
+  fecha: ['', Validators.required],
+  hora: ['', Validators.required],
+  cedula: ['', Validators.required],
   nombres: ['', Validators.required],
   apellidos: ['', Validators.required],
   telefono: ['', Validators.required],
-  cedula: ['', Validators.required],
   email: ['', Validators.required],
-  nombtecnico: ['', Validators.required],
   serial_equipo: ['', Validators.required],
+  nombtecnico: ['', Validators.required],
+  marcadispositivo: ['', Validators.required],
   tipodispositivo: ['', Validators.required],
   tiposervicio: ['', Validators.required],
   accesorios: ['', Validators.required],
   diaginicial: ['', Validators.required],
-
 
 });
 
   constructor(
     private client: ClientService,
     private fb: FormBuilder,
-    private route: Router /*inyeccion de independencias*/
+    private route: Router 
   ) {
     setInterval(() => {
       this.hora = new Date().toLocaleString().split(',')[1]
@@ -49,8 +50,11 @@ export class OrdenServicioComponent implements OnInit {
     }
 
     onSubmit(){
+      console.warn(this.form.value)
       if(this.form.valid){
         let data={
+          fecha:this.form.value.fecha,
+          hora:this.form.value.hora,
           nombres:this.form.value.nombres,
           telefono:this.form.value.telefono,
           apellidos:this.form.value.apellidos,
@@ -65,11 +69,13 @@ export class OrdenServicioComponent implements OnInit {
           diaginicial:this.form.value.diaginicial
         }
 
+
+
         this.client.postRequest("http://127.0.0.1:5000/ordenServicio",data
         ).subscribe(
           (data:any) => {
             console.log(data["data"]),
-            this.route.navigate(['/asignacionTecnico']);
+            this.route.navigate(['/']);
           },
           (error:any)=>{
             console.log(error)
@@ -103,12 +109,28 @@ export class OrdenServicioComponent implements OnInit {
           )}
 
     public fillForm(values: any) {
-      this.form.patchValue({
-        nombres: values.nombres,
-        apellidos: values.apellidos,
-        email: values.correo,
-        telefono: values.telefono,
-      })
+
+      // Diccionario
+      // Convierto las llaves de value a las llaves de form
+      const valueToForm: {[key: string]: string} = {
+        "nombres": "nombres",
+        "apellidos": "apellidos",
+        "correo": "email",
+        "telefono": "telefono",
+      }
+      Object.entries(values).forEach(([name, value]) => {
+        // Obtengo la llave del formulario desde los values
+        // correo -> email
+        const formKey = valueToForm[name];
+
+        // Obtengo el control del formulario
+        const control = this.form.get(formKey) as FormControl;
+
+        // Si el control no existe o está modificado, retorno
+        if (!control || control.dirty) return;
+
+        // Defino el valor al control del formulario
+        control!.setValue(value);
+      });
     }
-    
 }

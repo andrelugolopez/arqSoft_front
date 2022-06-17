@@ -1,3 +1,7 @@
+.lbl1{
+	background-color: transparent !important;
+	border-color: transparent !important;
+}
 
 .form_asignacion-tecnico {
 	background-color: #163446;
@@ -11,7 +15,7 @@
 	left: 0;
 	right: 0;
 	width: 600px;
-	height: 700px; /*tamaño del recuadro login*/	
+	height: min-content;/*tamaño del recuadro login*/	
 }
 
 .form_asignacion-tecnico label{

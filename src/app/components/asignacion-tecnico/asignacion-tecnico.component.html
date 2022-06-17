@@ -7,8 +7,8 @@
     <h1> Asignación de Técnico</h1>
     <br>
     <div class="container row">
-      <h6 class="col">Fecha</h6>
-      <h6 class="col">Hora</h6>
+      <h6 class="lbl1 col form-control" formControlName="fecha">Fecha {{fecha}}</h6>
+      <h6 class="lbl1 col form-control" formControlName="hora">Hora {{hora}}</h6>
     </div>
 
     <div class="container">
@@ -55,13 +55,16 @@
           </select>
         </div>
 
-        <div class="col text">Diagnóstico:</div>
+        <div class="col text">Diagnóstico Inicial:</div>
+        <input type="textarea" class="form-control textarea1" formControlName="diaginicial" aria-describedby="emailHelp">
+        <div class="w-100"></div>
+
+        <div class="col text">Reporte:</div>
         <input type="textarea" class="form-control textarea1" formControlName="diaginicial" aria-describedby="emailHelp">
         <div class="w-100"></div>
 
         <div class="container-button-orden-servicio">
           <button type="submit" class="form_tecnico_button">Guardar</button>
-          <a class="form_tecnico_button" aria-current="page" [routerLink]="['/']">Atras</a>
         </div>    
     </div>
 

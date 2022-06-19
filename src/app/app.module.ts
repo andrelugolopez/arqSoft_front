@@ -51,12 +51,15 @@ import { ContenedorOrdenServicioComponent } from './components/contenedor-orden-
 import { DetalleProductoComponent } from './components/detalle-producto/detalle-producto.component';
 import { ContenedorDetalleProductoComponent } from './components/contenedor-detalle-producto/contenedor-detalle-producto.component';
 import { ContenedorNuevaContrasenaComponent } from './components/contenedor-nueva-contrasena/contenedor-nueva-contrasena.component';
+import { FormularioContactoComponent } from './components/formulario-contacto/formulario-contacto.component';
+import { ContenedorContactoUsuarioComponent } from './components/contenedor-contacto-usuario/contenedor-contacto-usuario.component';
 import { NuevaContrasenaComponent } from './components/nueva-contrasena/nueva-contrasena.component';
 import { ContenedorOlvideContrasenaComponent } from './components/contenedor-olvide-contrasena/contenedor-olvide-contrasena.component';
 import { OlvideContrasenaComponent } from './components/olvide-contrasena/olvide-contrasena.component';
-import { PrincipalesmarcasComponent } from './principalesmarcas/principalesmarcas.component';
+import { PrincipalesmarcasComponent } from './components/principalesmarcas/principalesmarcas.component';
 import { ContenedorAdministradorRolComponent } from './components/contenedor-administrador-rol/contenedor-administrador-rol.component';
 import { AdministradorRolesComponent } from './components/administrador-roles/administrador-roles.component';
+
 
 @NgModule({
   declarations: [
@@ -110,8 +113,11 @@ import { AdministradorRolesComponent } from './components/administrador-roles/ad
     ContenedorOlvideContrasenaComponent,
     OlvideContrasenaComponent,
     PrincipalesmarcasComponent,
+    FormularioContactoComponent,
+    ContenedorContactoUsuarioComponent,
     ContenedorAdministradorRolComponent,
     AdministradorRolesComponent,
+
 
    
   ],

@@ -17,8 +17,8 @@ import { ContenedorAsignacionTecnicoComponent } from './components/contenedor-as
 import { ContenedorDetalleProductoComponent } from './components/contenedor-detalle-producto/contenedor-detalle-producto.component';
 import { ContenedorNuevaContrasenaComponent } from './components/contenedor-nueva-contrasena/contenedor-nueva-contrasena.component';
 import { ContenedorOlvideContrasenaComponent } from './components/contenedor-olvide-contrasena/contenedor-olvide-contrasena.component';
+import { ContenedorContactoUsuarioComponent } from './components/contenedor-contacto-usuario/contenedor-contacto-usuario.component';
 import { ContenedorAdministradorRolComponent } from './components/contenedor-administrador-rol/contenedor-administrador-rol.component';
-
 
 
 const routes: Routes = [
@@ -39,6 +39,7 @@ const routes: Routes = [
   {path:'detalleProducto/:idproducto', component: ContenedorDetalleProductoComponent},
   {path:'nuevaContrasena', component: ContenedorNuevaContrasenaComponent},
   {path:'olvideContrasena', component: ContenedorOlvideContrasenaComponent},
+  {path:'contacto-usuario', component: ContenedorContactoUsuarioComponent},
   {path:'administrador-rol', component: ContenedorAdministradorRolComponent},
 
  

@@ -136,6 +136,7 @@ export class AutorizacionService {
       return this.tecnico.asObservable();
      }
  
+     
 
     // constructor() { }
 }

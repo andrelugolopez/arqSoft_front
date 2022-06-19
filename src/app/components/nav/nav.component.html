@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg  navbar-ligth bg-ligth ">
     <div class="wrapper container-fluid">
 
-        <a class="nav-link" [routerLink]="['/']"><img src="/assets/imagenes/logo-arq.png " width=180 id="logo"></a>
+        <a class="nav-link" [routerLink]="['/']"><img src="/assets/imagenes/logo-arq.svg " width=290 id="logo"></a>
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -18,9 +18,7 @@
                     <a class="nav-link active" aria-current="page" [routerLink]="['/asistenciausuario']">Asistencia Tecnica</a>
                 </li>
             
-               <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" [routerLink]="['/asistenciatenicadmin']">Asistencia Tecnica</a>
-              </li> -->
+                -->
           
             <!-- ------------------------------------ -->
 
@@ -29,6 +27,10 @@
               <li *ngIf="autorizacion.isAdmin() | async" class="nav-item active">
                   <a class="nav-link" [routerLink]="['/asistenciatenicadmin']">Asistencia Tecnica</a>
                 </nav> 
+
+                <!-- <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" [routerLink]="['/asistenciatenicadmin']">Asistencia Tecnica</a>
+              </li> -->
           </div>
             <li *ngIf="!(autorizacion.isLoggedIn() | async)" class="nav-item active">
                 <a class="nav-link" [routerLink]="['/asistenciausuario']"(click)="autorizacion.logout()">Asistencia Tecnica<span class="sr-only"></span></a>
@@ -50,7 +52,7 @@
                           </a>
                           <ul class="dropdown-menu container-fluid " aria-labelledby="navbarDarkDropdownMenuLink">
                             <li><a class="nav-link" [routerLink]="['/equipos']">Equipos</a></li>
-                            <li><a class="nav-link" [routerLink]="['/perifericos']">Periféricos</a></li>
+                            <li><a class="nav-link" [routerLink]="['/perifericos']">Accesorios</a></li>
                             <li><a class="nav-link" [routerLink]="['/repuestos']">Repuestos </a></li>
                           </ul>
                         </li>

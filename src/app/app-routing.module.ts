@@ -17,10 +17,14 @@ import { ContenedorAsignacionTecnicoComponent } from './components/contenedor-as
 import { ContenedorDetalleProductoComponent } from './components/contenedor-detalle-producto/contenedor-detalle-producto.component';
 import { ContenedorNuevaContrasenaComponent } from './components/contenedor-nueva-contrasena/contenedor-nueva-contrasena.component';
 import { ContenedorOlvideContrasenaComponent } from './components/contenedor-olvide-contrasena/contenedor-olvide-contrasena.component';
+import { ContenedorContactoUsuarioComponent } from './components/contenedor-contacto-usuario/contenedor-contacto-usuario.component';
 import { ContenedorAdministradorRolComponent } from './components/contenedor-administrador-rol/contenedor-administrador-rol.component';
 import { ContenedorHistoricoAdminComponent } from './components/contenedor-historico-admin/contenedor-historico-admin.component';
 import { ContenedorAdminArticulosComponent } from './components/contenedor-admin-articulos/contenedor-admin-articulos.component';
 import { ContenedorCerrarOrdenComponent } from './components/contenedor-cerrar-orden/contenedor-cerrar-orden.component';
+
+
+
 
 const routes: Routes = [
   {path:'', component: ContenedorIndexComponent },
@@ -40,6 +44,7 @@ const routes: Routes = [
   {path:'detalleProducto/:idproducto', component: ContenedorDetalleProductoComponent},
   {path:'nuevaContrasena', component: ContenedorNuevaContrasenaComponent},
   {path:'olvideContrasena', component: ContenedorOlvideContrasenaComponent},
+  {path:'contacto-usuario', component: ContenedorContactoUsuarioComponent},
   {path:'administrador-rol', component: ContenedorAdministradorRolComponent},
   {path:'historico-admin', component: ContenedorHistoricoAdminComponent},
   {path:'admin-articulos', component:ContenedorAdminArticulosComponent},

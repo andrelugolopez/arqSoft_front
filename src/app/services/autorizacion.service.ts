@@ -15,12 +15,17 @@ import { BehaviorSubject, Observable } from "rxjs";
 export class AutorizacionService {
   isLogin = new BehaviorSubject<boolean>(this.checkToken());
   
-  admin = new BehaviorSubject<boolean>(false);
+  admin = new BehaviorSubject<boolean>(this.checkRol());
   tecnico = new BehaviorSubject<boolean>(false);
 
   private checkToken() : boolean {
     return !!localStorage.getItem('into');
   }
+
+  private checkRol() : boolean {
+    return !!localStorage.getItem('courrentRol');
+  }
+
 
   login(into:string) : void {
 
@@ -39,9 +44,12 @@ export class AutorizacionService {
 
   setCourrentRol(n3yB6PZnGE8n7F:string) : void {
     localStorage.setItem('courrentRol', n3yB6PZnGE8n7F);
-      if (n3yB6PZnGE8n7F=="admin") {
+    console.log("rol",n3yB6PZnGE8n7F)
+      if (n3yB6PZnGE8n7F=="J8p4SBfJgRfZCo") {/*admin*/
+      console.log("Rol es admin")
         this.admin.next(true);
-      }if (n3yB6PZnGE8n7F=="tecnico") {
+      }if (n3yB6PZnGE8n7F=="H7qm7gQr6DBGfM") {/*tecnico*/
+      console.log("Rol es tecnico")
         this.tecnico.next(true);
       }
   }
@@ -114,10 +122,10 @@ export class AutorizacionService {
   }
   
     //método que nos retorna el BehaviorSubject cómo un observable
-  isLoggedIn() : Observable<boolean> {
-    return this.isLogin.asObservable();
-    }
-  
+    isLoggedIn() : Observable<boolean> {
+      return this.isLogin.asObservable();
+      }
+    
   
     // método que nos retorna el BehaviorSubject admin cómo un observable
     isAdmin() : Observable<boolean> {

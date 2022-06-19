@@ -18,8 +18,9 @@ import { ContenedorDetalleProductoComponent } from './components/contenedor-deta
 import { ContenedorNuevaContrasenaComponent } from './components/contenedor-nueva-contrasena/contenedor-nueva-contrasena.component';
 import { ContenedorOlvideContrasenaComponent } from './components/contenedor-olvide-contrasena/contenedor-olvide-contrasena.component';
 import { ContenedorAdministradorRolComponent } from './components/contenedor-administrador-rol/contenedor-administrador-rol.component';
-
-
+import { ContenedorHistoricoAdminComponent } from './components/contenedor-historico-admin/contenedor-historico-admin.component';
+import { ContenedorAdminArticulosComponent } from './components/contenedor-admin-articulos/contenedor-admin-articulos.component';
+import { ContenedorCerrarOrdenComponent } from './components/contenedor-cerrar-orden/contenedor-cerrar-orden.component';
 
 const routes: Routes = [
   {path:'', component: ContenedorIndexComponent },
@@ -40,10 +41,10 @@ const routes: Routes = [
   {path:'nuevaContrasena', component: ContenedorNuevaContrasenaComponent},
   {path:'olvideContrasena', component: ContenedorOlvideContrasenaComponent},
   {path:'administrador-rol', component: ContenedorAdministradorRolComponent},
-
- 
-
-
+  {path:'historico-admin', component: ContenedorHistoricoAdminComponent},
+  {path:'admin-articulos', component:ContenedorAdminArticulosComponent},
+  {path:'cerrar-orden',component:ContenedorCerrarOrdenComponent},
+  
 ];
 
 @NgModule({

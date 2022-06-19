@@ -57,6 +57,12 @@ import { OlvideContrasenaComponent } from './components/olvide-contrasena/olvide
 import { PrincipalesmarcasComponent } from './principalesmarcas/principalesmarcas.component';
 import { ContenedorAdministradorRolComponent } from './components/contenedor-administrador-rol/contenedor-administrador-rol.component';
 import { AdministradorRolesComponent } from './components/administrador-roles/administrador-roles.component';
+import { ContenedorHistoricoAdminComponent } from './components/contenedor-historico-admin/contenedor-historico-admin.component';
+import { HistoricoAdminComponent } from './components/historico-admin/historico-admin.component';
+import { ContenedorAdminArticulosComponent } from './components/contenedor-admin-articulos/contenedor-admin-articulos.component';
+import { AdminArticulosComponent } from './components/admin-articulos/admin-articulos.component';
+import { ContenedorCerrarOrdenComponent } from './components/contenedor-cerrar-orden/contenedor-cerrar-orden.component';
+import { CerrarOrdenComponent } from './components/cerrar-orden/cerrar-orden.component';
 
 @NgModule({
   declarations: [
@@ -112,6 +118,12 @@ import { AdministradorRolesComponent } from './components/administrador-roles/ad
     PrincipalesmarcasComponent,
     ContenedorAdministradorRolComponent,
     AdministradorRolesComponent,
+    ContenedorHistoricoAdminComponent,
+    HistoricoAdminComponent,
+    ContenedorAdminArticulosComponent,
+    AdminArticulosComponent,
+    ContenedorCerrarOrdenComponent,
+    CerrarOrdenComponent,
 
    
   ],

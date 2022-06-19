@@ -6,12 +6,15 @@ import { AutorizacionService } from '../../services/autorizacion.service';
   styleUrls: ['./contenedor-asistenciatenicadmin.component.css']
 })
 export class ContenedorAsistenciatenicadminComponent implements OnInit {
-  mostrarFormulario: boolean = true;
+  mostrarCardstecnico: boolean = true;
+  mostrarCardsAdmin: boolean = true;
+
   constructor(
     public autorizacion: AutorizacionService
   ) { }
 
   ngOnInit(): void {
+    this.mostrarCardstecnico = false;
   }
 
 }

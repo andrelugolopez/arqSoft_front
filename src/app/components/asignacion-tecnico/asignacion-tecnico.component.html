@@ -2,83 +2,75 @@
     <div class="header-text">
   </div>
   
-  <div class="form">
+
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
     <h1> Asignación de Técnico</h1>
     <br>
-    <div class="container-button-orden-servicio">
-      <h6>Fecha</h6>
-      <h6>Hora</h6>
+    <div class="container row">
+      <h6 class="lbl1 col form-control" formControlName="fecha">Fecha {{fecha}}</h6>
+      <h6 class="lbl1 col form-control" formControlName="hora">Hora {{hora}}</h6>
     </div>
 
-    <div class="col">Tipo de dispositivo:</div>
-          <div class="form-check col">
-            <label class="form-check-label col" for="flexRadioDefault1">
-              Pc
-            </label>
-            <input class="form-check-input col" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-          </div>
-  
-          <div class="form-check col">
-            <label class="form-check-label col" for="flexRadioDefault2">
-              Portatil
-            </label>
-            <input class="form-check-input col" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-          </div>
-  
-          <div class="form-check col">
-            <label class="form-check-label col" for="flexRadioDefault2">
-              Otro
-            </label>
-            <input class="form-check-input col" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-            <textarea class="form-control col" aria-label="With textarea"></textarea>
-          </div>
-  
     <div class="container">
-      <div class="row">
-        <div class="col">Codigo Tecnico</div>
-        <textarea class="form-control col" aria-label="With textarea"></textarea>
-        <div class="w-100"></div>
-  
-        <div class="col">Nombre Tecnico</div>
-        <textarea class="form-control col" aria-label="With textarea"></textarea>
-        <div class="w-100"></div>
-  
-        <div class="col">Codigo Servicio:</div>
-        <textarea class="form-control col" aria-label="With textarea"></textarea>
-        <div class="w-100"></div>
- 
-        <div class="col">Escolar servicio:</div>
-          <div class="form-check col">
-            <label class="form-check-label col" for="flexRadioDefault1">
-              Si
-            </label>
-            <input class="form-check-input col" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-          </div>
-  
-          <div class="form-check col">
-            <label class="form-check-label col" for="flexRadioDefault2">
-              No
-            </label>
-            <input class="form-check-input col" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-          </div>
 
-  
+      <div class="row">
+        <div class="col text">Código Tecnico:</div>
+        <input type="text" class="form-control col" formControlName="codtecnico" aria-describedby="emailHelp">
+        <div class="w-100"></div>
+      </div>
+
+      <div class="row text">
+        <div class="col">Nombre del Técnico:</div>
+        <input type="text" class="form-control col" formControlName="nombretecnico" aria-describedby="emailHelp">
+        <div class="w-100"></div>
+      </div>
+
+      <div class="select_margin mb-3 row text">
+        <label for="exampleInputEmail1" class="form-label text col">Código del servicio: </label>
+        <select class="custom-select" id="inputGroupSelect01" formControlName="nombtecnico" >
+           <option>Seleccione Orden de Servicio:</option>
+           <option *ngFor="let CodServ of codigos">{{CodServ.ordenServicio}}</option>
+        </select>
+        <div class="w-100"></div>
+     </div>
+
+      <div class="row">
+        <div class="col text">Tipo de dispositivo:</div>
+        <input type="text" class="form-control col" formControlName="tipodispositivo" aria-describedby="emailHelp">
+        <div class="w-100"></div>
+      </div>
+
+ 
+        <div class="col text">Escalar servicio:</div>
+        <div class="text">
+          <input type="radio" value="si" formControlName="escalarservicio"> Si
+          <input type="radio" value="no" formControlName="escalarservicio"> No
+        </div>
+          
         <div class="mb-3">
           <div>
-           <label for="exampleInputEmail1" class="form-label">Tipo de especialidad o escolar </label>
+           <label for="exampleInputEmail1" class="form-label text">Tipo de especialidad a escalar </label>
           </div>
-          <select class="custom-select" id="inputGroupSelect01">
+          <select class="custom-select" id="inputGroupSelect01" formControlName="tipoespeciescalar">
             <option selected>Manejo de frecuencia en tarjeta de red</option>
             <option selected>Niveles de transmision de redes</option>
+            <option selected>Reseteo de Bios</option>
+            <option selected>Instalación de software especializado</option>
           </select>
         </div>
 
-        <div class="form_orden-servicio button">
-          <button type="submit" class="form_orden-servicio button">Guardar</button>
-          <a class="form_orden-servicio button" aria-current="page" [routerLink]="['/']">Atras</a>
-        </div>
-      </div>
+        <div class="col text">Diagnóstico Inicial:</div>
+        <input type="textarea" class="form-control textarea1" formControlName="diaginicial" aria-describedby="emailHelp">
+        <div class="w-100"></div>
+
+        <div class="col text">Reporte:</div>
+        <input type="textarea" class="form-control textarea1" formControlName="diaginicial" aria-describedby="emailHelp">
+        <div class="w-100"></div>
+
+        <div class="container-button-orden-servicio">
+          <button type="submit" class="form_tecnico_button">Guardar</button>
+        </div>    
     </div>
+
     <br>
-    </div>
-  
+  </form>

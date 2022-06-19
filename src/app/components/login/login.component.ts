@@ -59,11 +59,9 @@ constructor(/*inyeccion de independencias*/
               //nombres
               this.autorizacion.setCourrentUser(response.Nuat)
               //rol
-              this.autorizacion.setCourrentRol(response.rol)
+              this.autorizacion.setCourrentRol(response.n3yB6PZnGE8n7F)
               //doc
               this.autorizacion.setCourrentDoc(response.doc)
-              //CodigoR
-              this.autorizacion.setCourrentCodigoR(response.CodigoR)
 
               this.route.navigate(['/']);
 

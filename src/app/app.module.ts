@@ -55,6 +55,8 @@ import { NuevaContrasenaComponent } from './components/nueva-contrasena/nueva-co
 import { ContenedorOlvideContrasenaComponent } from './components/contenedor-olvide-contrasena/contenedor-olvide-contrasena.component';
 import { OlvideContrasenaComponent } from './components/olvide-contrasena/olvide-contrasena.component';
 import { PrincipalesmarcasComponent } from './principalesmarcas/principalesmarcas.component';
+import { ContenedorAdministradorRolComponent } from './components/contenedor-administrador-rol/contenedor-administrador-rol.component';
+import { AdministradorRolesComponent } from './components/administrador-roles/administrador-roles.component';
 
 @NgModule({
   declarations: [
@@ -108,6 +110,8 @@ import { PrincipalesmarcasComponent } from './principalesmarcas/principalesmarca
     ContenedorOlvideContrasenaComponent,
     OlvideContrasenaComponent,
     PrincipalesmarcasComponent,
+    ContenedorAdministradorRolComponent,
+    AdministradorRolesComponent,
 
    
   ],

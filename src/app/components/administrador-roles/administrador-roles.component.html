@@ -1,0 +1,55 @@
+<div class="form_Registro">
+    <div class="header-text">
+    <img class ="iconoU" src="/assets/imagenes/iconU.png">
+</div>
+
+<form>
+    <div class="form-group">
+      <input type="text"  placeholder="Cedula"   class="form-control" formControlName="cedula" aria-describedby="emailHelp">
+    </div>
+<br>
+    <div class="form-group">
+      <input type="text" placeholder="Nombres" class="form-control" formControlName="nombres" aria-describedby="emailHelp">
+    </div>
+<br>
+    <div class="form-group">
+      <input type="text" placeholder="Apellidos" class="form-control" formControlName="apellidos">
+    </div>
+<br>
+    <div class="form-group">
+      <input type="email" placeholder="Correo" class="form-control" formControlName="email" aria-describedby="emailHelp">
+    </div>
+<br>
+    <div class="form-group">
+      <input type="text" placeholder="telefono" class="form-control" formControlName="telefono" aria-describedby="emailHelp">
+    </div>
+<br>
+    <div class="form-group">
+      <input type="text" placeholder="direccion" class="form-control" formControlName="direccion" aria-describedby="emailHelp">
+    </div>
+<br>
+<br>
+<br>
+<label>Rol:</label>
+      <div  class=" container row">
+        <div class="form-check form-check-inline col-3">
+          <input class="form-check-input " formControlName="tipodispositivo" type="radio"  id="inlineRadio1" value="Pc">
+          <label class="form-check-label" for="inlineRadio1">Usuario</label>
+        </div>
+        <div class="form-check form-check-inline col-3">
+          <input class="form-check-input" formControlName="tipodispositivo" type="radio" id="inlineRadio2" value="Portatil">
+          <label class="form-check-label" for="inlineRadio2">Tecnico</label>
+        </div> 
+        <div class="container-button-orden-servicio col">
+          <div class="form-check form-check-inline">
+            <input class="form-check-input " formControlName="tipodispositivo" type="radio"  id="inlineRadio1" value="Otro">
+            <label class="form-check-label" for="inlineRadio1">Admin</label>
+          </div> 
+        </div>
+      </div>
+
+    <button type="submit" class="btn btn-primary">Guardar</button>
+    <button type="submit" class="btn btn-primary">Actulizar</button>
+    <button type="submit" class="btn btn-primary">Eliminar</button>
+</form>
+<br>

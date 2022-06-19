@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ClientService } from 'src/app/services/client.service';
 import { Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 
 
@@ -13,6 +14,8 @@ import { Router } from '@angular/router';
 })
 export class AsignacionTecnicoComponent implements OnInit {
   data: any
+  codigos: any
+  nombretecnico: any
 
   date = new Date().toLocaleString().split(',')
   fecha = this.date[0].replace(/\//g, "-")
@@ -37,6 +40,7 @@ constructor(
   private client: ClientService,
   private fb: FormBuilder, /*inyeccion de independencias*/
   private route: Router ,
+  public router: ActivatedRoute,
 
   ){
     setInterval(() => {
@@ -46,15 +50,25 @@ constructor(
 
 
   ngOnInit(): void{
-    
+  this.router.url
+  .subscribe(url => {
+    this.nombretecnico = url[1].path;
+  }
+  );
+  this.client.getRequest('http://127.0.0.1:5000/consultaDiagnostico'+this.nombretecnico).subscribe(    
+    (data: any) => {
+    this.codigos = data["data"],
+    console.log(data)
+    },
+    error => console.log("Ha ocurrido un error en la llamada: ", error)
+    )
 
   }
 
 
   onSubmit(){
     if(this.form.valid){
-      let data={/**/
-
+      let data={
         fecha:this.form.value.fecha,
         hora:this.form.value.hora,
         codtecnico:this.form.value.codtecnico,
@@ -65,8 +79,6 @@ constructor(
         diaginicial:this.form.value.diaginicial
 
       }
-
-
 
     this.client.postRequest("http://127.0.0.1:5000/asignacionTecnico",data
     ).subscribe(
@@ -80,6 +92,8 @@ constructor(
     }else{
       console.log("Form error");
     }
-}    
+}  
 
 }
+
+

@@ -24,13 +24,15 @@
         <input type="text" class="form-control col" formControlName="nombretecnico" aria-describedby="emailHelp">
         <div class="w-100"></div>
       </div>
-      
 
-      <div class="row text">
-        <div class="col">Código del servicio:</div>
-        <input type="text" class="form-control col" formControlName="codservicio" aria-describedby="emailHelp">
+      <div class="select_margin mb-3 row text">
+        <label for="exampleInputEmail1" class="form-label text col">Código del servicio: </label>
+        <select class="custom-select" id="inputGroupSelect01" formControlName="nombtecnico" >
+           <option>Seleccione Orden de Servicio:</option>
+           <option *ngFor="let CodServ of codigos">{{CodServ.ordenServicio}}</option>
+        </select>
         <div class="w-100"></div>
-      </div>
+     </div>
 
       <div class="row">
         <div class="col text">Tipo de dispositivo:</div>

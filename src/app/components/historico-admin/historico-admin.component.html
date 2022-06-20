@@ -1,5 +1,24 @@
-<div class="form_historico-admin">
-    <div class="header-text">
-        <h1> Historico Admin</h1>
+<form class="form_historico-Admin">
+    <h6>Historico Administrador</h6>
+    <br>
+    <br>
+    <div class="row text">
+        <label class="col text">Nombre tecnico:</label>
+        <label type="text" class=" tamano_input form-control col" formControlName="nombTecnico"></label>
+        <div class="w-100"></div>
     </div>
-</div>
+    <br>
+    <div class="select_margin mb-3 row text">
+        <label for="exampleInputEmail1" class="form-label text col">Ordenes abiertas: </label>
+        <select class="custom-select" id="inputGroupSelect01" formControlName="ordenAbierta" >
+        <option>Seleccione Orden de servicio:</option>
+        <option></option>
+        </select>
+        <div class="w-100"></div>
+    </div>
+    <br>
+    <br>
+    <div>
+        <button type="submit" class="btn btn-primary">Atras</button>
+    </div>
+</form>

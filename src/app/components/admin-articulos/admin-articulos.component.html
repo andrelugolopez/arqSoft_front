@@ -1,0 +1,68 @@
+<form class="form_admin-articulos">
+    <h6>Articulos Tienda</h6>
+    <br>
+    <br>
+    <div class="row text">
+        <label class="col text">Id Producto:</label>
+        <input type="text" class=" tamano_input form-control col" formControlName="cedula">
+        <div class="w-100"></div>
+    </div>
+    <br>
+
+    <label>Tipo de dispositivo:</label>
+    <div  class=" container row">
+        <div class="form-check form-check-inline col">
+          <input class="form-check-input " formControlName="tipodispositivo" type="radio"  id="inlineRadio1" value="Pc">
+          <label class="form-check-label" for="inlineRadio1">Equipo</label>
+        </div>
+
+        <div class="form-check form-check-inline col">
+          <input class="form-check-input" formControlName="tipodispositivo" type="radio" id="inlineRadio2" value="Portatil">
+          <label class="form-check-label" for="inlineRadio2">Accesorios</label>
+        </div> 
+
+        <div class="form-check form-check-inline col">
+            <input class="form-check-input " formControlName="tipodispositivo" type="radio"  id="inlineRadio1" value="Otro">
+            <label class="form-check-label" for="inlineRadio1">Repuestos</label>
+        </div> 
+    </div>
+
+    <div>
+        <label class="form-label">Descripción</label>
+        <br>
+        <br>
+        <textarea class="form-control" formControlName="diaginicial" aria-label="With textarea"></textarea>
+    </div>
+
+    <div class="row text">
+        <label class="col text">Cantidad:</label>
+        <input type="text" class=" tamano_input form-control col" formControlName="cedula">
+        <div class="w-100"></div>
+    </div>
+      
+    <div class="row text">
+        <label class="col">Nombre:</label>
+        <input type="text" class="tamano_input form-control col" formControlName="nombres">
+        <div class="w-100"></div>
+    </div>
+      
+    <div class="row text">
+        <label class="col text">Precio:</label>
+        <input type="text" class="tamano_input form-control col" formControlName="apellidos">
+        <div class="w-100"></div>
+    </div>
+
+    <div class="row text">
+        <label class="col text">Imagen:</label>
+        <input type="text" class="tamano_input form-control col" formControlName="apellidos">
+        <div class="w-100"></div>
+    </div>
+
+    <br>
+    <br>
+    <div class="container-button-orden-servicio">
+        <button type="submit" class="btn btn-primary">Guardar</button>
+        <button type="submit" class="btn btn-primary">Actualizar</button>
+        <button type="submit" class="btn btn-primary">Eliminar</button>
+    </div>
+</form>

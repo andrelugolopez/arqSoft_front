@@ -1,0 +1,39 @@
+<form class="form_cerrar_orden">
+    <h1> Salida de Equipo</h1>
+  <br>
+  <div class="container row">
+    <h6 class="lbl1 col form-control" formControlName="fecha">Fecha</h6>
+    <h6 class="lbl1 col form-control" formControlName="hora">Hora</h6>
+  </div>
+    <br>
+    <br>
+    <div class="row text">
+        <label class="col text">Serial Equipo:</label>
+        <input type="text" class=" tamano_input form-control col" formControlName="cedula">
+        <div class="w-100"></div>
+    </div>
+    <br>
+
+    <div>
+        <label class="form-label">Detalles:</label>
+        <br>
+        <br>
+        <textarea class="form-control" formControlName="diaginicial" aria-label="With textarea"></textarea>
+    </div>
+
+    <div>
+        <label class="form-label">Observación:</label>
+        <br>
+        <br>
+        <textarea class="form-control" formControlName="diaginicial" aria-label="With textarea"></textarea>
+    </div>
+
+    
+    <br>
+    <br>
+    <div class="container-button-orden-servicio ">
+        <button type="submit" class="btn btn-primary ">Guardar</button>
+        <button type="submit" class="btn btn-primary">Actualizar</button>
+        <button type="submit" class="btn btn-primary">Eliminar</button>
+    </div>
+</form>

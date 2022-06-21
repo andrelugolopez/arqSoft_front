@@ -20,6 +20,12 @@ import { ContenedorOlvideContrasenaComponent } from './components/contenedor-olv
 import { ContenedorContactoUsuarioComponent } from './components/contenedor-contacto-usuario/contenedor-contacto-usuario.component';
 import { ContenedorMapaComponent } from './components/contenedor-mapa/contenedor-mapa.component';
 
+import { ContenedorAdministradorRolComponent } from './components/contenedor-administrador-rol/contenedor-administrador-rol.component';
+import { ContenedorHistoricoAdminComponent } from './components/contenedor-historico-admin/contenedor-historico-admin.component';
+import { ContenedorAdminArticulosComponent } from './components/contenedor-admin-articulos/contenedor-admin-articulos.component';
+import { ContenedorCerrarOrdenComponent } from './components/contenedor-cerrar-orden/contenedor-cerrar-orden.component';
+
+
 const routes: Routes = [
   {path:'', component: ContenedorIndexComponent },
   {path:'equipos', component: ContenedorEquiposComponent },
@@ -34,17 +40,17 @@ const routes: Routes = [
   {path:'asistenciatenicadmin', component: ContenedorAsistenciatenicadminComponent},
   {path:'historico', component: ContenedorHistoricoComponent},
   {path:'ordenServicio', component: ContenedorOrdenServicioComponent},
-  {path:'asignacionTecnico', component: ContenedorAsignacionTecnicoComponent},
+  {path:'asignacionTecnico/:nombretecnico', component: ContenedorAsignacionTecnicoComponent},
   {path:'detalleProducto/:idproducto', component: ContenedorDetalleProductoComponent},
-  {path:'asignacionTecnico', component: ContenedorAsignacionTecnicoComponent},
   {path:'nuevaContrasena', component: ContenedorNuevaContrasenaComponent},
   {path:'olvideContrasena', component: ContenedorOlvideContrasenaComponent},
   {path:'contacto-usuario', component: ContenedorContactoUsuarioComponent},
-  {path:'mapa', component: ContenedorMapaComponent}
-
- 
-
-
+  {path:'mapa', component: ContenedorMapaComponent},
+  {path:'administrador-rol', component: ContenedorAdministradorRolComponent},
+  {path:'historico-admin', component: ContenedorHistoricoAdminComponent},
+  {path:'admin-articulos', component:ContenedorAdminArticulosComponent},
+  {path:'cerrar-orden',component:ContenedorCerrarOrdenComponent},
+  
 ];
 
 @NgModule({

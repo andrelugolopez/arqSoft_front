@@ -1,16 +1,33 @@
 <app-nav></app-nav>
 
-<div *ngIf="mostrarFormulario">
+
+<div>
     <div *ngIf="autorizacion.isAdmin() | async" class="container ">
         <div class=" contenedor row">
             <app-card-articulostienda class="col-3"></app-card-articulostienda>
             <app-card-ordenservicio class="col-3"></app-card-ordenservicio>
 
+
             <app-card-adminroles class="col-3"></app-card-adminroles>
             <app-card-historicos class="col-3"></app-card-historicos>
         </div>
     </div>
-</div>
+
+    <div>
+        <div *ngIf="(autorizacion.isTecni() | async)" class=" contenedor row">
+            <app-card-historicos class="col-6"></app-card-historicos>
+        </div>
+    </div>
+<!-- 
+    <div>
+        <div *ngIf="(autorizacion.isLoggedIn() | async)" class=" contenedor row">
+            <app-card-contactanos-u class="col-6"></app-card-contactanos-u>
+            <app-card-consultar-u class="col-6"></app-card-consultar-u>
+            <app-principalesmarcas></app-principalesmarcas>   
+        </div>
+    </div>      -->
+
+
 
 
 

@@ -51,14 +51,22 @@ import { ContenedorOrdenServicioComponent } from './components/contenedor-orden-
 import { DetalleProductoComponent } from './components/detalle-producto/detalle-producto.component';
 import { ContenedorDetalleProductoComponent } from './components/contenedor-detalle-producto/contenedor-detalle-producto.component';
 import { ContenedorNuevaContrasenaComponent } from './components/contenedor-nueva-contrasena/contenedor-nueva-contrasena.component';
+import { FormularioContactoComponent } from './components/formulario-contacto/formulario-contacto.component';
+import { ContenedorContactoUsuarioComponent } from './components/contenedor-contacto-usuario/contenedor-contacto-usuario.component';
 import { NuevaContrasenaComponent } from './components/nueva-contrasena/nueva-contrasena.component';
 import { ContenedorOlvideContrasenaComponent } from './components/contenedor-olvide-contrasena/contenedor-olvide-contrasena.component';
 import { OlvideContrasenaComponent } from './components/olvide-contrasena/olvide-contrasena.component';
 import { PrincipalesmarcasComponent } from './components/principalesmarcas/principalesmarcas.component';
-import { FormularioContactoComponent } from './components/formulario-contacto/formulario-contacto.component';
-import { ContenedorContactoUsuarioComponent } from './components/contenedor-contacto-usuario/contenedor-contacto-usuario.component';
 import { MapaComponent } from './components/mapa/mapa.component';
 import { ContenedorMapaComponent } from './components/contenedor-mapa/contenedor-mapa.component';
+import { ContenedorAdministradorRolComponent } from './components/contenedor-administrador-rol/contenedor-administrador-rol.component';
+import { AdministradorRolesComponent } from './components/administrador-roles/administrador-roles.component';
+import { ContenedorHistoricoAdminComponent } from './components/contenedor-historico-admin/contenedor-historico-admin.component';
+import { HistoricoAdminComponent } from './components/historico-admin/historico-admin.component';
+import { ContenedorAdminArticulosComponent } from './components/contenedor-admin-articulos/contenedor-admin-articulos.component';
+import { AdminArticulosComponent } from './components/admin-articulos/admin-articulos.component';
+import { ContenedorCerrarOrdenComponent } from './components/contenedor-cerrar-orden/contenedor-cerrar-orden.component';
+import { CerrarOrdenComponent } from './components/cerrar-orden/cerrar-orden.component';
 
 @NgModule({
   declarations: [
@@ -116,6 +124,15 @@ import { ContenedorMapaComponent } from './components/contenedor-mapa/contenedor
     ContenedorContactoUsuarioComponent,
     MapaComponent,
     ContenedorMapaComponent,
+
+    ContenedorAdministradorRolComponent,
+    AdministradorRolesComponent,
+    ContenedorHistoricoAdminComponent,
+    HistoricoAdminComponent,
+    ContenedorAdminArticulosComponent,
+    AdminArticulosComponent,
+    ContenedorCerrarOrdenComponent,
+    CerrarOrdenComponent,
 
    
   ],

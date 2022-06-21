@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./carrito.component.css']
 })
 export class CarritoComponent implements OnInit {
+  productos: any
 
   constructor(/*inyeccion de independencias*/
   private client: ClientService,

@@ -57,6 +57,8 @@ import { OlvideContrasenaComponent } from './components/olvide-contrasena/olvide
 import { PrincipalesmarcasComponent } from './components/principalesmarcas/principalesmarcas.component';
 import { FormularioContactoComponent } from './components/formulario-contacto/formulario-contacto.component';
 import { ContenedorContactoUsuarioComponent } from './components/contenedor-contacto-usuario/contenedor-contacto-usuario.component';
+import { MapaComponent } from './components/mapa/mapa.component';
+import { ContenedorMapaComponent } from './components/contenedor-mapa/contenedor-mapa.component';
 
 @NgModule({
   declarations: [
@@ -112,6 +114,8 @@ import { ContenedorContactoUsuarioComponent } from './components/contenedor-cont
     PrincipalesmarcasComponent,
     FormularioContactoComponent,
     ContenedorContactoUsuarioComponent,
+    MapaComponent,
+    ContenedorMapaComponent,
 
    
   ],

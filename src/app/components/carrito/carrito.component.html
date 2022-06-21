@@ -1,74 +1,18 @@
-<div class="cartas">
-    <div class="card1" style="width:400px">
-        <img class="card-img-top" src="/assets/imagenes/periferico1.jpg" alt="Card image">
-        <div class="card-body">
-            <h4 class="card-title">Impresora</h4>
-            <p class="card-text">$600.000</p>
-            <div class="d-flex justify-content-evenly">
-                <button class="btn" type="button">Eliminar</button>
-                <button class="btn" type="button">Agregar</button>
-              </div>
+<div class="contenedor">
+    <div class="cartas" *ngFor="let producto of productos">
+        <div class="card1" style="width:400px">
+            <img class="card-img-top" src="/assets/imagenes/{{producto.imagen}}" alt="Card image">
+            <div class="card-body">
+                <h4 class="card-title">{{producto.nombre}}</h4>
+                <p class="card-text"> {{producto.precio}}</p>
+                <a [routerLink]="['/tienda']" class="btn btn-primary">Seguir comparando</a>
+            </div>
         </div>
     </div>
-    <div class="card2" style="width:400px">
-        <img class="card-img-top" src="/assets/imagenes/periferico2.jpg" alt="Card image">
-        <div class="card-body">
-            <h4 class="card-title">Multifuncional</h4>
-            <p class="card-text">$1.500.000</p>
-            <div class="d-flex justify-content-evenly">
-                <button class="btn" type="button">Eliminar</button>
-                <button class="btn" type="button">Agregar</button>
-              </div>
-        </div>
-    </div>
-    <div class="card3" style="width:400px">
-        <img class="card-img-top" src="/assets/imagenes/periferico3.jpg" alt="Card image">
-        <div class="card-body">
-            <h4 class="card-title">Memoria USB-1T</h4>
-            <p class="card-text">$30.000</p>
-            <div class="d-flex justify-content-evenly">
-                <button class="btn" type="button">Eliminar</button>
-                <button class="btn" type="button">Agregar</button>
-              </div>
-        </div>
-    </div>
-    <div class="card4" style="width:400px">
-        <img class="card-img-top" src="/assets/imagenes/periferico4.jpg" alt="Card image">
-        <div class="card-body">
-            <h4 class="card-title">Memoria USB-32GB</h4>
-            <p class="card-text">$32.000</p>
-            <div class="d-flex justify-content-evenly">
-                <button class="btn" type="button">Eliminar</button>
-                <button class="btn" type="button">Agregar</button>
-              </div>
-        </div>
-    </div>
-    <div class="card5" style="width:400px">
-        <img class="card-img-top" height=400 src="/assets/imagenes/periferico5.jpg" alt="Card image">
-        <div class="card-body">
-        <h4 class="card-title">Monitor CX</h4>
-        <p class="card-text">$200.000</p>
-        <div class="d-flex justify-content-evenly">
-            <button class="btn" type="button">Eliminar</button>
-            <button class="btn" type="button">Agregar</button>
-          </div>
-        </div>
-    </div>
-    <div class="card6" style="width:400px">
-        <img class="card-img-top" height=400 src="/assets/imagenes/periferico6.jpg" alt="Card image">
-        <div class="card-body">
-        <h4 class="card-title">Monitor HP</h4>
-        <p class="card-text">$500.000</p>
-        <div class="d-flex justify-content-evenly">
-            <button class="btn" type="button">Eliminar</button>
-            <button class="btn" type="button">Agregar</button>
-          </div>
-        </div>
-    </div>
-</div>
-<!-- <div class="d-grid gap-2 col-2 mx-auto">
+  </div>
+<div class="d-grid gap-2 col-2 mx-auto">
     <button class="btn" [routerLink]="['/factura']" type="button">Pagar</button>
-</div> -->
+</div>
   
 
 

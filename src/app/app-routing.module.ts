@@ -40,7 +40,7 @@ const routes: Routes = [
   {path:'asistenciatenicadmin', component: ContenedorAsistenciatenicadminComponent},
   {path:'historico', component: ContenedorHistoricoComponent},
   {path:'ordenServicio', component: ContenedorOrdenServicioComponent},
-  {path:'asignacionTecnico/:nombretecnico', component: ContenedorAsignacionTecnicoComponent},
+  {path:'asignacionTecnico', component: ContenedorAsignacionTecnicoComponent},
   {path:'detalleProducto/:idproducto', component: ContenedorDetalleProductoComponent},
   {path:'nuevaContrasena', component: ContenedorNuevaContrasenaComponent},
   {path:'olvideContrasena', component: ContenedorOlvideContrasenaComponent},

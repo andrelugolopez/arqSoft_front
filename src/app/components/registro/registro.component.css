@@ -6,8 +6,8 @@
 .form_Registro {
 	background-color: #163446;
 	margin: auto auto;
-	padding: 20px;
-	border-radius: 5px;
+	padding: 35px;
+	border-radius: 20px;
 	box-shadow: 0 0 10px #000;
 	position:static;
 	top: 250px; /*para bajar todo el recuadro del formulario*/
@@ -15,7 +15,7 @@
 	left: 0;
 	right: 0;
 	width: 500px;
-	height: 710px; /*tamaño del recuadro formulario*/
+	height: 730px; /*tamaño del recuadro formulario*/
 }
 .form_Registro:before {
 	width: 100%;
@@ -81,15 +81,22 @@
 	border: none;
 	border-radius: 5px;
 	cursor: pointer;
-	width: 100%;
+	width: 40%;
 	font-size: 20px;
 	padding: 8px; /*tamaño del boton*/
 	margin: 15px 0px; /*distancia entre el checbox y el boton*/
 }
-h4{
+h3{
 	color: white;
 }
 .header-text{
 	padding-bottom: 10%;
 	padding-top: 10%;
+}
+
+.container-button{
+    display: flex;
+	justify-content: center;
+	padding: 0px;
+	width: auto;
 }

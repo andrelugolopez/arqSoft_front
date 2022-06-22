@@ -1,16 +1,28 @@
-<form class="form_historico-Admin">
+<form class="form_historico-Admin" [formGroup]="form" (ngSubmit)="onSubmit()">
     <h6>Historico Administrador</h6>
     <br>
     <br>
-    <div class="row text">
-        <label class="col text">Nombre tecnico:</label>
-        <label type="text" class=" tamano_input form-control col" formControlName="nombTecnico"></label>
+    <div class="select_margin mb-3 row text">
+        <label for="exampleInputEmail1" class="form-label text col">Nombre de Técnico: </label>
+        <select class="custom-select form-control" id="inputGroupSelect01" formControlName="nombtecnico">
+           <option>Seleccione el técnico:</option>
+           <option *ngFor="let tecnico of tecnicos">{{tecnico}}</option>
+        </select>
         <div class="w-100"></div>
-    </div>
+     </div>
+
     <br>
     <div class="select_margin mb-3 row text">
         <label for="exampleInputEmail1" class="form-label text col">Ordenes abiertas: </label>
-        <select class="custom-select" id="inputGroupSelect01" formControlName="ordenAbierta" >
+        <select class="custom-select" id="inputGroupSelect01">
+        <option>Seleccione Orden de servicio:</option>
+        <option *ngFor="let orden of ordenAbiertas">dispositivo: {{orden.tipoDispositivo}}</option>
+        </select>
+        <div class="w-100"></div>
+    </div>
+    <div class="select_margin mb-3 row text">
+        <label for="exampleInputEmail1" class="form-label text col">Ordenes cerrada: </label>
+        <select class="custom-select" id="inputGroupSelect01" >
         <option>Seleccione Orden de servicio:</option>
         <option></option>
         </select>
@@ -19,6 +31,6 @@
     <br>
     <br>
     <div>
-        <button type="submit" class="btn btn-primary">Atras</button>
+        <button type="submit" class="btn btn-primary">Consultar</button>
     </div>
 </form>

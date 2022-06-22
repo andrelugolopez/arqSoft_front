@@ -16,7 +16,7 @@
 	left: 0;
 	right: 0;
 	width: 500px;
-	height: 560px; /*tamaño del recuadro login*/
+	height: 550px; /*tamaño del recuadro login*/
 }
 
 .form_Login:before {

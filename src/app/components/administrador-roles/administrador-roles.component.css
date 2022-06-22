@@ -1,26 +1,26 @@
-.form_Registro {
+.form_administraor-roles {
 	background-color: #163446;
 	margin: 20px auto 20px auto;
 	padding: 35px;
 	border-radius: 20px;
 	box-shadow: 0 0 10px #000;
-	position:relative;
-	top: 130px; /*para bajar todo el recuadro del formulario*/
-	margin: auto;
+	position: static;
+	top: 250px;
+    bottom: 0;
 	left: 0;
 	right: 0;
 	width: 500px;
-	min-height: auto; /*tamaño del recuadro formulario*/
+	height: min-content; /*tamaño del recuadro formulario*/
 }
 
 
-.form_Registro .header-text {
+.form_administraor-roles .header-text {
 	font-size: 32px;
 	font-weight: 600;
 	text-align: center;
 }
 
-.form_Registro label {
+.form_administraor-roles label {
 	position: relative;
 	margin-left: 5px;
 	margin-right: 10px;
@@ -31,7 +31,7 @@
 	cursor: pointer;
     color: white;
 }
-.form_Registro label:before {
+.form_administraor-roles label:before {
 	display: inline-block;
 	width: 20px;
 	height: 20px;
@@ -41,17 +41,17 @@
 	bottom: 1px;
 	background-color: rgb(164, 172, 174);
 }
-.form_Registro input[type=checkbox]:checked+label:before {
+.form_administraor-roles input[type=checkbox]:checked+label:before {
 	content: "\2713";
 	font-size: 20px;
 	color: #000;
 	text-align: center;
 	line-height: 20px;
 }
-.form_Registro span {
+.form_administraor-roles span {
 	font-size: 20px;
 }
-.form_Registro button {
+.form_administraor-roles button {
 	background-color: rgba(231, 112, 15, 0.87);
 	border: none;
 	border-radius: 5px;

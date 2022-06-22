@@ -11,7 +11,7 @@ import { ActivatedRoute, ParamMap} from '@angular/router';
 })
 export class AdministradorRolesComponent implements OnInit {
 
-  cedula:any
+  usuarios: any
 
   form: FormGroup = this.fb.group({/*se inicializa el form*/
   cedula: ['', Validators.required],
@@ -45,6 +45,8 @@ export class AdministradorRolesComponent implements OnInit {
         rol:this.form.value.rol
       }
       
+      console.log("prueba",data.cedula)
+
       }else{
         console.log("Form error");
       }
@@ -54,21 +56,23 @@ export class AdministradorRolesComponent implements OnInit {
     this.router.paramMap
       .subscribe((params : ParamMap) => {
 
-      this.client.getRequest(`http://127.0.0.1:5000/consultaUsuario?documento=${this.cedula}`)
+      this.client.getRequest(`http://127.0.0.1:5000/consultaUsuario?documento=`+this.form.value.cedula)
       .pipe()
-        .subscribe({
-          next: (data:any) => this.fillForm(data["data"]),
-          error: (error) => console.log("Ha ocurrido un error en la llamada: ", error)
-        }
-        )}
-      }
-    
+      .subscribe(
+        (data: any) => {
+          this.usuarios = this.fillForm(data["data"]),
+          console.log(data)
+          },
+          error => console.log("Ha ocurrido un error en la llamada: ", error)
+          )
+        });
+    }
 
     public fillForm(values: any) {
-
     // Diccionario
     // Convierto las llaves de value a las llaves de form
     const valueToForm: {[key: string]: string} = {
+      "cedula": "cedula",
       "nombres": "nombres",
       "apellidos": "apellidos",
       "correo": "email",

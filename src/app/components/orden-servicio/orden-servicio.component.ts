@@ -69,8 +69,6 @@ export class OrdenServicioComponent implements OnInit {
           diaginicial:this.form.value.diaginicial
         }
 
-
-
         this.client.postRequest("http://127.0.0.1:5000/ordenServicio",data
         ).subscribe(
           (data:any) => {

@@ -3,6 +3,7 @@ import { ClientService } from '../../services/client.service';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ActivatedRoute, ParamMap} from '@angular/router';
+import { AutorizacionService } from '../../services/autorizacion.service';
 
 @Component({
   selector: 'app-administrador-roles',
@@ -28,6 +29,7 @@ export class AdministradorRolesComponent implements OnInit {
     private fb: FormBuilder, /*inyeccion de independencias*/
     private route: Router ,
     public router: ActivatedRoute,
+    public autorizacion: AutorizacionService,
   ) { }
 
   ngOnInit(): void {
@@ -44,6 +46,19 @@ export class AdministradorRolesComponent implements OnInit {
         direccion:this.form.value.direccion,
         rol:this.form.value.rol
       }
+
+      console.log("token",this.autorizacion.getToken())
+
+      this.client.postRequest('http://127.0.0.1:5000/actualizarUsuario',{data},this.autorizacion.getToken())
+      .subscribe(
+        (data:any) => {
+          console.log(data["data"]),
+          this.route.navigate(['/']);
+        },
+        (error:any)=>{
+          console.log(error)
+        });
+
       
       console.log("prueba",data.cedula)
 

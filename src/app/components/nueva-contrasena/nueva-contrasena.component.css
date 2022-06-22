@@ -1,34 +1,42 @@
 
 .form_nueva_contrasena {
+	background-color: #163446;
 	margin: auto auto;
-	padding: 20px;
-	top: 250px;
+	padding: 35px;
+	border-radius: 20px;
+	box-shadow: 0 0 10px #000;
+	position: relative;/*  se cambio para evitar que se salda del recuadro*/
+	top: 200px;
 	bottom: 0;
 	left: 0;
 	right: 0;
-	width: 450px;
+	width: 700px;
+	height: min-content; /*tamaño del recuadro login*/
 }
 
 
 
 .form_nueva_contrasena button {
-	background-color: #E28743;
+	background-color: rgba(231, 112, 15, 0.87);
 	color: #fff;
 	border: none;
-	border-radius: 20px;
+	border-radius: 5px;
 	cursor: pointer;
-	width: 30%;
-	font-size: 15px;
+	width: 40%;
+	font-size: 1rem;
 	padding: 8px; /*tamaño del boton*/
 	margin: 15px 0px; /*distancia entre el checbox y el boton*/
 }
 
-input{
-	border-radius: 20px;
-	text-align: left;
-	margin-top: 10px;
-	background-color: #D9D9D9;
-  }
+.form_nueva_contrasena input {
+	margin: 20px 0px; /*espacio entre los label*/
+	border: none;
+	padding: 10px;/*tamaño del label*/
+	border-radius: 5px;
+	width: 100%;
+	font-size: 1rem;/*tamaño de la letra*/
+	font-family: Arial;/*tipo de fuente*/
+}
 
 .container_button{
 	display: flex;
@@ -36,6 +44,13 @@ input{
 }
 
 
-a{
-	color: black;
+h3{
+	color: white;
+	font-size: 1erm;
+}
+
+.form_nueva_contrasena .header-text {
+	font-size: 10px;
+	font-weight: 600;
+	text-align: center;
 }

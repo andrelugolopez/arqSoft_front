@@ -3,9 +3,9 @@
       <h3>Administrador Roles</h3>
 </div>
 
-<form>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
     <div class="form-group">
-      <input type="text"  placeholder="Cedula"   class="form-control" formControlName="cedula" aria-describedby="emailHelp">
+      <input type="text"  placeholder="Cedula"  class="form-control" formControlName="cedula" aria-describedby="emailHelp" (change)="changeInput()">
     </div>
     <br>
     <div class="form-group">
@@ -34,16 +34,16 @@
     <br>
     <div  class=" container row">
       <div class="form-check form-check-inline col-3">
-        <input class="form-check-input " formControlName="tipodispositivo" type="radio"  id="inlineRadio1" value="Pc">
+        <input class="form-check-input " formControlName="rol" type="radio"  id="inlineRadio1" value="hbh2jFVsQM7RUy">
         <label class="form-check-label" for="inlineRadio1">Usuario</label>
       </div>
       <div class="form-check form-check-inline col-3">
-        <input class="form-check-input" formControlName="tipodispositivo" type="radio" id="inlineRadio2" value="Portatil">
+        <input class="form-check-input" formControlName="rol" type="radio" id="inlineRadio2" value="H7qm7gQr6DBGfM">
         <label class="form-check-label" for="inlineRadio2">Tecnico</label>
       </div> 
       <div class="container-button-orden-servicio col">
         <div class="form-check form-check-inline">
-          <input class="form-check-input " formControlName="tipodispositivo" type="radio"  id="inlineRadio1" value="Otro">
+          <input class="form-check-input " formControlName="rol" type="radio"  id="inlineRadio1" value="J8p4SBfJgRfZCo">
           <label class="form-check-label" for="inlineRadio1">Admin</label>
         </div> 
       </div>

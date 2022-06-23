@@ -1,0 +1,24 @@
+.cartas{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+   
+}
+.container{
+    max-width: 1820px !important;
+}
+.cardimg{
+    width: 25%;
+}
+.titulo{
+    font-weight: bold;
+    font-family: Arial;
+    padding: 6px;
+    border-top:rgba(231, 112, 15, 0.87) 2px solid;
+    
+ 
+}
+.borde1{
+    border-bottom: rgba(231, 112, 15, 0.87) 2px solid;  
+}

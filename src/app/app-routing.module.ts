@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ContenedorIndexComponent } from './components/contenedor-index/contenedor-index.component';
 import { ContenedorEquiposComponent } from './components/contenedor-equipos/contenedor-equipos.component';
@@ -23,6 +23,7 @@ import { ContenedorAdministradorRolComponent } from './components/contenedor-adm
 import { ContenedorHistoricoAdminComponent } from './components/contenedor-historico-admin/contenedor-historico-admin.component';
 import { ContenedorAdminArticulosComponent } from './components/contenedor-admin-articulos/contenedor-admin-articulos.component';
 import { ContenedorCerrarOrdenComponent } from './components/contenedor-cerrar-orden/contenedor-cerrar-orden.component';
+import { ContendorMediospagoComponent } from './components/contendor-mediospago/contendor-mediospago.component';
 
 
 const routes: Routes = [
@@ -49,6 +50,7 @@ const routes: Routes = [
   {path:'historico-admin', component: ContenedorHistoricoAdminComponent},
   {path:'admin-articulos', component:ContenedorAdminArticulosComponent},
   {path:'cerrar-orden',component:ContenedorCerrarOrdenComponent},
+  {path:'mediospago',component:ContendorMediospagoComponent},
   
 ];
 

@@ -67,6 +67,8 @@ import { ContenedorAdminArticulosComponent } from './components/contenedor-admin
 import { AdminArticulosComponent } from './components/admin-articulos/admin-articulos.component';
 import { ContenedorCerrarOrdenComponent } from './components/contenedor-cerrar-orden/contenedor-cerrar-orden.component';
 import { CerrarOrdenComponent } from './components/cerrar-orden/cerrar-orden.component';
+import { MediospagoComponent } from './components/mediospago/mediospago.component';
+import { ContendorMediospagoComponent } from './components/contendor-mediospago/contendor-mediospago.component';
 
 @NgModule({
   declarations: [
@@ -133,6 +135,8 @@ import { CerrarOrdenComponent } from './components/cerrar-orden/cerrar-orden.com
     AdminArticulosComponent,
     ContenedorCerrarOrdenComponent,
     CerrarOrdenComponent,
+    MediospagoComponent,
+    ContendorMediospagoComponent,
 
    
   ],

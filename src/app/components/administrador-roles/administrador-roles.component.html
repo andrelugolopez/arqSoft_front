@@ -3,7 +3,7 @@
       <h3>Administrador Roles</h3>
 </div>
 
-<form [formGroup]="form" (ngSubmit)="onSubmit()">
+<form [formGroup]="form">
     <div class="form-group">
       <input type="text"  placeholder="Cedula"  class="form-control" formControlName="cedula" aria-describedby="emailHelp" (change)="changeInput()">
     </div>
@@ -49,9 +49,9 @@
       </div>
     </div>
     <div class="container-button">
-        <button type="submit" class="btn btn-primary">Crear</button>
-        <button type="submit" class="btn btn-primary">Modificar</button>
-        <button type="submit" class="btn btn-primary">Eliminar</button>
+        <button (click)="Crear()" class="btn btn-primary">Crear</button>
+        <button (click)="Modificar()" class="btn btn-primary">Modificar</button>
+        <button (click)="Eliminar()" class="btn btn-primary">Eliminar</button>
     </div>
 </form>
 

@@ -42,16 +42,20 @@ export class ClientService {
   }
 
 
-  getRequest(route: string, into?:string) {
+  getRequest(route: string, token?:any, params?: any) {
 
     let config:any = {
       responseType: "json"
     }
-    if (into){
-      const header = new HttpHeaders().set('Authorization', `Bearer ${into}`);
+    if (token){
+      const header = new HttpHeaders().set('Authorization', `Bearer ${token}`);
       config["headers"] = header;
     }
-    console.log(config);
+
+    if (params){
+      const param = new HttpParams().set('correo', params)
+      config["params"] = param;
+    }
 
     return this.http.get(route, config);
   }

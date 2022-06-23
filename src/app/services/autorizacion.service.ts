@@ -100,7 +100,7 @@ export class AutorizacionService {
   }
 
 
-  getToken() {
+  getToken(): string | null{
     if (this.checkToken()){
       return localStorage.getItem('into')
     }

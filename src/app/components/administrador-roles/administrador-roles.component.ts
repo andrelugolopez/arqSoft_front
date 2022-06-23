@@ -35,7 +35,68 @@ export class AdministradorRolesComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onSubmit(){
+  Crear(){
+    if(this.form.valid){
+      let data={
+        cedula:this.form.value.cedula,
+        nombres:this.form.value.nombres,
+        apellidos:this.form.value.apellidos,
+        email:this.form.value.email,
+        telefono:this.form.value.telefono,
+        direccion:this.form.value.direccion,
+        rol:this.form.value.rol
+      }
+
+      this.client.postRequest('http://127.0.0.1:5000/registerAdmin',data,this.autorizacion.getToken())
+      .subscribe(
+        (data:any) => {
+          console.log(data["data"]),
+          this.route.navigate(['/asistenciatenicadmin']);
+        },
+        (error:any)=>{
+          console.log(error)
+        });
+
+      
+      console.log("prueba",data.cedula)
+
+      }else{
+        console.log("Form error");
+      }
+    }
+
+
+  Eliminar(){
+    if(this.form.valid){
+      let data={
+        cedula:this.form.value.cedula,
+        nombres:this.form.value.nombres,
+        apellidos:this.form.value.apellidos,
+        email:this.form.value.email,
+        telefono:this.form.value.telefono,
+        direccion:this.form.value.direccion,
+        rol:this.form.value.rol
+      }
+
+      this.client.getRequest('http://127.0.0.1:5000/eliminaruser', this.autorizacion.getToken() , this.form.value.email)
+      .subscribe(
+        (data:any) => {
+          console.log(data["data"]),
+          this.route.navigate(['/asistenciatenicadmin']);
+        },
+        (error:any)=>{
+          console.log(error)
+        });
+
+      
+      console.log("prueba",data.cedula)
+
+      }else{
+        console.log("Form error");
+      }
+    }
+
+  Modificar(){
     if(this.form.valid){
       let data={
         cedula:this.form.value.cedula,
@@ -53,7 +114,7 @@ export class AdministradorRolesComponent implements OnInit {
       .subscribe(
         (data:any) => {
           console.log(data["data"]),
-          this.route.navigate(['/']);
+          this.route.navigate(['/asistenciatenicadmin']);
         },
         (error:any)=>{
           console.log(error)

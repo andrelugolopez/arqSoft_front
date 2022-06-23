@@ -23,9 +23,7 @@ export class AsignacionTecnicoComponent implements OnInit {
 
 
   form: FormGroup = this.fb.group({/*se inicializa el form*/
-  fecha: ['', Validators.required],
-  hora: ['', Validators.required],
-  codtecnico: this.fb.control({value: localStorage.getItem('courrentDoc') ?? '', disabled: true}, [Validators.required]),
+  id_tec: this.fb.control({value: localStorage.getItem('courrentDoc') ?? '', disabled: true}, [Validators.required]),
   nombretecnico: this.fb.control({value: localStorage.getItem('courrentUser') ?? '', disabled: true}, [Validators.required]),
   codservicio: ['', Validators.required],
   tipodispositivo: ['', Validators.required],
@@ -69,9 +67,9 @@ constructor(
   onSubmit(){
     if(this.form.valid){
       let data={
-        fecha:this.form.value.fecha,
-        hora:this.form.value.hora,
-        codtecnico:this.form.value.codtecnico,
+        fecha:this.fecha,
+        hora:this.hora,
+        id_tec:this.form.value.id_tec,
         nombretecnico:this.form.value.nombretecnico,
         codservicio:this.form.value.codservicio,
         escalarservicio:this.form.value.escalarservicio,

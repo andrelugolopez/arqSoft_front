@@ -7,15 +7,15 @@
     <h1> Asignación de Técnico</h1>
     <br>
     <div class="container row">
-      <h6 class="lbl1 col form-control" formControlName="fecha">Fecha {{fecha}}</h6>
-      <h6 class="lbl1 col form-control" formControlName="hora">Hora {{hora}}</h6>
+      <h6 class="lbl1 col">Fecha {{fecha}}</h6>
+      <h6 class="lbl1 col">Hora {{hora}}</h6>
     </div>
 
     <div class="container">
 
       <div class="row">
         <div class="col text">Código Tecnico:</div>
-        <input type="text" class="form-control col" formControlName="codtecnico" aria-describedby="emailHelp">
+        <input type="text" class="form-control col" formControlName="id_tec" aria-describedby="emailHelp">
         <div class="w-100"></div>
       </div>
 
@@ -27,7 +27,7 @@
 
       <div class="select_margin mb-3 row text">
         <label for="exampleInputEmail1" class="form-label text col">Código del servicio: </label>
-        <select class="custom-select" id="inputGroupSelect01" formControlName="nombtecnico" >
+        <select class="custom-select" id="inputGroupSelect01" formControlName="codservicio" >
            <option>Seleccione Orden de Servicio:</option>
            <option *ngFor="let CodServ of codigos">{{CodServ.ordenServicio}}</option>
         </select>
@@ -71,6 +71,5 @@
           <button type="submit" class="form_tecnico_button">Guardar</button>
         </div>    
     </div>
-
     <br>
   </form>

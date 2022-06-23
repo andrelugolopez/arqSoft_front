@@ -18,8 +18,6 @@ export class OrdenServicioComponent implements OnInit {
   hora = this.date[1]
 
   form: FormGroup = this.fb.group({/*se inicializa el form*/
-  fecha: ['', Validators.required],
-  hora: ['', Validators.required],
   cedula: ['', Validators.required],
   nombres: ['', Validators.required],
   apellidos: ['', Validators.required],
@@ -53,8 +51,8 @@ export class OrdenServicioComponent implements OnInit {
       console.warn(this.form.value)
       if(this.form.valid){
         let data={
-          fecha:this.form.value.fecha,
-          hora:this.form.value.hora,
+          fecha:this.fecha,
+          hora:this.hora,
           nombres:this.form.value.nombres,
           telefono:this.form.value.telefono,
           apellidos:this.form.value.apellidos,
@@ -115,6 +113,8 @@ export class OrdenServicioComponent implements OnInit {
         "apellidos": "apellidos",
         "correo": "email",
         "telefono": "telefono",
+        "fecha": "fecha",
+        "hora": "hora",
       }
       Object.entries(values).forEach(([name, value]) => {
         // Obtengo la llave del formulario desde los values

@@ -49,7 +49,7 @@ export class AdministradorRolesComponent implements OnInit {
 
       console.log("token",this.autorizacion.getToken())
 
-      this.client.postRequest('http://127.0.0.1:5000/actualizarUsuario',{data},this.autorizacion.getToken())
+      this.client.postRequest('http://127.0.0.1:5000/actualizarUsuario',data,this.autorizacion.getToken())
       .subscribe(
         (data:any) => {
           console.log(data["data"]),

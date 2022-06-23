@@ -35,9 +35,9 @@ export class ClientService {
 
     if (into){
       const header = new HttpHeaders().set('Authorization', `Bearer ${into}`);
-      config["header"] = header;
+      config["headers"] = header;
     }
-
+    
     return this.http.post(route, data, config);
   }
 

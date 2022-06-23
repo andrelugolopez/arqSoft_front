@@ -92,6 +92,7 @@ export class AdministradorRolesComponent implements OnInit {
       "apellidos": "apellidos",
       "correo": "email",
       "telefono": "telefono",
+      "direccion": "direccion",
     }
     Object.entries(values).forEach(([name, value]) => {
       // Obtengo la llave del formulario desde los values

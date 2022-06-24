@@ -1,75 +1,76 @@
 <div class="form_asignacion-tecnico">
-    <div class="header-text">
+  <div class="header-text">
+</div>
+
+
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <h1> Asignación de Técnico</h1>
+  <br>
+  <div class="container row">
+    <h6 class="lbl1 col">Fecha {{fecha}}</h6>
+    <h6 class="lbl1 col">Hora {{hora}}</h6>
   </div>
-  
 
-  <form [formGroup]="form" (ngSubmit)="onSubmit()">
-    <h1> Asignación de Técnico</h1>
-    <br>
-    <div class="container row">
-      <h6 class="lbl1 col">Fecha {{fecha}}</h6>
-      <h6 class="lbl1 col">Hora {{hora}}</h6>
+  <div class="container">
+
+    <div class="row">
+      <div class="col text">Código Tecnico:</div>
+      <input type="text" class="form-control col" formControlName="id_tec" aria-describedby="emailHelp">
+      <div class="w-100"></div>
     </div>
 
-    <div class="container">
+    <div class="row text">
+      <div class="col">Nombre del Técnico:</div>
+      <input type="text" class="form-control col" formControlName="nombretecnico" aria-describedby="emailHelp">
+      <div class="w-100"></div>
+    </div>
 
-      <div class="row">
-        <div class="col text">Código Tecnico:</div>
-        <input type="text" class="form-control col" formControlName="id_tec" aria-describedby="emailHelp">
-        <div class="w-100"></div>
-      </div>
+    <div class="select_margin mb-3 row text">
+      <label for="exampleInputEmail1" class="form-label text col">Código del servicio: </label>
+      <select (click)="consultarInformacion()" class="custom-select form-control" id="inputGroupSelect01" formControlName="ordenServicio" >
+         <option>Seleccione Orden de Servicio:</option>
+         <option *ngFor="let ordenAbierta of ordenes">{{ordenAbierta.ordenServicio}}</option>
+      </select>
+      <div class="w-100"></div>
+   </div>
 
-      <div class="row text">
-        <div class="col">Nombre del Técnico:</div>
-        <input type="text" class="form-control col" formControlName="nombretecnico" aria-describedby="emailHelp">
-        <div class="w-100"></div>
-      </div>
-
-      <div class="select_margin mb-3 row text">
-        <label for="exampleInputEmail1" class="form-label text col">Código del servicio: </label>
-        <select class="custom-select" id="inputGroupSelect01" formControlName="codservicio" >
-           <option>Seleccione Orden de Servicio:</option>
-           <option *ngFor="let ordenAbierta of ordenes">{{ordenAbierta}}</option>
-        </select>
-        <div class="w-100"></div>
-     </div>
-
-      <div class="row">
-        <div class="col text">Tipo de dispositivo:</div>
+    <div class="row">
+      <div class="col text">Tipo de dispositivo:</div>
         <input type="text" class="form-control col" formControlName="tipodispositivo" aria-describedby="emailHelp">
-        <div class="w-100"></div>
+      <div class="w-100"></div>
+    </div>
+
+
+      <div class="col text">Escalar servicio:</div>
+      <div class="text">
+        <input type="radio" value="si" formControlName="escalar"> Si
+        <input type="radio" value="no" formControlName="escalar"> No
+      </div>
+        
+      <div class="mb-3">
+        <div>
+         <label for="exampleInputEmail1" class="form-label text">Tipo de especialidad a escalar </label>
+        </div>
+        <select class="custom-select" id="inputGroupSelect01" formControlName="escalar">
+          <option selected>Ninguno</option>
+          <option selected>Manejo de frecuencia en tarjeta de red</option>
+          <option selected>Niveles de transmision de redes</option>
+          <option selected>Reseteo de Bios</option>
+          <option selected>Instalación de software especializado</option>
+        </select>
       </div>
 
- 
-        <div class="col text">Escalar servicio:</div>
-        <div class="text">
-          <input type="radio" value="si" formControlName="escalarservicio"> Si
-          <input type="radio" value="no" formControlName="escalarservicio"> No
-        </div>
-          
-        <div class="mb-3">
-          <div>
-           <label for="exampleInputEmail1" class="form-label text">Tipo de especialidad a escalar </label>
-          </div>
-          <select class="custom-select" id="inputGroupSelect01" formControlName="tipoespeciescalar">
-            <option selected>Manejo de frecuencia en tarjeta de red</option>
-            <option selected>Niveles de transmision de redes</option>
-            <option selected>Reseteo de Bios</option>
-            <option selected>Instalación de software especializado</option>
-          </select>
-        </div>
-
-        <div class="col text">Diagnóstico Inicial:</div>
+      <div class="col text">Diagnóstico Inicial:</div>
         <input type="textarea" class="form-control textarea1" formControlName="diaginicial" aria-describedby="emailHelp">
-        <div class="w-100"></div>
+      <div class="w-100"></div>
 
-        <div class="col text">Reporte:</div>
-        <input type="textarea" class="form-control textarea1" formControlName="diaginicial" aria-describedby="emailHelp">
-        <div class="w-100"></div>
+      <div class="col text">Reporte:</div>
+      <input type="textarea" class="form-control textarea1" formControlName="reporte" aria-describedby="emailReport">
+      <div class="w-100"></div>
 
-        <div class="container-button-orden-servicio">
-          <button type="submit" class="form_tecnico_button">Guardar</button>
-        </div>    
-    </div>
-    <br>
-  </form>
+      <div class="container-button-orden-servicio">
+        <button type="submit" class="form_tecnico_button">Enviar</button>
+      </div>    
+  </div>
+  <br>
+</form>

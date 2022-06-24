@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup,FormControl, Validators } from '@angular/forms';
 import { ClientService } from 'src/app/services/client.service';
 import { Router } from '@angular/router';
 import { ActivatedRoute, ParamMap} from '@angular/router';
@@ -12,23 +12,25 @@ import { AutorizacionService } from '../../services/autorizacion.service';
   styleUrls: ['./asignacion-tecnico.component.css']
 })
 export class AsignacionTecnicoComponent implements OnInit {
+
   data: any
   ordenes: any
-
+  info: any
 
   date = new Date().toLocaleString().split(',')
   fecha = this.date[0].replace(/\//g, "-")
   hora = this.date[1]
 
-
   form: FormGroup = this.fb.group({/*se inicializa el form*/
   id_tec: this.fb.control({value: localStorage.getItem('courrentDoc') ?? '', disabled: true}, [Validators.required]),
   nombretecnico: this.fb.control({value: localStorage.getItem('courrentUser') ?? '', disabled: true}, [Validators.required]),
-  codservicio: ['', Validators.required],
   tipodispositivo: ['', Validators.required],
-  escalarservicio: ['', Validators.required],
-  tipoespeciescalar: ['', Validators.required],
-  diaginicial: ['', Validators.required]
+  diaginicial: ['', Validators.required],
+
+//Envio json
+  ordenServicio: ['', Validators.required],
+  escalar: ['', Validators.required],
+  reporte: ['', Validators.required],
 });
 
 constructor(
@@ -56,9 +58,22 @@ constructor(
     this.client.getRequest(`http://127.0.0.1:5000/consultaDiagnostico?nombreTecnico=`+localStorage.getItem('courrentUser'))
     .subscribe(    
       (data: any) => {
-      this.ordenes = data
+      this.ordenes = data["data"]
       console.log("data",this.ordenes)
       },
+      error => console.log("Ha ocurrido un error en la llamada: ", error)
+      )
+    });
+  }
+
+  consultarInformacion(){
+    this.router.paramMap
+    .subscribe((params : ParamMap) => {
+      
+    this.client.getRequest(`http://127.0.0.1:5000/consultaOrdenServicio?orden=`+this.form.value.ordenServicio)
+    .pipe()
+    .subscribe(    
+      (data: any) => this.fillForm(data["data"]),
       error => console.log("Ha ocurrido un error en la llamada: ", error)
       )
     });
@@ -72,14 +87,15 @@ constructor(
         hora:this.hora,
         id_tec:this.form.value.id_tec,
         nombretecnico:this.form.value.nombretecnico,
-        codservicio:this.form.value.codservicio,
-        escalarservicio:this.form.value.escalarservicio,
-        tipoespeciescalar:this.form.value.tipoespeciescalar,
-        diaginicial:this.form.value.diaginicial
-
+        tipodispositivo:this.form.value.tipodispositivo,
+        diaginicial:this.form.value.diaginicial,
+//Envio json
+        ordenServicio:this.form.value.ordenServicio,
+        escalar:this.form.value.escalar,
+        reporte:this.form.value.reporte,
       }
 
-    this.client.postRequest("http://127.0.0.1:5000/asignacionTecnico",data
+    this.client.postRequest("http://127.0.0.1:5000/actualizarHistoria",data
     ).subscribe(
       (data:any) => {
         console.log(data["data"]),
@@ -93,6 +109,30 @@ constructor(
     }
 }  
 
+public fillForm(values: any) {
+
+  // Diccionario
+  // Convierto las llaves de value a las llaves de form
+  const valueToForm: {[key: string]: string} = {
+    "diagnosticoInicial": "diaginicial",
+    "tipoDispositivo": "tipodispositivo",
+    "hora": "hora",
+  }
+  Object.entries(values).forEach(([name, value]) => {
+    // Obtengo la llave del formulario desde los values
+    // correo -> email
+    const formKey = valueToForm[name];
+
+    // Obtengo el control del formulario
+    const control = this.form.get(formKey) as FormControl;
+
+    // Si el control no existe o está modificado, retorno
+    if (!control || control.dirty) return;
+
+    // Defino el valor al control del formulario
+    control!.setValue(value);
+  });
 }
 
 
+}

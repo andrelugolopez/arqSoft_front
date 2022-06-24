@@ -1,23 +1,29 @@
 <app-nav></app-nav>
 
+<div class="container">
+    <div *ngIf="autorizacion.isAdmin() | async" class="container_tarjetas">
+        <div>
+            <app-card-articulostienda></app-card-articulostienda>
+        </div>
+        <div>
+            <app-card-ordenservicio></app-card-ordenservicio>
+        </div>
 
-<div>
-    <div *ngIf="autorizacion.isAdmin() | async" class="container ">
-        <div class=" contenedor row">
-            <app-card-articulostienda class="col-3"></app-card-articulostienda>
-            <app-card-ordenservicio class="col-3"></app-card-ordenservicio>
-
-
-            <app-card-adminroles class="col-3"></app-card-adminroles>
-            <app-card-historicos class="col-3"></app-card-historicos>
+        <div>
+            <app-card-adminroles></app-card-adminroles>
+        </div>
+        <div>
+            <app-card-historicos></app-card-historicos>
         </div>
     </div>
 
     <div>
         <div *ngIf="(autorizacion.isTecni() | async)" class=" contenedor row">
-            <app-card-historicos class="col-6"></app-card-historicos>
+            <app-card-historicos></app-card-historicos>
         </div>
     </div>
+
+</div>
 <!-- 
     <div>
         <div *ngIf="(autorizacion.isLoggedIn() | async)" class=" contenedor row">
@@ -27,8 +33,4 @@
         </div>
     </div>      -->
 
-
-
-
-
-<app-footer></app-footer>
+<app-footer class="fixed-bottom"></app-footer>

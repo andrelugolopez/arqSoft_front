@@ -29,7 +29,7 @@
         <label for="exampleInputEmail1" class="form-label text col">Código del servicio: </label>
         <select class="custom-select" id="inputGroupSelect01" formControlName="codservicio" >
            <option>Seleccione Orden de Servicio:</option>
-           <option *ngFor="let CodServ of codigos">{{CodServ.ordenServicio}}</option>
+           <option *ngFor="let ordenAbierta of ordenes">{{ordenAbierta}}</option>
         </select>
         <div class="w-100"></div>
      </div>

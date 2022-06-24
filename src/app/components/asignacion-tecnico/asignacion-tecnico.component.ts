@@ -2,9 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ClientService } from 'src/app/services/client.service';
 import { Router } from '@angular/router';
-import { ActivatedRoute } from '@angular/router';
-
-
+import { ActivatedRoute, ParamMap} from '@angular/router';
+import { AutorizacionService } from '../../services/autorizacion.service';
 
 
 @Component({
@@ -14,8 +13,8 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class AsignacionTecnicoComponent implements OnInit {
   data: any
-  codigos: any
-  nombretecnico: any
+  ordenes: any
+
 
   date = new Date().toLocaleString().split(',')
   fecha = this.date[0].replace(/\//g, "-")
@@ -32,13 +31,12 @@ export class AsignacionTecnicoComponent implements OnInit {
   diaginicial: ['', Validators.required]
 });
 
-
-
 constructor(
   private client: ClientService,
   private fb: FormBuilder, /*inyeccion de independencias*/
   private route: Router ,
   public router: ActivatedRoute,
+  public autorizacion: AutorizacionService,
 
   ){
     setInterval(() => {
@@ -48,19 +46,22 @@ constructor(
 
 
   ngOnInit(): void{
-  this.router.url
-  .subscribe(url => {
-    this.nombretecnico = url[1].path;
+    this.consultarOrdenes()
   }
-  );
-  this.client.getRequest('http://127.0.0.1:5000/consultaDiagnostico'+this.nombretecnico).subscribe(    
-    (data: any) => {
-    this.codigos = data["data"],
-    console.log(data)
-    },
-    error => console.log("Ha ocurrido un error en la llamada: ", error)
-    )
+  
+  consultarOrdenes(){
+    this.router.paramMap
+    .subscribe((params : ParamMap) => {
 
+    this.client.getRequest(`http://127.0.0.1:5000/consultaDiagnostico?nombreTecnico=`+localStorage.getItem('courrentUser'))
+    .subscribe(    
+      (data: any) => {
+      this.ordenes = data
+      console.log("data",this.ordenes)
+      },
+      error => console.log("Ha ocurrido un error en la llamada: ", error)
+      )
+    });
   }
 
 

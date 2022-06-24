@@ -27,16 +27,16 @@
 
       <div class="select_margin mb-3 row text">
         <label for="exampleInputEmail1" class="form-label text col">Código del servicio: </label>
-        <select class="custom-select" id="inputGroupSelect01" formControlName="codservicio" >
+        <select class="custom-select" id="inputGroupSelect01" formControlName="ordenServicio" >
            <option>Seleccione Orden de Servicio:</option>
-           <option *ngFor="let ordenAbierta of ordenes">{{ordenAbierta}}</option>
+           <option (click)="consultarInformacion()" *ngFor="let ordenAbierta of ordenes"><p>Código: </p>{{ordenAbierta.ordenServicio}}</option>
         </select>
         <div class="w-100"></div>
      </div>
 
       <div class="row">
         <div class="col text">Tipo de dispositivo:</div>
-        <input type="text" class="form-control col" formControlName="tipodispositivo" aria-describedby="emailHelp">
+        <label for="" class="col">hola</label>
         <div class="w-100"></div>
       </div>
 

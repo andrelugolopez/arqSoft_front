@@ -1,15 +1,10 @@
-select{
-	height: 35px;
-	width: 49%;
-	padding: 0px 0px 0px 5px;
-	margin: 0px 3px 0px 0px;
-	border-radius: 0.25rem;
-}
-
 .tamano_input{
-	width: 10px !important;
-	height: 35px;
+	width: 8px !important;
+	height: 30px !important;
 	padding: 0px 0px 0px 9px;
+	margin-top: 10px !important;
+	background-color: white;
+	color: black !important;
 }
 
 
@@ -99,6 +94,5 @@ h1, h4, h6{
 }
 
 input{
-	margin: 4px;
-	background-color: white;
+	
 }

@@ -1,8 +1,4 @@
-<div class="form_historico">
-  <div class="header-text">
-</div>
-
-<form class="form">
+<form class="form_historico">
     <h1> Historico</h1>
     <br>
     <div class="container row">
@@ -10,56 +6,74 @@
       <h6 class="lbl1 col">Hora {{hora}}</h6>
     </div>
 
-    <div class="container">
-      <div class="row text">
-        <label class="col text">Nombre cliente:</label>
-        <input type="text" class=" tamano_input form-control col" formControlName="cedula">
-        <div class="w-100"></div>
-      </div>
+    <div class="container" *ngFor="let orden of ordenes">
 
-      <div class="row text">
-        <label class="col">Telefono:</label>
-        <input type="text" class="tamano_input form-control col" formControlName="nombres">
-        <div class="w-100"></div>
-      </div>
+        <div class="row text">
+          <label class="col text">Documento:</label>
+          <label class="col text tamano_input"></label>
+          <div class="w-100"></div>
+        </div>
 
-      <div class="row text">
-        <label class="col">Marca dispositivo:</label>
-        <input type="text" class="tamano_input form-control col" formControlName="nombres">
-        <div class="w-100"></div>
-      </div>
+        <div class="row text">
+          <label class="col text">Nombre cliente:</label>
+          <label class="col text tamano_input">{{orden.nombreCliente}}</label>
+          <div class="w-100"></div>
+        </div>
 
-      <div class="row text">
-        <label class="col">Tipo de dispositivo:</label>
-        <input type="text" class="tamano_input form-control col" formControlName="nombres">
-        <div class="w-100"></div>
-      </div>
+        <div class="row text">
+          <label class="col">Telefono:</label>
+          <label class="col text tamano_input">{{orden.telefono}}</label>
+          <div class="w-100"></div>
+        </div>
 
-      <div class="row text">
-        <label class="col">Accesorios del dispositivo</label>
-        <input type="text" class="tamano_input form-control col" formControlName="nombres">
-        <div class="w-100"></div>
-      </div>
+        <div class="row text">
+          <label class="col">Nombre Tecnico:</label>
+          <label class="col text tamano_input">{{orden.nombreTecnico}}</label>
+          <div class="w-100"></div>
+        </div>
 
-      <div>
-        <label class="form-label">Diagnostico Inicial</label>
+        <div class="row text">
+          <label class="col">Marca dispositivo:</label>
+          <label class="col text tamano_input">{{orden.marcaEquipo}}</label>
+          <div class="w-100"></div>
+        </div>
+
+        <div class="row text">
+          <label class="col">Tipo de dispositivo:</label>
+          <label class="col text tamano_input">{{orden.tipoDispositivo}}</label>
+          <div class="w-100"></div>
+        </div>
+
+        <div class="row text">
+          <label class="col">Accesorios del dispositivo</label>
+          <label class="col text tamano_input">{{orden.accesoriosDispositivos}}</label>
+          <div class="w-100"></div>
+        </div>
+
+        <div>
+          <label class="form-label">Diagnostico Inicial</label>
+          <br>
+          <br>
+          <textarea class="form-control" formControlName="diaginicial" aria-label="With textarea">{{orden.diagnosticoInicial}}</textarea>
+        </div>
+
+        <div>
+          <label class="form-label">Diagnostico Detallado</label>
+          <br>
+          <br>
+          <textarea class="form-control" formControlName="diagnosticoDetallado" aria-label="With textarea">{{orden.diagnosticoDetallado}}</textarea>
+        </div>
+
+        <div>________________________________________________________________________</div>
         <br>
         <br>
-        <textarea class="form-control" formControlName="diaginicial" aria-label="With textarea"></textarea>
-      </div>
-
-      <div>
-        <label class="form-label">Diagnostico Detallado</label>
-        <br>
-        <br>
-        <textarea class="form-control" formControlName="diaginicial" aria-label="With textarea"></textarea>
-      </div>
+    </div>
 
       <div>
         <div class="mb-3"></div>
         <button type="submit" class="btn btn-primary">Atras</button>
       </div>
-  </div>
+  
 </form>
 
 

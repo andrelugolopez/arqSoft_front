@@ -31,7 +31,7 @@ export class AsignacionTecnicoComponent implements OnInit {
   ordenServicio: ['', Validators.required],
   escalar: ['', Validators.required],
   reporte: ['', Validators.required],
-});
+  });
 
 constructor(
   private client: ClientService,

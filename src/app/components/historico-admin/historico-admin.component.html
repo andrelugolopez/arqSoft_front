@@ -14,17 +14,17 @@
     <br>
     <div class="select_margin mb-3 row text">
         <label for="exampleInputEmail1" class="form-label text col">Ordenes abiertas: </label>
-        <select class="custom-select" id="inputGroupSelect01">
+        <select class="custom-select" id="inputGroupSelect01" >
         <option>Seleccione Orden de servicio:</option>
         <option *ngFor="let orden of ordenAbiertas">dispositivo: {{orden.tipoDispositivo}}</option>
         </select>
         <div class="w-100"></div>
     </div>
     <div class="select_margin mb-3 row text">
-        <label for="exampleInputEmail1" class="form-label text col">Ordenes cerrada: </label>
+        <label for="exampleInputEmail1" class="form-label text col">Ordenes Cerradas: </label>
         <select class="custom-select" id="inputGroupSelect01" >
         <option>Seleccione Orden de servicio:</option>
-        <option></option>
+        <option *ngFor="let ordenCerrada of ordenCerradas">dispositivo: {{ordenCerrada.tipoDispositivo}}</option>
         </select>
         <div class="w-100"></div>
     </div>

@@ -8,7 +8,18 @@ import { Router } from '@angular/router';
 })
 export class HistoricoComponent implements OnInit {
 
-  constructor() { }
+  date = new Date().toLocaleString().split(',')
+  fecha = this.date[0].replace(/\//g, "-")
+  hora = this.date[1]
+
+  constructor() 
+  
+  
+  { 
+    setInterval(() => {
+      this.hora = new Date().toLocaleString().split(',')[1]
+    }, 1)
+  }
 
   ngOnInit(): void {
   }

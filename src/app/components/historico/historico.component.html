@@ -2,69 +2,64 @@
   <div class="header-text">
 </div>
 
-
-<div class="form">
+<form class="form">
     <h1> Historico</h1>
     <br>
-
-    <div class="container-button-historico">
-      <h6>Fecha</h6>
-      <h6>Hora</h6>
+    <div class="container row">
+      <h6 class="lbl1 col">Fecha {{fecha}}</h6>
+      <h6 class="lbl1 col">Hora {{hora}}</h6>
     </div>
-
 
     <div class="container">
-      <div class="row">
-        <div class="col">Nombre del cliente</div>
-        <textarea class="form-control col" aria-label="With textarea"></textarea>
+      <div class="row text">
+        <label class="col text">Nombre cliente:</label>
+        <input type="text" class=" tamano_input form-control col" formControlName="cedula">
         <div class="w-100"></div>
-
-        <div class="col">Telefono</div>
-        <textarea class="form-control col" aria-label="With textarea"></textarea>
-
-        <div class="col">Marca de dispositivo</div>
-        <textarea class="form-control col" aria-label="With textarea"></textarea>
-        
-        <div class="col">Tipo del dispositivo</div>
-        <textarea class="form-control col" aria-label="With textarea"></textarea>
-        
-        <div class="col">Accesorios del dispositivo</div>
-        <textarea class="form-control col" aria-label="With textarea"></textarea>
       </div>
-    </div>
-    <br>
 
-    
-<form action="{#}" method="post">
-    <div class="mb-3">
-      <h4>Diagnostico inicial</h4>
-    </div>
+      <div class="row text">
+        <label class="col">Telefono:</label>
+        <input type="text" class="tamano_input form-control col" formControlName="nombres">
+        <div class="w-100"></div>
+      </div>
 
-    <div class="mb-3">
-      <h6>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ratione nulla eum maiores aliquid temporibus. Illum non similique rerum, ex temporibus, distinctio assumenda placeat odio architecto optio vel. Explicabo, unde reiciendis!
-      Animi, vero provident! Et voluptate veritatis excepturi assumenda atque illum, odit porro. Laudantium cupiditate culpa voluptas autem nihil, porro tempore veniam corrupti ipsum animi, explicabo incidunt distinctio nostrum numquam quod.
-      Eos nam ex rerum maxime beatae odio impedit eius totam quas esse necessitatibus reiciendis assumenda explicabo nihil, eaque fugit quia at alias aliquid iste sed culpa! Consequatur ipsum suscipit est!
-      </h6>
-      <br>
-      <h6>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis facere repudiandae dignissimos pariatur provident tempore facilis vel at magni. Rem magni fugiat illo dolore vel sequi molestiae beatae aliquid pariatur.</h6>
-    </div>
+      <div class="row text">
+        <label class="col">Marca dispositivo:</label>
+        <input type="text" class="tamano_input form-control col" formControlName="nombres">
+        <div class="w-100"></div>
+      </div>
 
-    <div class="mb-3">
-      <h4>Diagnostico Detallado</h4>
-    </div>
+      <div class="row text">
+        <label class="col">Tipo de dispositivo:</label>
+        <input type="text" class="tamano_input form-control col" formControlName="nombres">
+        <div class="w-100"></div>
+      </div>
 
-    <div class="mb-3">
-      <h6>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ratione nulla eum maiores aliquid temporibus. Illum non similique rerum, ex temporibus, distinctio assumenda placeat odio architecto optio vel. Explicabo, unde reiciendis!
-      Animi, vero provident! Et voluptate veritatis excepturi assumenda atque illum, odit porro. Laudantium cupiditate culpa voluptas autem nihil, porro tempore veniam corrupti ipsum animi, explicabo incidunt distinctio nostrum numquam quod.
-      Eos nam ex rerum maxime beatae odio impedit eius totam quas esse necessitatibus reiciendis assumenda explicabo nihil, eaque fugit quia at alias aliquid iste sed culpa! Consequatur ipsum suscipit est!
-      </h6>
-      <br>
-      <h6>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis facere repudiandae dignissimos pariatur provident tempore facilis vel at magni. Rem magni fugiat illo dolore vel sequi molestiae beatae aliquid pariatur.</h6>
-    </div>
+      <div class="row text">
+        <label class="col">Accesorios del dispositivo</label>
+        <input type="text" class="tamano_input form-control col" formControlName="nombres">
+        <div class="w-100"></div>
+      </div>
+
+      <div>
+        <label class="form-label">Diagnostico Inicial</label>
+        <br>
+        <br>
+        <textarea class="form-control" formControlName="diaginicial" aria-label="With textarea"></textarea>
+      </div>
+
+      <div>
+        <label class="form-label">Diagnostico Detallado</label>
+        <br>
+        <br>
+        <textarea class="form-control" formControlName="diaginicial" aria-label="With textarea"></textarea>
+      </div>
+
+      <div>
+        <div class="mb-3"></div>
+        <button type="submit" class="btn btn-primary">Atras</button>
+      </div>
+  </div>
+</form>
 
 
-
-    <div class="container-historico-button container-button-historico">
-      <a class="form_historico_button" button href="{#}">Atras</a>
-    </div>
-  </form>

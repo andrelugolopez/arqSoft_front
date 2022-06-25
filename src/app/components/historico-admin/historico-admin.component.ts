@@ -11,6 +11,7 @@ import { ActivatedRoute, ParamMap} from '@angular/router';
 })
 export class HistoricoAdminComponent implements OnInit {
   ordenAbiertas: any
+  ordenCerradas: any
   data: any
   tecnicos: any
 
@@ -33,26 +34,59 @@ export class HistoricoAdminComponent implements OnInit {
   }
 
   onSubmit(){
-    if(this.form.valid){
-      let tecnico={
-        nombtecnico:this.form.value.nombtecnico
-      }
-      console.log(tecnico.nombtecnico)
-
-    this.router.paramMap
-      .subscribe((params : ParamMap) => {
-      this.client.getRequest(`http://127.0.0.1:5000/consultaDiagnostico?nombreTecnico=${tecnico.nombtecnico}`).subscribe(
-        (data: any) => {
-          this.ordenAbiertas = data["data"],
-          console.log(data)
-          },
-          error => console.log("Ha ocurrido un error en la llamada: ", error)
-          )
-        });
-      }else{
-        console.log("Form error");
-      }
+    this.ordenesAbiertas()
+    this.ordenesCerradas()
     }
+
+    ordenesCerradas(){
+      if(this.form.valid){
+        let tecnico={
+          nombtecnico:this.form.value.nombtecnico
+        }
+        console.log(tecnico.nombtecnico)
+
+      this.router.paramMap
+        .subscribe((params : ParamMap) => {
+        this.client.getRequest(`http://127.0.0.1:5000/consultaOrdenTecnicos?tecnico=${tecnico.nombtecnico}`).subscribe(
+          (data: any) => {
+            this.ordenCerradas = data["data"],
+            console.log("informacion",this.ordenAbiertas)
+            },
+            error => console.log("Ha ocurrido un error en la llamada: ", error)
+            )
+          });
+        }else{
+          console.log("Form error");
+        }
+      }
+
+      ordenesAbiertas(){
+        if(this.form.valid){
+          let tecnico={
+            nombtecnico:this.form.value.nombtecnico
+          }
+          console.log(tecnico.nombtecnico)
+  
+        this.router.paramMap
+          .subscribe((params : ParamMap) => {
+          this.client.getRequest(`http://127.0.0.1:5000/consultaDiagnostico?nombreTecnico=${tecnico.nombtecnico}`).subscribe(
+            (data: any) => {
+              this.ordenAbiertas = data["data"],
+              console.log(data)
+              },
+              error => console.log("Ha ocurrido un error en la llamada: ", error)
+              )
+            });
+          }else{
+            console.log("Form error");
+          }
+        }
+
+
+
+
+
+
 
     listTech(){
       this.client.getRequest('http://127.0.0.1:5000/consultaTecnicos').subscribe(    

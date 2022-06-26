@@ -1,70 +1,76 @@
-<form class="form_admin-articulos">
+<form class="form_admin-articulos" [formGroup]="form">
     <h3>Articulos Tienda</h3>
     <br>
     <br>
-    <div class="row text">
-        <label class="col text">Id Producto:</label>
-        <input type="text" class=" tamano_input form-control col" formControlName="cedula">
-        <div class="w-100"></div>
-    </div>
-    <label>Tipo de dispositivo:</label>
-    <br>
-    <br>
     <div  class=" container row">
+        <label>Tipo de articulo:</label>
+        <br>
+        <br>
         <div class="form-check form-check-inline col">
-          <input class="form-check-input " formControlName="tipodispositivo" type="radio"  id="inlineRadio1" value="Pc">
+          <input class="form-check-input " formControlName="tipodispositivo" type="radio"  id="inlineRadio1" value="E">
           <label class="form-check-label" for="inlineRadio1">Equipo</label>
         </div>
 
         <div class="form-check form-check-inline col">
-          <input class="form-check-input" formControlName="tipodispositivo" type="radio" id="inlineRadio2" value="Portatil">
-          <label class="form-check-label" for="inlineRadio2">Accesorios</label>
+            <input class="form-check-input " formControlName="tipodispositivo" type="radio"  id="inlineRadio1" value="P">
+            <label class="form-check-label" for="inlineRadio1">Accesorios</label>
         </div> 
 
         <div class="form-check form-check-inline col">
-            <input class="form-check-input " formControlName="tipodispositivo" type="radio"  id="inlineRadio1" value="Otro">
+            <input class="form-check-input " formControlName="tipodispositivo" type="radio"  id="inlineRadio1" value="R">
             <label class="form-check-label" for="inlineRadio1">Repuestos</label>
         </div> 
     </div>
     <br>
     <br>
-
+    <div class="row text" >
+        <label class="col text">Id Producto:</label>
+        <input type="text" class=" tamano_input form-control col" formControlName="idproducto" (change)="consultar()">
+        <div class="w-100"></div>
+    </div>  
     <div>
         <label class="form-label">Descripción</label>
         <br>
         <br>
-        <textarea class="form-control" formControlName="diaginicial" aria-label="With textarea"></textarea>
+        <textarea class="form-control" formControlName="descripcionproductos" aria-label="With textarea"></textarea>
     </div>
     <br>
     <br>
     <div class="row text">
         <label class="col text">Cantidad:</label>
-        <input type="text" class=" tamano_input form-control col" formControlName="cedula">
+        <input type="text" class=" tamano_input form-control col" formControlName="cantidad">
         <div class="w-100"></div>
     </div>
       
     <div class="row text">
-        <label class="col">Nombre:</label>
-        <input type="text" class="tamano_input form-control col" formControlName="nombres">
+        <label class="col">Nombre articulo:</label>
+        <input type="text" class="tamano_input form-control col" formControlName="nombre">
         <div class="w-100"></div>
     </div>
       
     <div class="row text">
         <label class="col text">Precio:</label>
-        <input type="text" class="tamano_input form-control col" formControlName="apellidos">
+        <input type="text" class="tamano_input form-control col" formControlName="precio">
         <div class="w-100"></div>
     </div>
 
-    <div class="form-group">
-        <label for="ejemplo_archivo_1">Adjuntar un archivo</label>
-        <input type="file" id="ejemplo_archivo_1">
-        <p class="help-block"></p>
+    <div>
+        <label class="form-label">Ruta imagen:</label>
+        <br>
+        <br>
+        <textarea class="form-control" formControlName="imagen" aria-label="With textarea"></textarea>
     </div>
+
+    <!-- <div class="form-group">
+        <label for="ejemplo_archivo_1">Adjuntar un archivo</label>
+        <input type="file" id="ejemplo_archivo_1" formControlName="rutaimagen">
+        <p class="help-block"></p>
+    </div> -->
     <br>
 
     <div class="container-button-orden-servicio">
-        <button type="submit" class="btn btn-primary">Guardar</button>
-        <button type="submit" class="btn btn-primary">Actualizar</button>
-        <button type="submit" class="btn btn-primary">Eliminar</button>
+        <button type="submit" class="btn btn-primary" (click)="Crear()">Crear</button>
+        <button type="submit" class="btn btn-primary" (click)="Actualizar()">Actualizar</button>
+        <button type="submit" class="btn btn-primary" (click)="Eliminar()">Eliminar</button>
     </div>
 </form>

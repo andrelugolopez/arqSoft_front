@@ -9,9 +9,9 @@
     align-items: center;
     justify-content: center;
     margin: 80px 0px 39px 0px ;  
-    max-width: 1820px !important;
+    max-width: 100% !important;
    
 }
 .container{
-    max-width: 1820px !important;
+    max-width: 100% !important;
 }

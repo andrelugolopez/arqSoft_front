@@ -1,18 +1,17 @@
 <app-nav></app-nav>
 
-<div class="container">
+<div class=" container row">
     <div *ngIf="autorizacion.isAdmin() | async" class="container_tarjetas">
-        <div>
+        <div class="col">
             <app-card-articulostienda></app-card-articulostienda>
         </div>
-        <div>
-            <app-card-ordenservicio></app-card-ordenservicio>
+        <div class="col">
+            <app-card-ordenservicio ></app-card-ordenservicio>
         </div>
-
-        <div>
+        <div class="col">
             <app-card-adminroles></app-card-adminroles>
         </div>
-        <div>
+        <div class="col">
             <app-card-historicos></app-card-historicos>
         </div>
     </div>

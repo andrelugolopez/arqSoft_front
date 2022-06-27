@@ -45,9 +45,11 @@ export class AutorizacionService {
   setCourrentRol(n3yB6PZnGE8n7F:string) : void {
     localStorage.setItem('courrentRol', n3yB6PZnGE8n7F);
     console.log("rol",n3yB6PZnGE8n7F)
+
       if (n3yB6PZnGE8n7F=="J8p4SBfJgRfZCo") {/*admin*/
       console.log("Rol es admin")
         this.admin.next(true);
+        
       }if (n3yB6PZnGE8n7F=="H7qm7gQr6DBGfM") {/*tecnico*/
       console.log("Rol es tecnico")
         this.tecnico.next(true);

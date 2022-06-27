@@ -8,6 +8,7 @@ import { AutorizacionService } from '../../services/autorizacion.service';
 export class ContenedorAsistenciatenicadminComponent implements OnInit {
   mostrarCardstecnico: boolean = true;
   mostrarCardsAdmin: boolean = true;
+  mostrarFormulario: boolean = true;
 
   constructor(
     public autorizacion: AutorizacionService

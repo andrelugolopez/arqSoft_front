@@ -41,7 +41,7 @@
 }
 
 .form_login input {
-	margin: 5px 0px; /*espacio entre los label*/
+	margin: 20px 0px; /*espacio entre los label*/
 	border: none;
 	padding: 5px;/*tamaño del label*/
 	border-radius: 5px;
@@ -51,7 +51,7 @@
 }
 
 
-.form_login label {
+.form_login label{
 	position: relative;
 	margin-left: 5px;
 	margin-right: 10px;
@@ -60,6 +60,7 @@
 	width: 20px;
 	height: 20px;
 	cursor: pointer;
+	
 }
 .form_login label:before {
 	display: inline-block;
@@ -71,13 +72,7 @@
 	bottom: 1px;
 	background-color: rgb(164, 172, 174);
 }
-.form_login input[type=checkbox]:checked+label:before {
-	content: "\2713";
-	font-size: 20px;
-	color: #000;
-	text-align: center;
-	line-height: 20px;
-}
+
 .form_login span {
 	font-size: 20px;
 }
@@ -96,21 +91,20 @@ h3{
 	color: white;
 }
 .header-text{
-	padding-bottom: 10%;
-	padding-top: 10%;
+	padding-bottom: 5%;
+	padding-top: 5%;
 }
  a {
 	text-decoration:none;
 	color: white;
 	font-size: 1rem;
 	margin: 20px;
+	text-align: center;
  }
 
- .container-enlaces{
-    display: flex;
-	justify-content: baseline;
-	padding: 0px;
-	width: auto;
+ .col_margin{
+	margin: auto;
+    
 }
 
 .container-button{
@@ -120,9 +114,14 @@ h3{
 	width: auto;
 }
 
+label{
+	color: white;
+	margin: 0px 0px 10px 0px;
+	width: 100%;
+}
+
 .invalid{
 	color: red;
-	
 }
 
 

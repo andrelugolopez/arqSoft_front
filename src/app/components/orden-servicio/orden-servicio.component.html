@@ -3,12 +3,16 @@
 </div>
 
 <form [formGroup]="form" (ngSubmit)="onSubmit()">
-  <h1> Orden de servicio</h1>
+  <h3> Orden de servicio</h3>
   <br>
-  <div class="container row">
-    <h6 class="lbl1 col">Fecha {{fecha}}</h6>
-    <h6 class="lbl1 col">Hora {{hora}}</h6>
+  <div class="container">
+    <div class="row text">
+      <label class="lbl1 col text">Fecha {{fecha}}</label>
+      <label class="lbl1 col text">Hora {{hora}}</label>
+  </div>  
   </div>
+  <br>
+  <br>
     
   <div class="container">
 
@@ -48,6 +52,12 @@
         <div class="w-100"></div>
       </div>
 
+      <div class="row text">
+        <label class="col text">Marca dispositivo:</label>
+        <input type="text" class="tamano_input form-control col" formControlName="marcadispositivo">
+        <div class="w-100"></div>
+      </div>
+
       <div class="select_margin mb-3 row text">
          <label for="exampleInputEmail1" class="form-label text col">Nombre de Técnico: </label>
          <select class="custom-select" id="inputGroupSelect01" formControlName="nombtecnico" >
@@ -57,12 +67,7 @@
          <div class="w-100"></div>
       </div>
 
-      <div class="row text">
-        <label class="col text">Marca dispositivo:</label>
-        <input type="text" class="tamano_input form-control col" formControlName="marcadispositivo">
-        <div class="w-100"></div>
-      </div>
-      <br>
+
 
       <label>Tipo de dispositivo:</label>
       <div  class=" container row">

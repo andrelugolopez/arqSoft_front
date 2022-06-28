@@ -17,6 +17,7 @@ export class AdminArticulosComponent implements OnInit {
   infoEquipos: any
   producto: any
 
+  
   form: FormGroup = this.fb.group({/*se inicializa el form*/
   idproducto: ['', Validators.required],
   tipodispositivo: ['', Validators.required],
@@ -36,9 +37,7 @@ export class AdminArticulosComponent implements OnInit {
     public autorizacion: AutorizacionService,
   ) { }
 
-  ngOnInit(): void {
-
-    
+  ngOnInit(): void {  
   }
 
   Crear(){

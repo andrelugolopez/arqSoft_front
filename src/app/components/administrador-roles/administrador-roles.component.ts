@@ -4,6 +4,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { Router } from '@angular/router';
 import { ActivatedRoute, ParamMap} from '@angular/router';
 import { AutorizacionService } from '../../services/autorizacion.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-administrador-roles',
@@ -46,7 +47,9 @@ export class AdministradorRolesComponent implements OnInit {
         direccion:this.form.value.direccion,
         rol:this.form.value.rol
       }
-      // let timerInterval
+      console.log("entra a crear")
+
+      // let timerInterval:any
       // Swal.fire({
       //   title: 'Auto close alert!',
       //   html: 'I will close in <b></b> milliseconds.',
@@ -68,6 +71,7 @@ export class AdministradorRolesComponent implements OnInit {
       //     console.log('I was closed by the timer')
       //   }
       // })
+
       this.client.postRequest('http://127.0.0.1:5000/registerAdmin',data,this.autorizacion.getToken())
       .subscribe(
         (data:any) => {
@@ -116,41 +120,41 @@ export class AdministradorRolesComponent implements OnInit {
         direccion:this.form.value.direccion,
         rol:this.form.value.rol
       }
+      console.log("entra a eliminar")
+      const swalWithBootstrapButtons = Swal.mixin({
+        customClass: {
+          confirmButton: 'btn btn-success',
+          cancelButton: 'btn btn-danger'
+        },
+        buttonsStyling: false
+      })
 
-      // const swalWithBootstrapButtons = Swal.mixin({
-      //   customClass: {
-      //     confirmButton: 'btn btn-success',
-      //     cancelButton: 'btn btn-danger'
-      //   },
-      //   buttonsStyling: false
-      // })
-
-      // swalWithBootstrapButtons.fire({
-      //   title: 'Are you sure?',
-      //   text: "You won't be able to revert this!",
-      //   icon: 'warning',
-      //   showCancelButton: true,
-      //   confirmButtonText: 'Yes, delete it!',
-      //   cancelButtonText: 'No, cancel!',
-      //   reverseButtons: true
-      // }).then((result) => {
-      //   if (result.isConfirmed) {
-      //     swalWithBootstrapButtons.fire(
-      //       'Deleted!',
-      //       'Your file has been deleted.',
-      //       'success'
-      //     )
-      //   } else if (
-      //     /* Read more about handling dismissals below */
-      //     result.dismiss === Swal.DismissReason.cancel
-      //   ) {
-      //     swalWithBootstrapButtons.fire(
-      //       'Cancelled',
-      //       'Your imaginary file is safe :)',
-      //       'error'
-      //     )
-      //   }
-      // })
+      swalWithBootstrapButtons.fire({
+        title: 'Are you sure?',
+        text: "You won't be able to revert this!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'Yes, delete it!',
+        cancelButtonText: 'No, cancel!',
+        reverseButtons: true
+      }).then((result) => {
+        if (result.isConfirmed) {
+          swalWithBootstrapButtons.fire(
+            'Deleted!',
+            'Your file has been deleted.',
+            'success'
+          )
+        } else if (
+          /* Read more about handling dismissals below */
+          result.dismiss === Swal.DismissReason.cancel
+        ) {
+          swalWithBootstrapButtons.fire(
+            'Cancelled',
+            'Your imaginary file is safe :)',
+            'error'
+          )
+        }
+      })
 
       this.client.getRequest('http://127.0.0.1:5000/eliminaruser', this.autorizacion.getToken() , this.form.value.email)
       .subscribe(
@@ -248,6 +252,7 @@ export class AdministradorRolesComponent implements OnInit {
       console.log("prueba",data.cedula)
 
       }else{
+
           //   const { value: password } = await Swal.fire({
           //   title: 'Enter your password',
           //   input: 'password',
@@ -263,6 +268,7 @@ export class AdministradorRolesComponent implements OnInit {
           // if (password) {
           //   Swal.fire(`Entered password: ${password}`)
           // }
+          
         console.log("Form error");
       }
     }

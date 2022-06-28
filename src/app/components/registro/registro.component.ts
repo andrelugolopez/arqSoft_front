@@ -31,6 +31,14 @@ constructor(
 /**/
   onSubmit(){
     if(this.form.valid){
+
+      Swal.fire({
+      position: 'center',
+      icon: 'success',
+      title: 'Registro exitoso',
+      showConfirmButton: false,
+      timer: 2500
+      });
       let data={
         email:this.form.value.email,
         nombres:this.form.value.nombres,
@@ -43,29 +51,6 @@ constructor(
     ).subscribe(
     (response:any)=>{
       console.log(response),
-      Swal.fire({
-      position: 'center',
-      icon: 'success',
-      title: 'Registro exitoso',
-      showConfirmButton: false,
-      timer: 2500
-      });
-    // const { value: accept } = await Swal.fire({
-    //   title: 'Terms and conditions',
-    //   input: 'checkbox',
-    //   inputValue: 1,
-    //   inputPlaceholder:
-    //     'I agree with the terms and conditions',
-    //   confirmButtonText:
-    //     'Continue <i class="fa fa-arrow-right"></i>',
-    //   inputValidator: (result) => {
-    //     return !result && 'You need to agree with T&C'
-    //   }
-    //   })
-
-    //   if (accept) {
-    //     Swal.fire('You agreed with T&C :)')
-    //   };
 
       this.route.navigate(['/login']);
     }),

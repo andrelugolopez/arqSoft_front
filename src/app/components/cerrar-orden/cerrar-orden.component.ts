@@ -4,6 +4,7 @@ import { ClientService } from 'src/app/services/client.service';
 import { Router } from '@angular/router';
 import { ActivatedRoute, ParamMap} from '@angular/router';
 import { AutorizacionService } from '../../services/autorizacion.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-cerrar-orden',
@@ -56,12 +57,19 @@ onSubmit(){
     ).subscribe(
       (data:any) => {
         console.log(data["data"]),
-        this.route.navigate(['/']);
+
+        Swal.fire('Orden Creada') 
+        this.route.navigate(['/asistenciatenicadmin']);
       },
       (error:any)=>{
         console.log(error)
       });
     }else{
+        Swal.fire(
+        'Falta Informacion',
+        'Por favor completalos',
+        'warning'
+        )
       console.log("Form error");
     }
  console.log("*********",this.form.value.serial )

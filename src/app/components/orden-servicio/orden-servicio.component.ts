@@ -3,6 +3,7 @@ import { ClientService } from '../../services/client.service';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { of } from 'rxjs';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-orden-servicio',
@@ -67,17 +68,25 @@ export class OrdenServicioComponent implements OnInit {
           diaginicial:this.form.value.diaginicial
         }
 
+        Swal.fire('Any fool can use a computer')
+
         this.client.postRequest("http://127.0.0.1:5000/ordenServicio",data
         ).subscribe(
           (data:any) => {
             console.log(data["data"]),
-            this.route.navigate(['/']);
+            this.route.navigate(['/orden-servicio']);
           },
           (error:any)=>{
             console.log(error)
           });
         }else{
+          Swal.fire(
+            'The Internet?',
+            'That thing is still around?',
+            'warning'
+          )
           console.log("Form error");
+
         }
     }    
     

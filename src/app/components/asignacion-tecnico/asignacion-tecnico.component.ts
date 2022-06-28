@@ -95,7 +95,7 @@ constructor(
         reporte:this.form.value.reporte,
       }
 
-      Swal.fire('Any fool can use a computer')
+      Swal.fire('La información ha sido almacenada')
 
     this.client.postRequest("http://127.0.0.1:5000/actualizarHistoria",data
     ).subscribe(
@@ -108,8 +108,8 @@ constructor(
       });
     }else{
         Swal.fire(
-        'The Internet?',
-        'That thing is still around?',
+        'Falta Informacion',
+        'Por favor complétalos',
         'warning'
         )
       console.log("Form error");

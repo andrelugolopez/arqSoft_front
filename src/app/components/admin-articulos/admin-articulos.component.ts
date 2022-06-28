@@ -4,6 +4,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { Router } from '@angular/router';
 import { ActivatedRoute, ParamMap} from '@angular/router';
 import { AutorizacionService } from '../../services/autorizacion.service';
+import Swal from 'sweetalert2';
 
 
 
@@ -42,6 +43,7 @@ export class AdminArticulosComponent implements OnInit {
   }
 
   Crear(){
+
     if(this.form.valid){
       let data={
         idproducto:this.form.value.idproducto,

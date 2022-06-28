@@ -85,13 +85,13 @@ constructor(/*inyeccion de independencias*/
           /*console.log("we",data)*/
         }else{
           console.log("Form error");
-              Swal.fire({
-              position: 'top-end',
-              icon: 'error',
-              title: 'Tenemos promemas para loguearte',
-              showConfirmButton: false,
-              timer: 2500
-              })
+          Swal.fire({
+          position: 'top-end',
+          icon: 'error',
+          title: 'Tenemos problemas para loguearte',
+          showConfirmButton: false,
+          timer: 2500
+          })
           this.route.navigate(['/login']);
           this.mostrarSpinner = false;
           this.mostrarFormulario = true;   

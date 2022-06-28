@@ -14,9 +14,16 @@ export class HistoricoAdminComponent implements OnInit {
   ordenCerradas: any
   data: any
   tecnicos: any
+  infoOrden: any 
+  infoDiagnostico: any
+  infoDiagnosticoCerrada: any
+  info: any
+
 
   form: FormGroup = this.fb.group({/*se inicializa el form*/
   nombtecnico: ['', Validators.required],
+  ordenAbierta: [''],
+  ordenCerrada: [''],
   });
 
 
@@ -38,6 +45,60 @@ export class HistoricoAdminComponent implements OnInit {
     this.ordenesCerradas()
     }
 
+    informacionOrdenAbierta(){
+      if(this.form.valid){
+
+        console.log(this.form.value.ordenAbierta)
+
+      this.router.paramMap
+        .subscribe((params : ParamMap) => {
+        this.client.getRequest('http://127.0.0.1:5000/consultaEstadoOrden?orden='+this.form.value.ordenAbierta).subscribe(
+          (data: any) => {
+            this.infoOrden = data["data"],
+            console.log("informacion ordenes",this.infoOrden)
+            this.infoDiagnostico = "Nombre cliente: " + this.infoOrden.nombreCliente + "\n "
+                        + "Diagnostico inicial: " +this.infoOrden.diagnosticoInicial +"\n " 
+                        + "Serial Equipo: " + this.infoOrden.serialEquipo + "\n "
+                        + "Tipo dispositivo: " + this.infoOrden.tipoDispositivo + "\n "
+                        + "Diagnostico inicial: " + this.infoOrden.diagnosticoInicial
+                      
+            },
+            error => console.log("Ha ocurrido un error en la llamada: ", error)
+            )
+          });
+        }else{
+          console.log("Form error");
+        }
+      }
+
+
+    informacionOrdenCerrada(){
+      if(this.form.valid){
+
+        console.log(this.form.value.ordenCerrada)
+
+      this.router.paramMap
+        .subscribe((params : ParamMap) => {
+        this.client.getRequest('http://127.0.0.1:5000/consultaEstadoOrden?orden='+this.form.value.ordenCerrada).subscribe(
+          (data: any) => {
+            this.info = data["data"],
+            console.log("informacion ordenes",this.infoOrden)
+            this.infoDiagnosticoCerrada= "Nombre cliente: " + this.info.nombreCliente + "\n "
+                        + "Diagnostico inicial: " +this.info.diagnosticoInicial +"\n " 
+                        + "Serial Equipo: " + this.info.serialEquipo + "\n "
+                        + "Tipo dispositivo: " + this.info.tipoDispositivo + "\n "
+                        + "Diagnostico inicial: " + this.info.diagnosticoInicial + "\n "
+                        + "Observaciones salida: " + this.info.historicoCierre
+                      
+            },
+            error => console.log("Ha ocurrido un error en la llamada: ", error)
+            )
+          });
+        }else{
+          console.log("Form error");
+        }
+      }
+
     ordenesCerradas(){
       if(this.form.valid){
         let tecnico={
@@ -50,7 +111,7 @@ export class HistoricoAdminComponent implements OnInit {
         this.client.getRequest(`http://127.0.0.1:5000/consultaOrdenTecnicos?tecnico=${tecnico.nombtecnico}`).subscribe(
           (data: any) => {
             this.ordenCerradas = data["data"],
-            console.log("informacion",this.ordenAbiertas)
+            console.log("informacion",this.ordenCerradas)
             },
             error => console.log("Ha ocurrido un error en la llamada: ", error)
             )
@@ -59,6 +120,8 @@ export class HistoricoAdminComponent implements OnInit {
           console.log("Form error");
         }
       }
+
+
 
       ordenesAbiertas(){
         if(this.form.valid){
@@ -81,11 +144,6 @@ export class HistoricoAdminComponent implements OnInit {
             console.log("Form error");
           }
         }
-
-
-
-
-
 
 
     listTech(){

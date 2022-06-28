@@ -4,7 +4,7 @@ import { ClientService } from 'src/app/services/client.service';
 import { Router } from '@angular/router';
 import { ActivatedRoute, ParamMap} from '@angular/router';
 import { AutorizacionService } from '../../services/autorizacion.service';
-
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-asignacion-tecnico',
@@ -95,16 +95,23 @@ constructor(
         reporte:this.form.value.reporte,
       }
 
+      Swal.fire('Any fool can use a computer')
+
     this.client.postRequest("http://127.0.0.1:5000/actualizarHistoria",data
     ).subscribe(
       (data:any) => {
         console.log(data["data"]),
-        this.route.navigate(['/']);
+        this.route.navigate(['/asignacion-tecnico']);
       },
       (error:any)=>{
         console.log(error)
       });
     }else{
+        Swal.fire(
+        'The Internet?',
+        'That thing is still around?',
+        'warning'
+        )
       console.log("Form error");
     }
 }  

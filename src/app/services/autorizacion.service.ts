@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from "rxjs";
+import Swal from 'sweetalert2';
 
 // nombres usados para seguridad
 // envio de token = into

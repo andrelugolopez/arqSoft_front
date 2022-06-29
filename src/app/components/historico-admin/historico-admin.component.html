@@ -1,7 +1,9 @@
 <form class="form_historico-Admin" [formGroup]="form" (ngSubmit)="onSubmit()">
-    <h6>Historico Administrador</h6>
+    <br>
+    <h3>Historico Administrador</h3>
     <br>
     <br>
+    <div class="container">
     <div class="select_margin mb-3 row text">
         <label for="exampleInputEmail1" class="form-label text col">Nombre de Técnico: </label>
         <select class="custom-select form-control" id="inputGroupSelect01" formControlName="nombtecnico">
@@ -11,8 +13,8 @@
         <div class="w-100"></div>
      </div>
 
-     <div>
-        <button type="submit" class="btn btn-primary">Consultar</button>
+     <div class="container-button">
+        <button type="submit" class="btn btn-primary form_historico-Admin_button">Consultar ordenes</button>
     </div>
 
     <br>
@@ -32,7 +34,7 @@
         <br>
         <textarea class="tamano_textarea" aria-label="With textarea">{{infoDiagnostico}}</textarea>
     </div>
-  
+    
     <div class="select_margin mb-3 row text">
         <label for="exampleInputEmail1" class="form-label text col">Ordenes Cerradas: </label>
         <select class="custom-select" id="inputGroupSelect01" formControlName="ordenCerrada" (click)="informacionOrdenCerrada()" >
@@ -41,12 +43,12 @@
         </select>
         <div class="w-100"></div>
     </div>
-
-    <div>
-        <label class="form-label">Diagnostico</label>
+        <div>
+            <label class="form-label">Diagnostico</label>
         <br>
         <br>
         <textarea class="tamano_textarea" aria-label="With textarea">{{infoDiagnosticoCerrada}}</textarea>
+        </div>
     </div>
     <br>
     <br>

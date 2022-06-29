@@ -9,8 +9,14 @@
     <img class="card-img-top img-fluid" src="/assets/imagenes/orden.png" alt="">
   </div>
     <div class="card-body" >
+      <div *ngIf="(autorizacion.isTecni() | async)" class=" contenedor row">
+        <a [routerLink]="['/asignacionTecnico']" class="btn text-white">Remisiones</a>
+    </div>
+    <div *ngIf="(autorizacion.isAdmin() | async)" class=" contenedor row">
         <a [routerLink]="['/ordenServicio']" class="btn text-white">Crear</a>
         <a [routerLink]="['/asignacionTecnico']" class="btn text-white">Remisiones</a>
         <a [routerLink]="['/cerrar-orden']" class="btn text-white">Salida del equipo</a>
+  </div>
+        
     </div>
 </div>

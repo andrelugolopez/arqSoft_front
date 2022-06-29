@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from "rxjs";
-import Swal from 'sweetalert2';
+
 
 // nombres usados para seguridad
 // envio de token = into
@@ -15,9 +15,9 @@ import Swal from 'sweetalert2';
 })
 export class AutorizacionService {
   isLogin = new BehaviorSubject<boolean>(this.checkToken());
-  
   admin = new BehaviorSubject<boolean>(this.checkRol());
-  tecnico = new BehaviorSubject<boolean>(false);
+  tecnico = new BehaviorSubject<boolean>(this.checkRol());
+  usuario = new BehaviorSubject<boolean>(this.checkRol());
 
   private checkToken() : boolean {
     return !!localStorage.getItem('into');
@@ -34,6 +34,7 @@ export class AutorizacionService {
     this.admin.next(true);
     this.tecnico.next(true);
     this.isLogin.next(true);
+    this.usuario.next(true);
 
   }
 
@@ -50,10 +51,20 @@ export class AutorizacionService {
       if (n3yB6PZnGE8n7F=="J8p4SBfJgRfZCo") {/*admin*/
       console.log("Rol es admin")
         this.admin.next(true);
+        this.tecnico.next(false);
+        this.usuario.next(false);
         
       }if (n3yB6PZnGE8n7F=="H7qm7gQr6DBGfM") {/*tecnico*/
       console.log("Rol es tecnico")
         this.tecnico.next(true);
+        this.admin.next(false);
+        this.usuario.next(false);
+
+      }if (n3yB6PZnGE8n7F=="hbh2jFVsQM7RUy") {/*usuario*/
+      console.log("Rol es usuario")
+        this.usuario.next(true);
+        this.admin.next(false);
+        this.tecnico.next(false);
       }
   }
 
@@ -134,10 +145,12 @@ export class AutorizacionService {
     isAdmin() : Observable<boolean> {
      return this.admin.asObservable();
      }
-
-     isTecni() : Observable<boolean> {
-      return this.tecnico.asObservable();
-     }
+    isTecni() : Observable<boolean> {
+    return this.tecnico.asObservable();
+    }
+    isUser() : Observable<boolean> {
+    return this.usuario.asObservable();
+    }
  
      
 

@@ -14,6 +14,8 @@ import Swal from 'sweetalert2';
 export class PerfilComponent implements OnInit {
   usuarios: any
 
+  n3yB6PZnGE8n7F: any
+
 
   form: FormGroup = this.fb.group({/*se inicializa el form*/
   cedula: ['', Validators.required],
@@ -35,6 +37,7 @@ export class PerfilComponent implements OnInit {
 
   ngOnInit(): void {
     this.changeInput()
+
   }
   
   changeInput(){
@@ -90,19 +93,6 @@ export class PerfilComponent implements OnInit {
       control!.setValue(value);
     });
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

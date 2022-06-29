@@ -10,7 +10,7 @@
   border-radius: 40px !important;
   background-color: #163446;
   height: 459px;
-  width: 90%;
+  width: 300px;
 }
 .btn {
     border-radius: 4px;
@@ -23,8 +23,12 @@
     transition: all 0.5s;
     cursor: pointer;
     margin: 7px 7px 7px 7px;
-    
-   
+    width: 50%;
+    padding: 7px 7px 7px 7px;
+  }
+
+  .btn_text{
+    width: 70% !important;
   }
   
   .btn span {
@@ -54,4 +58,11 @@
 
   img{
     height: 200px;
+  }
+
+  .contenedor_botones{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
   }

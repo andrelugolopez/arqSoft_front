@@ -29,12 +29,12 @@
 }
 
 .form_nueva_contrasena input {
-	margin: 20px 0px; /*espacio entre los label*/
+	margin: 5px 0px; /*espacio entre los label*/
 	border: none;
-	padding: 10px;/*tamaño del label*/
+	padding: 5px;/*tamaño del label*/
 	border-radius: 5px;
 	width: 100%;
-	font-size: 1rem;/*tamaño de la letra*/
+	font-size: 1erm;/*tamaño de la letra*/
 	font-family: Arial;/*tipo de fuente*/
 }
 
@@ -53,4 +53,16 @@ h3, h4{
 	font-size: 10px;
 	font-weight: 600;
 	text-align: center;
+}
+
+.form_nueva_contrasena label {
+	position: relative;
+	margin-left: 5px;
+	margin-right: 10px;
+	top: 5px;
+	display: inline-block;
+	width: 100%;
+	height: 20px;
+	color: white;
+	cursor: pointer;
 }

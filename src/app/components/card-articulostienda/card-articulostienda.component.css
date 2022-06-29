@@ -57,10 +57,9 @@ h4{
   width: 100%;
 }
 
-img{
-  height: auto;
-  width: 100%;
-
+.imagen{
+  height: 200px;
+  width: 250px;
 }
 
 .tamano_titulo{

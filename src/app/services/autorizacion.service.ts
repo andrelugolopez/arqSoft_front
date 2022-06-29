@@ -15,16 +15,20 @@ import { BehaviorSubject, Observable } from "rxjs";
 })
 export class AutorizacionService {
   isLogin = new BehaviorSubject<boolean>(this.checkToken());
-  admin = new BehaviorSubject<boolean>(this.checkRol());
-  tecnico = new BehaviorSubject<boolean>(this.checkRol());
-  usuario = new BehaviorSubject<boolean>(this.checkRol());
+  admin = new BehaviorSubject<boolean>(this.checkRol("J8p4SBfJgRfZCo"));
+  tecnico = new BehaviorSubject<boolean>(this.checkRol("H7qm7gQr6DBGfM"));
+  usuario = new BehaviorSubject<boolean>(this.checkRol("hbh2jFVsQM7RUy"));
 
   private checkToken() : boolean {
     return !!localStorage.getItem('into');
   }
 
-  private checkRol() : boolean {
-    return !!localStorage.getItem('courrentRol');
+  private checkRol(rol: string) : boolean {
+    if(localStorage.getItem('courrentRol')){
+      let rolLocalStorage = localStorage.getItem('courrentRol');
+      return rol === rolLocalStorage
+    }
+    return false
   }
 
 

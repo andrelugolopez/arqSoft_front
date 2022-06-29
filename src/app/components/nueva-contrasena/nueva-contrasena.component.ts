@@ -3,6 +3,7 @@ import { ClientService } from '../../services/client.service';
 import { AutorizacionService } from '../../services/autorizacion.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-nueva-contrasena',
@@ -57,16 +58,33 @@ export class NuevaContrasenaComponent implements OnInit {
           ).subscribe(
           (response:any)=>{
           console.log(response),
+          Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'Cambio Exitoso',
+            showConfirmButton: false,
+            timer: 2000
+          })
+          
           this.route.navigate(['/login']);
 
           }),
           (error:any)=>console.log(error)
       }else{
         console.log("Error codigo");
+        Swal.fire({
+          position: 'top-end',
+          icon: 'error',
+          title: 'Algo salio mal, intentalo de nuevo',
+          showConfirmButton: false,
+          timer: 2500
+        })
 
       }
     }else{
       console.log("Form error");
+      
+      
     }
   }
 }

@@ -4,6 +4,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { Router } from '@angular/router';
 import { ActivatedRoute, ParamMap} from '@angular/router';
 import { AutorizacionService } from '../../services/autorizacion.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-administrador-roles',
@@ -49,8 +50,24 @@ export class AdministradorRolesComponent implements OnInit {
 
       this.client.postRequest('http://127.0.0.1:5000/registerAdmin',data,this.autorizacion.getToken())
       .subscribe(
-        (data:any) => {
-          console.log(data["data"]),
+        async(data:any) => {
+          const Toast = Swal.mixin({
+            toast: true,
+            position: 'center',
+            showConfirmButton: false,
+            timer: 2500,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+              toast.addEventListener('mouseenter', Swal.stopTimer)
+              toast.addEventListener('mouseleave', Swal.resumeTimer)
+            }
+          })
+          
+          Toast.fire({
+            icon: 'success',
+            title: 'Rol creado satisfactoriamente'
+          })
+
           this.route.navigate(['/asistenciatenicadmin']);
         },
         (error:any)=>{
@@ -81,6 +98,24 @@ export class AdministradorRolesComponent implements OnInit {
       this.client.getRequest('http://127.0.0.1:5000/eliminaruser', this.autorizacion.getToken() , this.form.value.email)
       .subscribe(
         (data:any) => {
+          Swal.fire({
+            title: '¿Está seguro?',
+            text: "De lo contrario no puede revertir cambios",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#E7700F',
+            cancelButtonColor: '#9fd5d1',
+            confirmButtonText: 'si, Eliminar!'
+          }).then((result) => {
+            if (result.isConfirmed) {
+              Swal.fire(
+                'Hecho!',
+                'Ha sido actualizado.',
+                'success'
+              )
+            }
+          })
+          
           console.log(data["data"]),
           this.route.navigate(['/asistenciatenicadmin']);
         },
@@ -114,6 +149,24 @@ export class AdministradorRolesComponent implements OnInit {
       .subscribe(
         (data:any) => {
           console.log(data["data"]),
+          Swal.fire({
+            title: 'Está seguro?',
+            text: "De lo contrario no puede revertir cambios",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#E7700F',
+            cancelButtonColor: '#9fd5d1',
+            confirmButtonText: 'si, actualizar!'
+          }).then((result) => {
+            if (result.isConfirmed) {
+              Swal.fire(
+                'Hecho!',
+                'El rol ha sido actualizado.',
+                'success'
+              )
+            }
+          })
+          
           this.route.navigate(['/asistenciatenicadmin']);
         },
         (error:any)=>{

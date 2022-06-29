@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ClientService } from '../../services/client.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-registro',
@@ -37,16 +38,51 @@ constructor(
 
     this.client.postRequest("http://127.0.0.1:5000/register",data
     ).subscribe(
-    (response:any)=>{
-      console.log(response),
+    async (response:any)=>{
+      console.log(response)
+     //Acuerdo de confidencialidad
+     const { value: accept } = await Swal.fire({
+      title: 'Términos y condiciones de datos',
+      input: 'checkbox',
+      inputValue: 1,
+      inputPlaceholder:'Terminos y Condiciones',
+      confirmButtonColor:'#E7700F',
+      confirmButtonText:'Continue <i class="fa fa-arrow-right"></i>',
+      inputValidator: (result:any) => {
+        return !result && 'Está de acuerdo con los términos y condiciones'
+      }
+    })
+    
+    if (accept) {
+      Swal.fire('Acepta términos para continuar :)')
+    }
+
+
+      Swal.fire({
+        position: 'center',
+        icon: 'success',
+        title: 'Registro Exitoso',
+        showConfirmButton: false,
+        timer: 2000
+      })
       this.route.navigate(['/login']);
+      
     }),
     (error:any)=>{
       console.log(error)
     };
-      /*console.log("we",data)*/
+    console.log("Form error");
     }else{
-      console.log("Form error");
+      Swal.fire({
+        position: 'top-left',
+        icon: 'error',
+        title: 'Algo salió mal, inténtanto de nuevo',
+        showConfirmButton: false,
+        timer: 2000
+      })
+      
+      this.route.navigate(['/login']);
+      
     }
   }
 }

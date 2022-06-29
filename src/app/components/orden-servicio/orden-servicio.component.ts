@@ -3,6 +3,7 @@ import { ClientService } from '../../services/client.service';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { of } from 'rxjs';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-orden-servicio',
@@ -70,7 +71,23 @@ export class OrdenServicioComponent implements OnInit {
         this.client.postRequest("http://127.0.0.1:5000/ordenServicio",data
         ).subscribe(
           (data:any) => {
-            console.log(data["data"]),
+            console.log(data["data"])
+            const Toast = Swal.mixin({
+              toast: true,
+              position: 'center',
+              showConfirmButton: false,
+              timer: 2500,
+              timerProgressBar: true,
+              didOpen: (toast) => {
+                toast.addEventListener('mouseenter', Swal.stopTimer)
+                toast.addEventListener('mouseleave', Swal.resumeTimer)
+              }
+            })
+            
+            Toast.fire({
+              icon: 'success',
+              title: 'Orden generada satisfactoriamente'
+            })
             this.route.navigate(['/']);
           },
           (error:any)=>{

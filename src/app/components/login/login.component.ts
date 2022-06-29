@@ -3,7 +3,7 @@ import { ClientService } from '../../services/client.service';
 import { AutorizacionService } from '../../services/autorizacion.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-
+import Swal from 'sweetalert2';
 
 // nombres usados para seguridad
 // envio de token = into
@@ -21,6 +21,7 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
   mostrarSpinner: boolean = false;
   mostrarFormulario: boolean = true;
+  
   
 
   form!: FormGroup;
@@ -64,19 +65,38 @@ constructor(/*inyeccion de independencias*/
               this.autorizacion.setCourrentDoc(response.doc)
 
               this.route.navigate(['/']);
+              Swal.fire({
+                position: 'center',
+                icon: 'success',
+                title: 'Ingreso Exitoso',
+                showConfirmButton: false,
+                timer: 2000
+              })
 
           }),
 
           (error:any)=> {
+            
             console.log(error);
           };
     
           /*console.log("we",data)*/
         }else{
           console.log("Form error");
+          Swal.fire({
+            position: 'top-end',
+            icon: 'error',
+            title: '¡¡Usuario o contraseña incorrecta!!',
+            showConfirmButton: false,
+            timer: 2000
+          })
+          this.route.navigate(['/login']);
+          this.mostrarFormulario=true;
+          this.mostrarSpinner=false;
+       }
 
         }
-     }
+        
      inputIsValid(llave: string): boolean {
       return !this.form.controls[llave].valid
      }

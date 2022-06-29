@@ -11,8 +11,9 @@
     background-color:  rgba(231, 112, 15, 0.87);
     font-weight: bold;
     font-family: Arial;
-    margin: 7px;
+    margin: 7px 7px 7px 7px;
     padding: 3px;
+    font-size: 1erm;
  }  /* .cartas{
     display: flex; 
     height: 26%;

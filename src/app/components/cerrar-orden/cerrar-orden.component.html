@@ -1,45 +1,47 @@
 <form class="form_cerrarSesion" [formGroup]="form" (ngSubmit)="onSubmit()">
-    <h1> Salida de Equipo</h1>
+    <h4> Salida de Equipo</h4>
   <br>
-  <div class="container row">
-    <h6 class="lbl1 col ">Fecha {{fecha}}</h6>
-    <h6 class="lbl1 col ">Hora {{hora}}</h6>
+  <div class="container">
+    <div class="row text">
+      <label class="lbl1 col text">Fecha {{fecha}}</label>
+      <label class="lbl1 col text">Hora {{hora}}</label>
+    </div>  
   </div>
     <br>
     <br>
-    <div class="row text">
-        <label class="col text">Serial Equipo:</label>
-        <input type="text" class=" tamano_input form-control col" (change)="changeInput()" formControlName="serial">
-        <div class="w-100"></div>
-    </div>
-    <div class="row text">
-        <label class="col text">Nombre cliente:</label>
-        <input type="text" class=" tamano_input form-control col" formControlName="nombreCliente">
-        <div class="w-100"></div>
-    </div>
-    <div class="row text">
-        <label class="col text">Accesorios:</label>
-        <input type="text" class=" tamano_input form-control col" formControlName="accesoriosDispositivos">
-        <div class="w-100"></div>
-    </div>
-    <br>
+    <div class="container">
+        <div class="row text">
+            <label class="col text">Serial Equipo:</label>
+            <input type="text" class=" tamano_input form-control col" (change)="changeInput()" formControlName="serial">
+            <div class="w-100"></div>
+        </div>
+        <div class="row text">
+            <label class="col text">Nombre cliente:</label>
+            <input type="text" class=" tamano_input form-control col" formControlName="nombreCliente">
+            <div class="w-100"></div>
+        </div>
+        <div class="row text">
+            <label class="col text">Accesorios:</label>
+            <input type="text" class=" tamano_input form-control col" formControlName="accesoriosDispositivos">
+            <div class="w-100"></div>
+        </div>
+        <br>
 
-    <div>
-        <label class="form-label">Detalles:</label>
-        <br>
-        <br>
-        <textarea class="form-control" formControlName="diagnosticoInicial" aria-label="With textarea"></textarea>
-    </div>
+        <div>
+            <label class="form-label">Detalles:</label>
+            <br>
+            <br>
+            <textarea class="form-control" formControlName="diagnosticoInicial" aria-label="With textarea"></textarea>
+        </div>
 
-    <div>
-        <label class="form-label">Observación:</label>
-        <br>
-        <br>
-        <textarea class="form-control" formControlName="Observacion" aria-label="With textarea"></textarea>
+        <div>
+            <label class="form-label">Observación:</label>
+            <br>
+            <br>
+            <textarea class="form-control" formControlName="Observacion" aria-label="With textarea"></textarea>
+        </div>
     </div>
-    <br>
-    <br>
-    <div>
+    <div class=container-button>
         <button type="submit" class="btn btn-primary ">Guardar</button>
     </div>
 </form>

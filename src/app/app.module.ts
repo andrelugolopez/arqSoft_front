@@ -69,6 +69,8 @@ import { ContenedorCerrarOrdenComponent } from './components/contenedor-cerrar-o
 import { CerrarOrdenComponent } from './components/cerrar-orden/cerrar-orden.component';
 import { MediospagoComponent } from './components/mediospago/mediospago.component';
 import { ContendorMediospagoComponent } from './components/contendor-mediospago/contendor-mediospago.component';
+import { PerfilComponent } from './components/perfil/perfil.component';
+import { ContenedorPerfilComponent } from './components/contenedor-perfil/contenedor-perfil.component';
 
 @NgModule({
   declarations: [
@@ -137,6 +139,8 @@ import { ContendorMediospagoComponent } from './components/contendor-mediospago/
     CerrarOrdenComponent,
     MediospagoComponent,
     ContendorMediospagoComponent,
+    PerfilComponent,
+    ContenedorPerfilComponent,
 
    
   ],

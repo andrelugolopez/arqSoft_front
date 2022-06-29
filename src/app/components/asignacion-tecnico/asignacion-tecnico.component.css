@@ -5,17 +5,17 @@
 
 .form_asignacion-tecnico {
 	background-color: #163446;
-	margin: auto auto;
+	margin: 20px auto 20px auto;
 	padding: 20px;
 	border-radius: 5px;
-	box-shadow: 0 0 10px #163446;
+	box-shadow: 0 0 10px #000;
 	position: static;/*  se cambio para evitar que se salda del recuadro*/
 	top: 250px;
 	bottom: 0;
 	left: 0;
 	right: 0;
-	width: 600px;
-	height: min-content;/*tamaño del recuadro login*/	
+	width: 700px;
+	height: min-content; /*tamaño del recuadro login*/
 }
 
 .form_asignacion-tecnico label{
@@ -53,17 +53,8 @@
 .form_asignacion-tecnico span {
 	font-size: 14px;
 }
-.form_orden-servicio button {
-	background-color: rgba(231, 112, 15, 0.87);
-	color: #fff;
-	border: none;
-	border-radius: 5px;
-	cursor: pointer;
-	width: 40%;
-	font-size: 20px;
-	padding: 5px; /*tamaño del boton*/
-	margin: 25px 0px; /*distancia entre el checbox y el boton*/
-}
+
+
 .form_tecnico_button{
 	text-align: center;
 	background-color: rgba(231, 112, 15, 0.87);
@@ -72,7 +63,7 @@
 	border-radius: 5px;
 	cursor: pointer;
 	width: 40%;
-	font-size: 20px;
+	font-size: 1em;
 	padding: 5px; /*tamaño del boton*/
 	margin: 25px 0px; /*distancia entre el checbox y el boton*/
 	text-decoration: none;
@@ -96,9 +87,10 @@ h1, h4, h6{
 
 
 .container-button-orden-servicio{
-	display: flex;
-	justify-content: space-between;
-    width: 100%;
+    display: flex;
+	justify-content: center;
+	padding: 0px;
+	width: auto;
 }
 
 

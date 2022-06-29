@@ -1,35 +1,40 @@
 <app-nav></app-nav>
 
 <div  class=" container row">
-    <div *ngIf="autorizacion.isAdmin() | async" class="container_tarjetas">
-        <div class="col">
-            <app-card-articulostienda></app-card-articulostienda>
+    <div *ngIf="(autorizacion.isLoggedIn() | async)" class=" contenedor row">
+
+        <div *ngIf="(autorizacion.isUser() | async)" class=" contenedor row">
+            <div >
+                <div class="container">
+                    <div class=" contenedor row ">
+                        <br>
+                        <br>
+                        <app-card-contactanos-u class="col-6"></app-card-contactanos-u>
+                        <app-card-consultar-u class="col-6"></app-card-consultar-u>
+                        <app-principalesmarcas></app-principalesmarcas>   
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="col">
+
+        <div *ngIf="(autorizacion.isTecni() | async)" class=" contenedor row">
             <app-card-ordenservicio ></app-card-ordenservicio>
         </div>
-        <div class="col">
-            <app-card-adminroles></app-card-adminroles>
-        </div>
-        <div class="col">
-            <app-card-historicos></app-card-historicos>
+      
+        <div *ngIf="autorizacion.isAdmin() | async" class="container_tarjetas">
+            <div class="col">
+                <app-card-articulostienda></app-card-articulostienda>
+            </div>
+            <div class="col">
+                <app-card-ordenservicio ></app-card-ordenservicio>
+            </div>
+            <div class="col">
+                <app-card-adminroles></app-card-adminroles>
+            </div>
+            <div class="col">
+                <app-card-historicos></app-card-historicos>
+            </div>
         </div>
     </div>
-
-    <!-- <div>
-        <div *ngIf="(autorizacion.isTecni() | async)" class=" contenedor row">
-            <app-card-historicos></app-card-historicos>
-        </div>
-    </div> -->
-
 </div>
-<!-- 
-    <div>
-        <div *ngIf="(autorizacion.isLoggedIn() | async)" class=" contenedor row">
-            <app-card-contactanos-u class="col-6"></app-card-contactanos-u>
-            <app-card-consultar-u class="col-6"></app-card-consultar-u>
-            <app-principalesmarcas></app-principalesmarcas>   
-        </div>
-    </div>      -->
-
 <app-footer class="fixed-bottom"></app-footer>

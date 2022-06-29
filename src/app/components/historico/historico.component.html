@@ -1,5 +1,6 @@
 <form class="form_historico">
-    <h1> Historico</h1>
+  <br>
+    <h3> Historico</h3>
     <br>
     <div class="container row">
       <h6 class="lbl1 col">Fecha {{fecha}}</h6>
@@ -64,14 +65,13 @@
           <textarea class="form-control" formControlName="diagnosticoDetallado" aria-label="With textarea">{{orden.diagnosticoDetallado}}</textarea>
         </div>
 
-        <div>________________________________________________________________________</div>
-        <br>
-        <br>
+        <div><p>_______________________________________________________________________________________________</p></div>
     </div>
 
-      <div>
-        <div class="mb-3"></div>
-        <button type="submit" class="btn btn-primary">Atras</button>
+      <div class="container-button">
+        <div class="tamano_button">
+          <a class="form_historico_button col_margin col" [routerLink]="['/']">Atras</a>
+        </div>
       </div>
   
 </form>

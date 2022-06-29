@@ -7,12 +7,9 @@ select{
 }
 
 .tamano_input{
-	width: 10px !important;
 	height: 35px;
 	padding: 0px 0px 0px 9px;
 }
-
-
 
 .lbl1{
 	background-color: transparent !important;
@@ -40,7 +37,6 @@ select{
 
 .form_admin-articulos label {
 	position: relative;
-	margin: 0px 0px 0px 0px;
 	top: 5px;
 	display: inline-block;
 	width: 100%;
@@ -48,6 +44,7 @@ select{
 	cursor: pointer;
 	color: white;
 }
+
 
 .form_admin-articulos label:before {
 	display: inline-block;
@@ -100,4 +97,8 @@ h3{
 input{
 	margin: 4px;
 	background-color: white;
+}
+
+.col-lg-3{
+	width: 30% !important;
 }

@@ -9,6 +9,9 @@ import Swal from 'sweetalert2';
   templateUrl: './registro.component.html',
   styleUrls: ['./registro.component.css']
 })
+
+
+
 export class RegistroComponent implements OnInit {
   form: FormGroup = this.fb.group({/*se inicializa el form*/
   email: ['', Validators.required],
@@ -28,7 +31,15 @@ constructor(
 /**/
   onSubmit(){
     if(this.form.valid){
-      let data={/**/
+
+      Swal.fire({
+      position: 'center',
+      icon: 'success',
+      title: 'Registro exitoso',
+      showConfirmButton: false,
+      timer: 2500
+      });
+      let data={
         email:this.form.value.email,
         nombres:this.form.value.nombres,
         apellidos:this.form.value.apellidos,
@@ -38,6 +49,7 @@ constructor(
 
     this.client.postRequest("http://127.0.0.1:5000/register",data
     ).subscribe(
+
     async (response:any)=>{
       console.log(response)
      //Acuerdo de confidencialidad
@@ -65,15 +77,17 @@ constructor(
         showConfirmButton: false,
         timer: 2000
       })
+
       this.route.navigate(['/login']);
       
     }),
     (error:any)=>{
-      console.log(error)
+      console.log(error);
     };
     console.log("Form error");
     }else{
       Swal.fire({
+
         position: 'top-left',
         icon: 'error',
         title: 'Algo salió mal, inténtanto de nuevo',
@@ -83,6 +97,9 @@ constructor(
       
       this.route.navigate(['/login']);
       
+
+      console.log("Form error");
+
     }
   }
 }

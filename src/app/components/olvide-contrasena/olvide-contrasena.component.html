@@ -1,9 +1,11 @@
 <div class="form_olvide_contrasena">  
     <div>
         <form [formGroup]="form" (ngSubmit)="onSubmit()">
-                <h3>Recuperación de contraseña:</h3>
+                <h5>Ingreses su correo para recuperar la contraseña:</h5>
                 <br>
                 <div class="form-group">
+                    <label for="">Correo electrónico:</label>
+                    <br>
                     <input type="email" placeholder="Correo electronico" class="form-control" formControlName="email" aria-describedby="emailHelp">
                 </div>
 

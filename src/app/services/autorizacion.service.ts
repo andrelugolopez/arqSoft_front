@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from "rxjs";
 
+
 // nombres usados para seguridad
 // envio de token = into
 // nombre de usuario = Nuat
@@ -14,16 +15,20 @@ import { BehaviorSubject, Observable } from "rxjs";
 })
 export class AutorizacionService {
   isLogin = new BehaviorSubject<boolean>(this.checkToken());
-  
-  admin = new BehaviorSubject<boolean>(this.checkRol());
-  tecnico = new BehaviorSubject<boolean>(false);
+  admin = new BehaviorSubject<boolean>(this.checkRol("J8p4SBfJgRfZCo"));
+  tecnico = new BehaviorSubject<boolean>(this.checkRol("H7qm7gQr6DBGfM"));
+  usuario = new BehaviorSubject<boolean>(this.checkRol("hbh2jFVsQM7RUy"));
 
   private checkToken() : boolean {
     return !!localStorage.getItem('into');
   }
 
-  private checkRol() : boolean {
-    return !!localStorage.getItem('courrentRol');
+  private checkRol(rol: string) : boolean {
+    if(localStorage.getItem('courrentRol')){
+      let rolLocalStorage = localStorage.getItem('courrentRol');
+      return rol === rolLocalStorage
+    }
+    return false
   }
 
 
@@ -33,6 +38,7 @@ export class AutorizacionService {
     this.admin.next(true);
     this.tecnico.next(true);
     this.isLogin.next(true);
+    this.usuario.next(true);
 
   }
 
@@ -49,10 +55,20 @@ export class AutorizacionService {
       if (n3yB6PZnGE8n7F=="J8p4SBfJgRfZCo") {/*admin*/
       console.log("Rol es admin")
         this.admin.next(true);
+        this.tecnico.next(false);
+        this.usuario.next(false);
         
       }if (n3yB6PZnGE8n7F=="H7qm7gQr6DBGfM") {/*tecnico*/
       console.log("Rol es tecnico")
         this.tecnico.next(true);
+        this.admin.next(false);
+        this.usuario.next(false);
+
+      }if (n3yB6PZnGE8n7F=="hbh2jFVsQM7RUy") {/*usuario*/
+      console.log("Rol es usuario")
+        this.usuario.next(true);
+        this.admin.next(false);
+        this.tecnico.next(false);
       }
   }
 
@@ -133,10 +149,12 @@ export class AutorizacionService {
     isAdmin() : Observable<boolean> {
      return this.admin.asObservable();
      }
-
-     isTecni() : Observable<boolean> {
-      return this.tecnico.asObservable();
-     }
+    isTecni() : Observable<boolean> {
+    return this.tecnico.asObservable();
+    }
+    isUser() : Observable<boolean> {
+    return this.usuario.asObservable();
+    }
  
      
 

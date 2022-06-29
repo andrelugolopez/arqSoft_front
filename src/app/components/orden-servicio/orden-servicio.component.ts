@@ -68,9 +68,12 @@ export class OrdenServicioComponent implements OnInit {
           diaginicial:this.form.value.diaginicial
         }
 
+        Swal.fire('Any fool can use a computer')
+
         this.client.postRequest("http://127.0.0.1:5000/ordenServicio",data
         ).subscribe(
           (data:any) => {
+
             console.log(data["data"])
             const Toast = Swal.mixin({
               toast: true,
@@ -89,12 +92,19 @@ export class OrdenServicioComponent implements OnInit {
               title: 'Orden generada satisfactoriamente'
             })
             this.route.navigate(['/']);
+
           },
           (error:any)=>{
             console.log(error)
           });
         }else{
+          Swal.fire(
+            'The Internet?',
+            'That thing is still around?',
+            'warning'
+          )
           console.log("Form error");
+
         }
     }    
     

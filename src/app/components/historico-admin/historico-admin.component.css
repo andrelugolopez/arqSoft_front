@@ -19,12 +19,12 @@ select{
 	padding: 20px;
 	border-radius: 5px;
 	box-shadow: 0 0 10px #000;
-	position: static;/*  se cambio para evitar que se salga del recuadro*/
+	position: static;/*  se cambio para evitar que se salda del recuadro*/
 	top: 250px;
 	bottom: 0;
 	left: 0;
 	right: 0;
-	width: 800px;
+	width: 600px;
 	height: min-content; /*tamaño del recuadro login*/
 }
 
@@ -58,22 +58,22 @@ select{
 	border-radius: 5px;
 	cursor: pointer;
 	width: 30%;
-	font-size: 20px;
+	font-size: 1erm;
 	padding: 5px; /*tamaño del boton*/
 	display: flex;
 	justify-content: center;
-	margin: 25px 0px; /*distancia entre el checbox y el boton*/
+	margin: 0px 0px; /*distancia entre el checbox y el boton*/
 	
 }
 
-h1, h4, h6{
+h3, h4, h6{
     text-align: center;
 	color: white;
 }
 
-.container-button-orden-servicio{
+.container-button{
     display: flex;
-	justify-content: baseline;
+	justify-content: center;
 	padding: 0px;
 	width: auto;
 }
@@ -89,5 +89,5 @@ h1, h4, h6{
 
 .tamano_textarea{
 	width: 100% !important;
-	height: 180px !important;
+	height: 120px !important;
 }

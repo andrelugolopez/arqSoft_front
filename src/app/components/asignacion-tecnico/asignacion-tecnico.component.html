@@ -4,12 +4,17 @@
 
 
 <form [formGroup]="form" (ngSubmit)="onSubmit()">
-  <h1> Asignación de Técnico</h1>
   <br>
-  <div class="container row">
-    <h6 class="lbl1 col">Fecha {{fecha}}</h6>
-    <h6 class="lbl1 col">Hora {{hora}}</h6>
+  <h4> Asignación de Técnico</h4>
+  <br>
+  <div class="container">
+    <div class="row ">
+      <label class="lbl1 col text">Fecha {{fecha}}</label>
+      <label class="lbl1 col text">Hora {{hora}}</label>
+    </div>  
   </div>
+  <br>
+  <br>
 
   <div class="container">
 
@@ -25,9 +30,9 @@
       <div class="w-100"></div>
     </div>
 
-    <div class="select_margin mb-3 row text">
+    <div class="select_margin mb-3 row">
       <label for="exampleInputEmail1" class="form-label text col">Código del servicio: </label>
-      <select (click)="consultarInformacion()" class="custom-select form-control" id="inputGroupSelect01" formControlName="ordenServicio" >
+      <select (click)="consultarInformacion()" class="custom-select form-control col-1" id="inputGroupSelect01" formControlName="ordenServicio" >
          <option>Seleccione Orden de Servicio:</option>
          <option *ngFor="let ordenAbierta of ordenes">{{ordenAbierta.ordenServicio}}</option>
       </select>

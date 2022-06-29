@@ -5,26 +5,32 @@
 
 <form [formGroup]="form">
     <div class="form-group">
+      <label for="">Documento de identidad:</label>
       <input type="text"  placeholder="Cedula"  class="form-control" formControlName="cedula" aria-describedby="emailHelp" (change)="changeInput()">
     </div>
     <br>
     <div class="form-group">
+      <label for="">Nombres:</label>
       <input type="text" placeholder="Nombres" class="form-control" formControlName="nombres" aria-describedby="emailHelp">
     </div>
       <br>
     <div class="form-group">
+      <label for="">Apellidos</label>
       <input type="text" placeholder="Apellidos" class="form-control" formControlName="apellidos">
     </div>
     <br>
     <div class="form-group">
+      <label for="">Correo electrónico</label>
       <input type="email" placeholder="Correo" class="form-control" formControlName="email" aria-describedby="emailHelp">
     </div>
     <br>
     <div class="form-group">
+      <label for="">Telefono:</label>
       <input type="text" placeholder="telefono" class="form-control" formControlName="telefono" aria-describedby="emailHelp">
     </div>
     <br>
     <div class="form-group">
+      <label for="">Dirección:</label>
       <input type="text" placeholder="direccion" class="form-control" formControlName="direccion" aria-describedby="emailHelp">
     </div>
     <br>

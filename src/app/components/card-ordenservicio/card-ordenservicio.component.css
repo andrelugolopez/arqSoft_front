@@ -69,5 +69,10 @@
   }
 
   .tamano_titulo{
-    padding: 40px 0px 0px 0px;
+    padding: 15px 0px 0px 0px;
+    width: 60%;
+  }
+  .contenedor_titulo{
+    display: flex;
+    justify-content: center;
   }

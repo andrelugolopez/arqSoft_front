@@ -1,7 +1,9 @@
 
 <div class="card1 text-center  text-white  rounded ">
-  <div class="tamano_titulo">
-    <h4 class="card-title">Generar ordenes de servicios</h4>
+  <div class="contenedor_titulo">
+    <div class="tamano_titulo">
+      <h4 class="card-title">Generar ordenes de servicios</h4>
+    </div>
   </div>
   <br>
   <br>
@@ -9,7 +11,7 @@
     <img class="card-img-top img-fluid" src="/assets/imagenes/orden1.png" alt="">
   </div>
     <div class="card-body" >
-      <div *ngIf="(autorizacion.isTecni() | async)" class=" contenedor row">
+      <div *ngIf="(autorizacion.isTecni() | async)" class="contenedor_botones">
         <a [routerLink]="['/asignacionTecnico']" class="btn text-white">Remisiones</a>
     </div>
     <div *ngIf="(autorizacion.isAdmin() | async)" class="contenedor_botones">

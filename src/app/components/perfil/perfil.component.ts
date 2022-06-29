@@ -34,13 +34,24 @@ export class PerfilComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.changeInput()
   }
   
   changeInput(){
+    let data={
+      cedula:this.form.value.cedula,
+      nombres:this.form.value.nombres,
+      apellidos:this.form.value.apellidos,
+      email:this.form.value.email,
+      telefono:this.form.value.telefono,
+      direccion:this.form.value.direccion,
+      rol:this.form.value.rol
+    }
+
     this.router.paramMap
       .subscribe((params : ParamMap) => {
 
-      this.client.getRequest(`http://127.0.0.1:5000/consultaUsuario?documento=`+this.form.value.cedula)
+      this.client.getRequest(`http://127.0.0.1:5000/consultaUsuario?documento=`+localStorage.getItem('courrentDoc'))
       .pipe()
       .subscribe(
         (data: any) => {
@@ -56,12 +67,13 @@ export class PerfilComponent implements OnInit {
     // Diccionario
     // Convierto las llaves de value a las llaves de form
     const valueToForm: {[key: string]: string} = {
-      "cedula": "cedula",
+      "documento": "cedula",
       "nombres": "nombres",
       "apellidos": "apellidos",
       "correo": "email",
       "telefono": "telefono",
       "direccion": "direccion",
+      "rol": "rol",
     }
     Object.entries(values).forEach(([name, value]) => {
       // Obtengo la llave del formulario desde los values

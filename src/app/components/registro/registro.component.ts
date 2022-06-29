@@ -49,24 +49,57 @@ constructor(
 
     this.client.postRequest("http://127.0.0.1:5000/register",data
     ).subscribe(
-    (response:any)=>{
-      console.log(response),
+
+    async (response:any)=>{
+      console.log(response)
+     //Acuerdo de confidencialidad
+     const { value: accept } = await Swal.fire({
+      title: 'Términos y condiciones de datos',
+      input: 'checkbox',
+      inputValue: 1,
+      inputPlaceholder:'Terminos y Condiciones',
+      confirmButtonColor:'#E7700F',
+      confirmButtonText:'Continue <i class="fa fa-arrow-right"></i>',
+      inputValidator: (result:any) => {
+        return !result && 'Está de acuerdo con los términos y condiciones'
+      }
+    })
+    
+    if (accept) {
+      Swal.fire('Acepta términos para continuar :)')
+    }
+
+
+      Swal.fire({
+        position: 'center',
+        icon: 'success',
+        title: 'Registro Exitoso',
+        showConfirmButton: false,
+        timer: 2000
+      })
 
       this.route.navigate(['/login']);
+      
     }),
     (error:any)=>{
       console.log(error);
     };
-      /*console.log("we",data)*/
+    console.log("Form error");
     }else{
       Swal.fire({
-      position: 'top-end',
-      icon: 'error',
-      title: 'Algo salio mal, intentalo de nuevo',
-      showConfirmButton: false,
-      timer: 2500
+
+        position: 'top-left',
+        icon: 'error',
+        title: 'Algo salió mal, inténtanto de nuevo',
+        showConfirmButton: false,
+        timer: 2000
       })
+      
+      this.route.navigate(['/login']);
+      
+
       console.log("Form error");
+
     }
   }
 }

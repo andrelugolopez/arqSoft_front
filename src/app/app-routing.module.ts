@@ -24,6 +24,7 @@ import { ContenedorHistoricoAdminComponent } from './components/contenedor-histo
 import { ContenedorAdminArticulosComponent } from './components/contenedor-admin-articulos/contenedor-admin-articulos.component';
 import { ContenedorCerrarOrdenComponent } from './components/contenedor-cerrar-orden/contenedor-cerrar-orden.component';
 import { ContendorMediospagoComponent } from './components/contendor-mediospago/contendor-mediospago.component';
+import { ContenedorPerfilComponent } from './components/contenedor-perfil/contenedor-perfil.component';
 
 
 const routes: Routes = [
@@ -51,6 +52,7 @@ const routes: Routes = [
   {path:'admin-articulos', component:ContenedorAdminArticulosComponent},
   {path:'cerrar-orden',component:ContenedorCerrarOrdenComponent},
   {path:'mediospago',component:ContendorMediospagoComponent},
+  {path:'perfil',component:ContenedorPerfilComponent},
   
 ];
 

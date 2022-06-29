@@ -61,9 +61,9 @@
     opacity: 1;
     right: 0;
   }
- img{
-  height: auto;
-  width: 100%;
+ .imagen{
+  height: 200px;
+  width: 250px;
 }
 
 .tamano_titulo{

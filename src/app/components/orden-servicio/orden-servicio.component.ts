@@ -68,7 +68,7 @@ export class OrdenServicioComponent implements OnInit {
           diaginicial:this.form.value.diaginicial
         }
 
-        Swal.fire('Any fool can use a computer')
+        Swal.fire('Orden generada')
 
         this.client.postRequest("http://127.0.0.1:5000/ordenServicio",data
         ).subscribe(

@@ -49,29 +49,6 @@ export class AdministradorRolesComponent implements OnInit {
       }
       console.log("entra a crear")
 
-      // let timerInterval:any
-      // Swal.fire({
-      //   title: 'Auto close alert!',
-      //   html: 'I will close in <b></b> milliseconds.',
-      //   timer: 2000,
-      //   timerProgressBar: true,
-      //   didOpen: () => {
-      //     Swal.showLoading()
-      //     const b = Swal.getHtmlContainer().querySelector('b')
-      //     timerInterval = setInterval(() => {
-      //       b.textContent = Swal.getTimerLeft()
-      //     }, 100)
-      //   },
-      //   willClose: () => {
-      //     clearInterval(timerInterval)
-      //   }
-      // }).then((result) => {
-      //   /* Read more about handling dismissals below */
-      //   if (result.dismiss === Swal.DismissReason.timer) {
-      //     console.log('I was closed by the timer')
-      //   }
-      // })
-
       this.client.postRequest('http://127.0.0.1:5000/registerAdmin',data,this.autorizacion.getToken())
       .subscribe(
         async(data:any) => {
@@ -103,23 +80,6 @@ export class AdministradorRolesComponent implements OnInit {
       console.log("prueba",data.cedula)
 
       }else{
-
-          //   const { value: password } = await Swal.fire({
-          //   title: 'Enter your password',
-          //   input: 'password',
-          //   inputLabel: 'Password',
-          //   inputPlaceholder: 'Enter your password',
-          //   inputAttributes: {
-          //     maxlength: 10,
-          //     autocapitalize: 'off',
-          //     autocorrect: 'off'
-          //   }
-          // })
-
-          // if (password) {
-          //   Swal.fire(`Entered password: ${password}`)
-          // }
-
         console.log("Form error");
       }
     }

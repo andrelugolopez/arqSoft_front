@@ -13,6 +13,7 @@ import { ClientService } from '../../services/client.service';
 export class FacturaComponent implements OnInit {
   productos=[];
   form: FormGroup;
+  mostrarFormulario: boolean = true;
   
   constructor(
     public autorizacion: AutorizacionService,
@@ -37,10 +38,16 @@ export class FacturaComponent implements OnInit {
         this.productos.push(diccionario[key])    
      }
       console.log("dicionario formateado en arreglo",  this.productos);
+
+      
     }
+
+
 
   onSubmit(){
     if (this.form.valid) {
+
+      
 
        let carritof= localStorage.getItem('carrito')
        let f = JSON.parse(carritof)

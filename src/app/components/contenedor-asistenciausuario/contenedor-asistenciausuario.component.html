@@ -1,7 +1,7 @@
 <app-nav></app-nav>
 <div >
     <div class="container">
-        <div class=" contenedor row ">
+        <div *ngIf="!(autorizacion.isLoggedIn()|async)"  class=" contenedor row ">
             <app-card-contactanos-u class="col-6"></app-card-contactanos-u>
             <app-card-consultar-u class="col-6"></app-card-consultar-u>
             <app-principalesmarcas></app-principalesmarcas>   

@@ -1,16 +1,17 @@
+
 <div class="contenedor">
     <div class="cartas" *ngFor="let producto of productos">
         <div class="card1" style="width:400px">
-            <img class="card-img-top" src="/assets/imagenes/{{producto.imagen}}" alt="Card image">
             <div class="card-body">
-                <h4 class="card-title">{{producto.nombre}}</h4>
+                <h4 class="card-title">{{producto.nombre}}</h4><br>
                 <p class="card-text"> {{producto.precio}}</p>
-                <a [routerLink]="['/tienda']" class="btn btn-primary">Seguir comparando</a>
             </div>
         </div>
     </div>
   </div>
 <div class="d-grid gap-2 col-2 mx-auto">
+
+    <button class="btn" [routerLink]="['/menu-tienda']" type="button">Seguir comparando</button>
     <button class="btn" [routerLink]="['/factura']" type="button">Pagar</button>
 </div>
   

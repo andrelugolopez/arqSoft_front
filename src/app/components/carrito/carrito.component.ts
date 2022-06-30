@@ -10,27 +10,24 @@ import { Router } from '@angular/router';
   styleUrls: ['./carrito.component.css']
 })
 export class CarritoComponent implements OnInit {
-  productos: any
 
-  constructor(/*inyeccion de independencias*/
+  productos=[]
+
+  constructor(
   private client: ClientService,
   public autorizacion: AutorizacionService,
   private route: Router
   ){}
 
   ngOnInit(): void {
-  }
-
-  comprar(idproducto:any){
-    this.client.postRequest('http://localhost:5000/carrito', {idproducto: idproducto}, this.autorizacion.getToken()).subscribe(
-      (response: any) => {console.log(response);
-      },
-      (error: any) => {console.log(error);}
-    )
-    console.log("ID producto: ", idproducto);
     
+    let diccionario = JSON.parse(localStorage.getItem('carrito')!)
+    for (const key in diccionario) {
+     
+        this.productos.push(diccionario[key])    
+    }
+    console.log("dicionario formateado en arreglo",  this.productos);
   }
-
 
 }
 

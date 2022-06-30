@@ -1,21 +1,71 @@
 .contenedor{
-    display: flex; 
-    flex-wrap: wrap;
-
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 80px 0px 39px 0px ;  
+    color: white;
+    max-width: 1820px !important;
    
 }
+.card-body{
+  margin: 0px 0px 0px 20px ; 
+   
+}
+.indexof{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0px 120px 0px 120px ;
+}
 
-.cartas{
-    width: 33.33%;
-    height: 26%;
-    flex-direction: column;
-    align-items: baseline;
- }
+.card1{
+    margin: 42px 30px 42px 50px;
+    padding: 30px 0px 42px 0px;
+    border-radius: 40px !important;
+    background-color: #163446; 
+    height: 529px;
+    /* width: 359px;    */
+  }
+  .textoP{
+    color: rgba(231, 112, 15, 0.87);
+    font-weight: bold;
+    font-family: Arial;
+  }
+  
+   img{
+    height: 260px;
+  }
+  .producto{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
 
- .card-img-top{
-     object-fit: contain;
-     max-width: 100%;
-     height: 300px;
-
-    
- }
+.imagen_anadir{
+    cursor: pointer;
+    width: 40px;
+    height: 40px;   
+}
+.iconos{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0px 120px 0px 120px ;  
+}
+.btn{
+  background-color:  rgba(231, 112, 15, 0.87);
+  font-weight: bold;
+  font-family: Arial;
+}
+.pagar{
+  display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: center;
+ margin: 0px 0px 322px 0px ;  
+ color: white;
+}

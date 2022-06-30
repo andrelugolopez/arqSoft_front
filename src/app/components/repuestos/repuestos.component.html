@@ -1,22 +1,66 @@
+
 <div class="contenedor">
     <div class="cartas" *ngFor="let producto of productos">
         <div class="card1" style="width:400px">
-            <img class="card-img-top" src="/assets/imagenes/{{producto.imagen}}" alt="Card image">
-            <div class="card-body">
-                <h4 class="card-title">{{producto.nombre}}</h4>
-                <p class="card-text"> {{producto.precio}}</p>
-                <a [routerLink]="['/carrito']" class="btn btn-primary">Agregar al carrito</a>
-                <a [routerLink]="['/detalleProducto']"class="btn btn-primary">Ver detalle</a>
+            <div class="producto">
+                <!-- <img class="card-img-top" src="/assets/imagenes/{{producto.imagen}}" alt="Card image"> -->
+                 <img src="{{producto.url}}"/>
             </div>
+                <div class="card-body text-center">
+                    <h3 class="card-title">{{producto.nombre}}</h3>
+                    <h3 class="textoP card-text">$ {{producto.precio}}</h3>
+
+                    <div class="indexof">
+                        <button type="button" (click)="cantidad(productos.indexOf(producto), '-')">-</button>
+                        <b>{{productos[productos.indexOf(producto)]["cantidad"]}}</b>
+                        <button type="button" (click)="cantidad(productos.indexOf(producto), '+')">+</button><br><br>
+                    </div>
+                </div>
+                    <div class="iconos">
+                        <img src="/assets/imagenes/vaciar.png" class="imagen_anadir" (click)="quitarCarrito(productos.indexOf(producto))"/>
+                        <a [routerLink]="['/detalleProducto',producto.idproducto]"><img src="/assets/imagenes/VerMas.png" class="imagen_anadir"></a>
+                        <img src="/assets/imagenes/agregar.png" class="imagen_anadir"  (click)="Carrito(productos.indexOf(producto))"/>
+                        
+                       
+                    </div>    
+                
         </div>
+     </div>
+ </div>
+ <div class="pagar">
+    <div class="d-grid gap-2 col-2 mx-auto">
+        <button class="btn" type="button" (click)="pagar()">Pagar</button>
+        <button class="btn" type="button" (click)="formatearDiiconario()">Formatear diccionario</button>
     </div>
-</div>
-
-
-
-<!-- <h1>Directiva ngIf</h1>
-    <div *ngIf="mostrarparrafo">
-      <p>SOMOS ADSI RAPPI 2022</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates vero itaque facere officiis rerum quia totam, reiciendis ipsa recusandae tempore dolorum. Quidem asperiores totam error nulla quas molestias voluptate id?</p>
+ </div>
+ 
+      <!-- <div *ngFor="let producto of productos">
+        <img src="{{producto.url}}">
+        <p>{{producto.precio}}</p>
+        <button type="button" (click)="cantidad(productos.indexOf(producto), '+')">+</button>
+        {{productos[productos.indexOf(producto)]["cantidad"]}}
+        <button type="button" (click)="cantidad(productos.indexOf(producto), '-')">-</button>
+        
+        <br>
+        <button type="button" (click)="Carrito(productos.indexOf(producto))">Agregar a carrito</button>
+        <button type="button" (click)="quitarCarrito(productos.indexOf(producto))">Quitar carrito</button>
+        
     </div>
-    <button (click)="mostrarparrafo=!mostrarparrafo;">Ver Más</button> -->
+        
+        <button type="button" (click)="pagar()">Pagar</button>
+        <button type="button" (click)="formatearDiiconario()">Formatear diccionario</button>
+
+<div class="contenedor">
+  <div class="cartas" *ngFor="let producto of productos">
+      <div class="card1" style="width:400px">
+          <img class="card-img-top" src="/assets/imagenes/{{producto.imagen}}" alt="Card image">
+          <div class="card-body">
+              <h4 class="card-title">{{producto.nombre}}</h4>
+              <p class="card-text"> {{producto.precio}}</p>
+              <a [routerLink]="['/carrito']" class="btn btn-primary">Agregar al carrito</a>
+              <a [routerLink]="['/detalleProducto',producto.idproducto]"class="btn btn-primary">Ver detalle</a>
+          </div>
+      </div>
+  </div>
+</div> -->
+

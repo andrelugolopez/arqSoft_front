@@ -1,21 +1,68 @@
 .contenedor{
-    display: flex; 
-    flex-wrap: wrap;
-
-   
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  max-width: 100vw;
+  flex-wrap: wrap;
 }
 
-.cartas{
-    width: 33.33%;
-    height: 26%;
-    flex-direction: column;
-    align-items: baseline;
- }
+.indexof{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0px 120px 0px 120px ;
+  color: black;
+}
 
- .card-img-top{
-     object-fit: contain;
-     max-width: 100%;
-     height: 300px;
+.card1{
+    margin: 42px 30px 42px 50px;
+    padding: 30px 0px 42px 0px;
+    border-radius: 40px !important;
+    border: solid 2px #163446;
+    height: 529px;
+    /* width: 359px;    */
+  }
+  .textoP{
+    color: black;
+    font-weight: bold;
+    font-family: Arial;
+  }
+  
+   img{
+    height: 260px;
+  }
+  .producto{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
 
-    
- }
+.imagen_anadir{
+    cursor: pointer;
+    width: 40px;
+    height: 40px;   
+}
+.iconos{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0px 120px 0px 120px ;  
+}
+.btn{
+  background-color:  rgba(231, 112, 15, 0.87);
+  font-weight: bold;
+  font-family: Arial;
+}
+.pagar{
+  display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: center;
+ /* margin: 0px 0px 322px 0px ;   */
+ color: white;
+}

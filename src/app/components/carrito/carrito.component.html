@@ -3,12 +3,16 @@
     <div class="cartas" *ngFor="let producto of productos">
         <div class="card1" style="width:400px">
             <div class="card-body text-white ">
-                <h4 class="card-title">{{producto.nombre}}</h4><br>
-                <p class="card-text"> {{producto.precio}}</p>
+                <h5 class="card-title">{{producto.nombre}}</h5><br>
+                <p class="card-text">{{producto.precio | currency:'COP':'$':'1.0'}}</p>
+                <p class="card-text">Sub {{producto.subtotal | currency:'COP':'$':'1.0'}}</p>
+                <p class="card-text"> Cantidad a comprar: {{producto.cantidad}}</p>
             </div>
         </div>
     </div>
+    <p class="card-text"> Total compra: {{total | currency:'COP':'$':'1.0'}}</p>
   </div>
+
 <div class="d-grid gap-2 col-2 mx-auto">
 
     <button class="btn text-white" [routerLink]="['/menu-tienda']" type="button">Seguir comparando</button>

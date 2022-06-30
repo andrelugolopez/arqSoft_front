@@ -7,12 +7,12 @@
             </div>
                 <div class="card-body text-center">
                     <h3 class="card-title">{{producto.nombre}}</h3>
-                    <h3 class="textoP card-text">$ {{producto.precio}}</h3>
+                    <h3 class="textoP card-text">{{producto.precio | currency:'COP':'$':'1.0'}}</h3>
 
                     <div class="indexof">
-                        <button type="button" (click)="cantidad(productos.indexOf(producto), '-')">-</button>
-                        <b>{{productos[productos.indexOf(producto)]["cantidad"]}}</b>
-                        <button type="button" (click)="cantidad(productos.indexOf(producto), '+')">+</button><br><br>
+                        <button class="quitar" type="button" (click)="cantidad(productos.indexOf(producto), '-')">-</button>
+                        <b class="mx-3">{{productos[productos.indexOf(producto)]["cantidad"]}}</b>
+                        <button class="agregar"type="button" (click)="cantidad(productos.indexOf(producto), '+')">+</button><br><br>
                     </div>
                 </div>
                     <div class="iconos">
@@ -27,8 +27,8 @@
      </div>
  </div>
  <div class="pagar">
-    <div class="d-grid gap-2 col-2 mx-auto">
-        <a [routerLink]="['/carrito']" class="btn btn-primary"(click)="pagar()">Pagar</a>
+    <div class="d-grid gap-2 col-2 mx-auto text-white">
+        <button [routerLink]="['/carrito']" class="btn"(click)="pagar()">Pagar</button>
         <button class="btn" type="button" (click)="formatearDiiconario()">Formatear diccionario</button>
     </div>
  </div>

@@ -33,6 +33,7 @@
   
    img{
     height: 260px;
+    max-width: 99%;
   }
   .producto{
     display: flex;

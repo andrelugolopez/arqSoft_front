@@ -12,8 +12,10 @@ import { ClientService } from '../../services/client.service';
 })
 export class FacturaComponent implements OnInit {
   productos=[];
+  arreglo=[];
   form: FormGroup;
   mostrarFormulario: boolean = true;
+
   
   constructor(
     public autorizacion: AutorizacionService,
@@ -47,11 +49,16 @@ export class FacturaComponent implements OnInit {
   onSubmit(){
     if (this.form.valid) {
 
-      
-
        let carritof= localStorage.getItem('carrito')
        let f = JSON.parse(carritof)
-       console.log(f, 77777);
+       
+       let diccionario = JSON.parse(localStorage.getItem('carrito')!)
+      for (const key in diccionario) {
+       
+          this.arreglo.push(diccionario[key])
+          
+      }
+      console.log("dicionario formateado en arreglo",  this.arreglo);
 
         this.client.postRequest('http://127.0.0.1:5000/facturacion', {
           telefono: this.form.value.telefono,
@@ -59,7 +66,8 @@ export class FacturaComponent implements OnInit {
           departamento: this.form.value.departamento,
           municipio: this.form.value.municipio,
           pagos:this.form.value.pagos,
-          data: f
+          data: this.arreglo
+          
       }).subscribe(
         (response: any) => {
           console.log(response);

@@ -32,6 +32,7 @@
   }
   
    img{
+    max-width: 99%;
     height: 260px;
   }
   .producto{

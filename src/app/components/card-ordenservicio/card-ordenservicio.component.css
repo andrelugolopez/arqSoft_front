@@ -76,6 +76,9 @@
     display: flex;
     justify-content: center;
   }
-  img {
-    height: 160px;
-  }
+
+  .fit-image{
+    width: 70%;
+    object-fit: cover;
+    height: 160px; /* only if you want fixed height */
+    }

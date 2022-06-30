@@ -4,6 +4,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { Router } from '@angular/router';
 import { of } from 'rxjs';
 import Swal from 'sweetalert2';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-orden-servicio',
@@ -70,7 +71,7 @@ export class OrdenServicioComponent implements OnInit {
 
         Swal.fire('Orden generada')
 
-        this.client.postRequest("http://127.0.0.1:5000/ordenServicio",data
+        this.client.postRequest(environment.url+"/ordenServicio",data
         ).subscribe(
           (data:any) => {
 
@@ -109,7 +110,7 @@ export class OrdenServicioComponent implements OnInit {
     }    
     
       listTech(){
-        this.client.getRequest('http://127.0.0.1:5000/consultaTecnicos').subscribe(    
+        this.client.getRequest(environment.url+'/consultaTecnicos').subscribe(    
           (data: any) => {
           this.tecnicos = data["data"],
           console.log(data)
@@ -120,7 +121,7 @@ export class OrdenServicioComponent implements OnInit {
 
 
       changeInput(){
-          this.client.postRequest("http://127.0.0.1:5000/consultaOrden",{     
+          this.client.postRequest(environment.url+"/consultaOrden",{     
             telefono:this.form.value.telefono,
             cedula:this.form.value.cedula,
             email:this.form.value.email,

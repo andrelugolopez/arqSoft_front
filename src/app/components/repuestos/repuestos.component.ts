@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ClientService } from '../../services/client.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-repuestos',
@@ -20,7 +21,7 @@ export class RepuestosComponent implements OnInit {
     }
 
     ngOnInit(){
-        this.client.getRequestAllProducts('http://localhost:5000/productos?tipo=R').subscribe(
+        this.client.getRequestAllProducts(environment.url+'/productos?tipo=R').subscribe(
         (data: any) => {
           this.productos = data["data"];
           console.log(333, this.productos);

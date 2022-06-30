@@ -4,6 +4,7 @@ import { AutorizacionService } from '../../services/autorizacion.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-nueva-contrasena',
@@ -50,11 +51,11 @@ export class NuevaContrasenaComponent implements OnInit {
 
         let info = {
           password :this.password,
-          email: localStorage.getItem("email"),  
+          email: localStorage.getItem("email"),
         }
         console.log("hola",info)
 
-        this.client.postRequest("http://127.0.0.1:5000/cambioClave",info
+        this.client.postRequest(environment.url+"/cambioClave",info
           ).subscribe(
           (response:any)=>{
           console.log(response),
@@ -65,7 +66,7 @@ export class NuevaContrasenaComponent implements OnInit {
             showConfirmButton: false,
             timer: 2000
           })
-          
+
           this.route.navigate(['/login']);
 
           }),
@@ -83,14 +84,7 @@ export class NuevaContrasenaComponent implements OnInit {
       }
     }else{
       console.log("Form error");
-      
-      
+
     }
   }
 }
-
-  
-      
-
-    
-

@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { ActivatedRoute, ParamMap} from '@angular/router';
 import { AutorizacionService } from '../../services/autorizacion.service';
 import Swal from 'sweetalert2';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-administrador-roles',
@@ -49,7 +50,7 @@ export class AdministradorRolesComponent implements OnInit {
       }
       console.log("entra a crear")
 
-      this.client.postRequest('http://127.0.0.1:5000/registerAdmin',data,this.autorizacion.getToken())
+      this.client.postRequest(environment.url+'/registerAdmin',data,this.autorizacion.getToken())
       .subscribe(
         async(data:any) => {
           const Toast = Swal.mixin({
@@ -132,7 +133,7 @@ export class AdministradorRolesComponent implements OnInit {
         }
       })
 
-      this.client.getRequest('http://127.0.0.1:5000/eliminaruser', this.autorizacion.getToken() , this.form.value.email)
+      this.client.getRequest(environment.url+'/eliminaruser', this.autorizacion.getToken() , this.form.value.email)
       .subscribe(
         (data:any) => {
           Swal.fire({
@@ -232,7 +233,7 @@ export class AdministradorRolesComponent implements OnInit {
       //   }
       // })
 
-      this.client.postRequest('http://127.0.0.1:5000/actualizarUsuario',data,this.autorizacion.getToken())
+      this.client.postRequest(environment.url+'/actualizarUsuario',data,this.autorizacion.getToken())
       .subscribe(
         (data:any) => {
           console.log(data["data"]),
@@ -289,7 +290,7 @@ export class AdministradorRolesComponent implements OnInit {
     this.router.paramMap
       .subscribe((params : ParamMap) => {
 
-      this.client.getRequest(`http://127.0.0.1:5000/consultaUsuario?documento=`+this.form.value.cedula)
+      this.client.getRequest(environment.url+`/consultaUsuario?documento=`+this.form.value.cedula)
       .pipe()
       .subscribe(
         (data: any) => {

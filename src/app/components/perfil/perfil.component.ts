@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { ActivatedRoute, ParamMap} from '@angular/router';
 import { AutorizacionService } from '../../services/autorizacion.service';
 import Swal from 'sweetalert2';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-perfil',
@@ -54,7 +55,7 @@ export class PerfilComponent implements OnInit {
     this.router.paramMap
       .subscribe((params : ParamMap) => {
 
-      this.client.getRequest(`http://127.0.0.1:5000/consultaUsuario?documento=`+localStorage.getItem('courrentDoc'))
+      this.client.getRequest(environment.url+`/consultaUsuario?documento=`+localStorage.getItem('courrentDoc'))
       .pipe()
       .subscribe(
         (data: any) => {

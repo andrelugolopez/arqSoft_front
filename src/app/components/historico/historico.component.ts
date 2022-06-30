@@ -4,6 +4,7 @@ import { ClientService } from 'src/app/services/client.service';
 import { Router } from '@angular/router';
 import { ActivatedRoute, ParamMap} from '@angular/router';
 import { AutorizacionService } from '../../services/autorizacion.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-historico',
@@ -55,7 +56,7 @@ export class HistoricoComponent implements OnInit {
     this.router.paramMap
     .subscribe((params : ParamMap) => {
 
-    this.client.getRequest(`http://127.0.0.1:5000//consultaHistoria?nombre=`+localStorage.getItem('courrentUser'))
+    this.client.getRequest(environment.url+`/consultaHistoria?nombre=`+localStorage.getItem('courrentUser'))
     .subscribe(    
       (data: any) => {
       this.ordenes = data["data"]

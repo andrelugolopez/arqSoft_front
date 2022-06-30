@@ -3,6 +3,7 @@ import { AutorizacionService } from '../../services/autorizacion.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ClientService } from '../../services/client.service';
+import { environment } from 'src/environments/environment';
 
 
 @Component({
@@ -60,7 +61,7 @@ export class FacturaComponent implements OnInit {
       }
       console.log("dicionario formateado en arreglo",  this.arreglo);
 
-        this.client.postRequest('http://127.0.0.1:5000/facturacion', {
+        this.client.postRequest(environment.url+'/facturacion', {
           telefono: this.form.value.telefono,
           direccion: this.form.value.direccion,
           departamento: this.form.value.departamento,

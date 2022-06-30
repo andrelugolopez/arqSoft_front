@@ -3,12 +3,16 @@
 </div>
 
 <form [formGroup]="form" (ngSubmit)="onSubmit()">
-  <h1> Orden de servicio</h1>
+  <h3> Orden de servicio</h3>
   <br>
-  <div class="container row">
-    <h6 class="lbl1 col">Fecha {{fecha}}</h6>
-    <h6 class="lbl1 col">Hora {{hora}}</h6>
+  <div class="container">
+    <div class="row text">
+      <label class="lbl1 col text">Fecha {{fecha}}</label>
+      <label class="lbl1 col text">Hora {{hora}}</label>
+    </div>  
   </div>
+  <br>
+  <br>
     
   <div class="container">
 
@@ -48,6 +52,12 @@
         <div class="w-100"></div>
       </div>
 
+      <div class="row text">
+        <label class="col text">Marca dispositivo:</label>
+        <input type="text" class="tamano_input form-control col" formControlName="marcadispositivo">
+        <div class="w-100"></div>
+      </div>
+
       <div class="select_margin mb-3 row text">
          <label for="exampleInputEmail1" class="form-label text col">Nombre de Técnico: </label>
          <select class="custom-select" id="inputGroupSelect01" formControlName="nombtecnico" >
@@ -57,20 +67,15 @@
          <div class="w-100"></div>
       </div>
 
-      <div class="row text">
-        <label class="col text">Marca dispositivo:</label>
-        <input type="text" class="tamano_input form-control col" formControlName="marcadispositivo">
-        <div class="w-100"></div>
-      </div>
-      <br>
-
       <label>Tipo de dispositivo:</label>
-      <div  class=" container row">
-        <div class="form-check form-check-inline col-3">
+      <br>
+      <br>
+      <div  class="container row">
+        <div class="form-check form-check-inline col-4">
           <input class="form-check-input " formControlName="tipodispositivo" type="radio"  id="inlineRadio1" value="Pc">
           <label class="form-check-label" for="inlineRadio1">Pc</label>
         </div>
-        <div class="form-check form-check-inline col-3">
+        <div class="form-check form-check-inline col-4">
           <input class="form-check-input" formControlName="tipodispositivo" type="radio" id="inlineRadio2" value="Portatil">
           <label class="form-check-label" for="inlineRadio2">Portátil</label>
         </div> 
@@ -85,12 +90,11 @@
           </div>
         </div>
       </div>
-
+      <br>
+      <label class="text">Tipo de servicio:</label>
       <br>
       <br>
-
-      <label class="text">Tipo de servicio:</label> 
-        <div class="form-check form-check-inline">
+        <div class="form-check form-check-inline col-6">
           <input class="form-check-input " formControlName="tiposervicio" type="radio"  id="inlineRadio1" value="Mantenimineto preventivo">
           <label class="form-check-label" for="inlineRadio1">Mantenimiento preventivo</label>
         </div>
@@ -103,15 +107,15 @@
 
       <label class="text">Accesorios:</label> 
       <br>
-
+      <br>
       <div class="container row text">
 
-          <div class="form-check form-check-inline col-3">
+          <div class="form-check form-check-inline col-4">
             <input class="form-check-input" formControlName="accesorios" type="radio"  id="inlineRadio1" value="Mouse">
             <label class="form-check-label" for="inlineRadio1">Mouse</label>
           </div>
 
-          <div class="form-check form-check-inline col-3">
+          <div class="form-check form-check-inline col-4">
             <input class="form-check-input" formControlName="accesorios" type="radio" id="inlineRadio2" value="Cable de energia">
             <label class="form-check-label" for="inlineRadio2">Cable de energía</label>
           </div>
@@ -121,16 +125,16 @@
             <label class="form-check-label" for="inlineRadio2">Cargador</label>        
           </div>   
       </div> 
-
+      <br>
 
       <div class="container row text">
 
-        <div class="form-check form-check-inline col-3">
+        <div class="form-check form-check-inline col-4">
           <input class="form-check-input" formControlName="accesorios" type="radio" id="inlineRadio2" value="Teclado">
           <label class="form-check-label" for="inlineRadio2">Teclado</label>
         </div>
 
-        <div class="form-check form-check-inline  col-3">
+        <div class="form-check form-check-inline  col-4">
           <input class="form-check-input" formControlName="accesorios" type="radio" id="inlineRadio2" value="ninguno">
           <label class="form-check-label " for="inlineRadio2">Ninguno</label>
         </div>
@@ -154,8 +158,7 @@
         <textarea class="form-control" formControlName="diaginicial" aria-label="With textarea"></textarea>
       </div>
 
-        <div>
-          <div class="mb-3"></div>
+        <div class="container-button-orden-servicio">
           <button type="submit" class="btn btn-primary">Guardar</button>
         </div>
  

@@ -1,7 +1,9 @@
 <form class="form_historico-Admin" [formGroup]="form" (ngSubmit)="onSubmit()">
-    <h6>Historico Administrador</h6>
+    <br>
+    <h3>Historico Administrador</h3>
     <br>
     <br>
+    <div class="container">
     <div class="select_margin mb-3 row text">
         <label for="exampleInputEmail1" class="form-label text col">Nombre de Técnico: </label>
         <select class="custom-select form-control" id="inputGroupSelect01" formControlName="nombtecnico">
@@ -11,26 +13,44 @@
         <div class="w-100"></div>
      </div>
 
+     <div class="container-button">
+        <button type="submit" class="btn btn-primary form_historico-Admin_button">Consultar ordenes</button>
+    </div>
+
     <br>
     <div class="select_margin mb-3 row text">
-        <label for="exampleInputEmail1" class="form-label text col">Ordenes abiertas: </label>
-        <select class="custom-select" id="inputGroupSelect01" >
-        <option>Seleccione Orden de servicio:</option>
-        <option *ngFor="let orden of ordenAbiertas">dispositivo: {{orden.tipoDispositivo}}</option>
-        </select>
+        <label for="exampleInputEmail1" class="form-label text col" >Ordenes abiertas: </label>
+            <select class="custom-select" id="inputGroupSelect01" formControlName="ordenAbierta" (click)="informacionOrdenAbierta()">
+                <option>Seleccione Orden de servicio:</option>
+                <option *ngFor="let orden of ordenAbiertas">{{orden.ordenServicio}}</option>
+            </select>
         <div class="w-100"></div>
     </div>
+    <br>
+
+    <div>
+        <label class="form-label">Diagnostico</label>
+        <br>
+        <br>
+        <textarea class="tamano_textarea" aria-label="With textarea">{{infoDiagnostico}}</textarea>
+    </div>
+    
     <div class="select_margin mb-3 row text">
         <label for="exampleInputEmail1" class="form-label text col">Ordenes Cerradas: </label>
-        <select class="custom-select" id="inputGroupSelect01" >
-        <option>Seleccione Orden de servicio:</option>
-        <option *ngFor="let ordenCerrada of ordenCerradas">dispositivo: {{ordenCerrada.tipoDispositivo}}</option>
+        <select class="custom-select" id="inputGroupSelect01" formControlName="ordenCerrada" (click)="informacionOrdenCerrada()" >
+            <option>Seleccione Orden de servicio:</option>
+            <option *ngFor="let ordenCerrada of ordenCerradas">{{ordenCerrada.ordenServicio}}</option>
         </select>
         <div class="w-100"></div>
     </div>
-    <br>
-    <br>
-    <div>
-        <button type="submit" class="btn btn-primary">Consultar</button>
+        <div>
+            <label class="form-label">Diagnostico</label>
+        <br>
+        <br>
+        <textarea class="tamano_textarea" aria-label="With textarea">{{infoDiagnosticoCerrada}}</textarea>
+        </div>
     </div>
+    <br>
+    <br>
+
 </form>

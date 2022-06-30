@@ -3,8 +3,7 @@ import { ClientService } from '../../services/client.service';
 import { AutorizacionService } from '../../services/autorizacion.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-
-
+import Swal from 'sweetalert2';
 // nombres usados para seguridad
 // envio de token = into
 // nombre de usuario = Nuat
@@ -21,6 +20,7 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
   mostrarSpinner: boolean = false;
   mostrarFormulario: boolean = true;
+  
   
 
   form!: FormGroup;
@@ -42,6 +42,7 @@ constructor(/*inyeccion de independencias*/
         this.mostrarSpinner = true;
         this.mostrarFormulario = false;
         if(this.form.valid){
+
           // let data={/**/
           //   email:this.form.value.email,
           //   password:this.form.value.password,
@@ -63,20 +64,49 @@ constructor(/*inyeccion de independencias*/
               //doc
               this.autorizacion.setCourrentDoc(response.doc)
 
+              Swal.fire({
+              position: 'center',
+              icon: 'success',
+              title: 'Login exitoso',
+              showConfirmButton: false,
+              timer: 2500
+              })
+
               this.route.navigate(['/']);
+              Swal.fire({
+                position: 'center',
+                icon: 'success',
+                title: 'Ingreso Exitoso',
+                showConfirmButton: false,
+                timer: 2000
+              })
 
           }),
 
           (error:any)=> {
+
+            
             console.log(error);
-          };
+         };
     
           /*console.log("we",data)*/
         }else{
           console.log("Form error");
+          Swal.fire({
+            position: 'top-end',
+            icon: 'error',
+            title: '¡¡Usuario o contraseña incorrecta!!',
+            showConfirmButton: false,
+            timer: 2000
+          })
+          this.route.navigate(['/login']);
+          this.mostrarFormulario=true;
+          this.mostrarSpinner=false;
+       }
 
         }
-     }
+        
+
      inputIsValid(llave: string): boolean {
       return !this.form.controls[llave].valid
      }

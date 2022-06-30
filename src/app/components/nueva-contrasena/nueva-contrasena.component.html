@@ -2,19 +2,25 @@
     <div>
         <form [formGroup]="form" (ngSubmit)="onSubmit()">
             <div class="header-text">
-                <h3>Ingrese información recuperar contraseña</h3>
+                <h4>Ingrese información recuperar contraseña</h4>
                 <br>
             </div>
 
             <div>
+                <label for="">Código de recuperación:</label>
                 <input type="text" placeholder="Código de recuperación" class="form-control" formControlName="codigo" aria-describedby="emailHelp">
             </div>
+            <br>
             <div>
+                <label for="">Nueva contraseña:</label>
                 <input type="password" placeholder="Nueva contraseña" class="form-control" formControlName="contrasena" aria-describedby="emailHelp">
             </div>
+            <br>
             <div class="form-group">
+                <label for="">Confirmar contraseña:</label>
                 <input type="password" placeholder="Confirmar contraseña" class="form-control" formControlName="nuevacontrasena" aria-describedby="emailHelp">
             </div>
+            <br>
             <div>
                 <div class="container_button">
                     <button type="submit" class="btn btn-primary">Guardar</button>

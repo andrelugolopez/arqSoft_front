@@ -4,6 +4,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { Router } from '@angular/router';
 import { ActivatedRoute, ParamMap} from '@angular/router';
 import { AutorizacionService } from '../../services/autorizacion.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-administrador-roles',
@@ -46,14 +47,55 @@ export class AdministradorRolesComponent implements OnInit {
         direccion:this.form.value.direccion,
         rol:this.form.value.rol
       }
+      console.log("entra a crear")
+
+      // let timerInterval:any
+      // Swal.fire({
+      //   title: 'Auto close alert!',
+      //   html: 'I will close in <b></b> milliseconds.',
+      //   timer: 2000,
+      //   timerProgressBar: true,
+      //   didOpen: () => {
+      //     Swal.showLoading()
+      //     const b = Swal.getHtmlContainer().querySelector('b')
+      //     timerInterval = setInterval(() => {
+      //       b.textContent = Swal.getTimerLeft()
+      //     }, 100)
+      //   },
+      //   willClose: () => {
+      //     clearInterval(timerInterval)
+      //   }
+      // }).then((result) => {
+      //   /* Read more about handling dismissals below */
+      //   if (result.dismiss === Swal.DismissReason.timer) {
+      //     console.log('I was closed by the timer')
+      //   }
+      // })
 
       this.client.postRequest('http://127.0.0.1:5000/registerAdmin',data,this.autorizacion.getToken())
       .subscribe(
-        (data:any) => {
-          console.log(data["data"]),
+        async(data:any) => {
+          const Toast = Swal.mixin({
+            toast: true,
+            position: 'center',
+            showConfirmButton: false,
+            timer: 2500,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+              toast.addEventListener('mouseenter', Swal.stopTimer)
+              toast.addEventListener('mouseleave', Swal.resumeTimer)
+            }
+          })
+          
+          Toast.fire({
+            icon: 'success',
+            title: 'Rol creado satisfactoriamente'
+          })
+
           this.route.navigate(['/asistenciatenicadmin']);
         },
         (error:any)=>{
+
           console.log(error)
         });
 
@@ -61,6 +103,23 @@ export class AdministradorRolesComponent implements OnInit {
       console.log("prueba",data.cedula)
 
       }else{
+
+          //   const { value: password } = await Swal.fire({
+          //   title: 'Enter your password',
+          //   input: 'password',
+          //   inputLabel: 'Password',
+          //   inputPlaceholder: 'Enter your password',
+          //   inputAttributes: {
+          //     maxlength: 10,
+          //     autocapitalize: 'off',
+          //     autocorrect: 'off'
+          //   }
+          // })
+
+          // if (password) {
+          //   Swal.fire(`Entered password: ${password}`)
+          // }
+
         console.log("Form error");
       }
     }
@@ -77,10 +136,63 @@ export class AdministradorRolesComponent implements OnInit {
         direccion:this.form.value.direccion,
         rol:this.form.value.rol
       }
+      console.log("entra a eliminar")
+      const swalWithBootstrapButtons = Swal.mixin({
+        customClass: {
+          confirmButton: 'btn btn-success',
+          cancelButton: 'btn btn-danger'
+        },
+        buttonsStyling: false
+      })
+
+      swalWithBootstrapButtons.fire({
+        title: 'Are you sure?',
+        text: "You won't be able to revert this!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'Yes, delete it!',
+        cancelButtonText: 'No, cancel!',
+        reverseButtons: true
+      }).then((result) => {
+        if (result.isConfirmed) {
+          swalWithBootstrapButtons.fire(
+            'Deleted!',
+            'Your file has been deleted.',
+            'success'
+          )
+        } else if (
+          /* Read more about handling dismissals below */
+          result.dismiss === Swal.DismissReason.cancel
+        ) {
+          swalWithBootstrapButtons.fire(
+            'Cancelled',
+            'Your imaginary file is safe :)',
+            'error'
+          )
+        }
+      })
 
       this.client.getRequest('http://127.0.0.1:5000/eliminaruser', this.autorizacion.getToken() , this.form.value.email)
       .subscribe(
         (data:any) => {
+          Swal.fire({
+            title: '¿Está seguro?',
+            text: "De lo contrario no puede revertir cambios",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#E7700F',
+            cancelButtonColor: '#9fd5d1',
+            confirmButtonText: 'si, Eliminar!'
+          }).then((result) => {
+            if (result.isConfirmed) {
+              Swal.fire(
+                'Hecho!',
+                'Ha sido actualizado.',
+                'success'
+              )
+            }
+          })
+          
           console.log(data["data"]),
           this.route.navigate(['/asistenciatenicadmin']);
         },
@@ -93,6 +205,21 @@ export class AdministradorRolesComponent implements OnInit {
 
       }else{
         console.log("Form error");
+          //   const { value: password } = await Swal.fire({
+          //   title: 'Enter your password',
+          //   input: 'password',
+          //   inputLabel: 'Password',
+          //   inputPlaceholder: 'Enter your password',
+          //   inputAttributes: {
+          //     maxlength: 10,
+          //     autocapitalize: 'off',
+          //     autocorrect: 'off'
+          //   }
+          // })
+
+          // if (password) {
+          //   Swal.fire(`Entered password: ${password}`)
+          // }
       }
     }
 
@@ -110,10 +237,63 @@ export class AdministradorRolesComponent implements OnInit {
 
       console.log("token",this.autorizacion.getToken())
 
+      // const swalWithBootstrapButtons = Swal.mixin({
+      //   customClass: {
+      //     confirmButton: 'btn btn-success',
+      //     cancelButton: 'btn btn-danger'
+      //   },
+      //   buttonsStyling: false
+      // })
+
+      // swalWithBootstrapButtons.fire({
+      //   title: 'Are you sure?',
+      //   text: "You won't be able to revert this!",
+      //   icon: 'warning',
+      //   showCancelButton: true,
+      //   confirmButtonText: 'Yes, delete it!',
+      //   cancelButtonText: 'No, cancel!',
+      //   reverseButtons: true
+      // }).then((result) => {
+      //   if (result.isConfirmed) {
+      //     swalWithBootstrapButtons.fire(
+      //       'Deleted!',
+      //       'Your file has been deleted.',
+      //       'success'
+      //     )
+      //   } else if (
+      //     /* Read more about handling dismissals below */
+      //     result.dismiss === Swal.DismissReason.cancel
+      //   ) {
+      //     swalWithBootstrapButtons.fire(
+      //       'Cancelled',
+      //       'Your imaginary file is safe :)',
+      //       'error'
+      //     )
+      //   }
+      // })
+
       this.client.postRequest('http://127.0.0.1:5000/actualizarUsuario',data,this.autorizacion.getToken())
       .subscribe(
         (data:any) => {
           console.log(data["data"]),
+          Swal.fire({
+            title: 'Está seguro?',
+            text: "De lo contrario no puede revertir cambios",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#E7700F',
+            cancelButtonColor: '#9fd5d1',
+            confirmButtonText: 'si, actualizar!'
+          }).then((result) => {
+            if (result.isConfirmed) {
+              Swal.fire(
+                'Hecho!',
+                'El rol ha sido actualizado.',
+                'success'
+              )
+            }
+          })
+          
           this.route.navigate(['/asistenciatenicadmin']);
         },
         (error:any)=>{
@@ -124,6 +304,23 @@ export class AdministradorRolesComponent implements OnInit {
       console.log("prueba",data.cedula)
 
       }else{
+
+          //   const { value: password } = await Swal.fire({
+          //   title: 'Enter your password',
+          //   input: 'password',
+          //   inputLabel: 'Password',
+          //   inputPlaceholder: 'Enter your password',
+          //   inputAttributes: {
+          //     maxlength: 10,
+          //     autocapitalize: 'off',
+          //     autocorrect: 'off'
+          //   }
+          // })
+
+          // if (password) {
+          //   Swal.fire(`Entered password: ${password}`)
+          // }
+          
         console.log("Form error");
       }
     }

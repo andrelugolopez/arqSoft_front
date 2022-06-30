@@ -1,27 +1,32 @@
 <div class="form_Registro">
     <div class="header-text">
-      <h3>Registrarse</h3>
+      <h3>Registro</h3>
     <img class ="iconoU" src="/assets/imagenes/iconU.png">
 </div>
 
-<form [formGroup]="form" (ngSubmit)="onSubmit()">
+<form [formGroup]="form" (ngSubmit)="onSubmit()" class="container-fluid">
     <div class="form-group">
-      <input type="text"  placeholder="Cedula"   class="form-control" formControlName="cedula" aria-describedby="emailHelp">
+      <label for="">Documento:</label>
+      <input type="text"  placeholder="Documento"   class="form-control" formControlName="cedula" aria-describedby="emailHelp">
     </div>
     <br>
     <div class="form-group">
+      <label for="">Nombres:</label>
       <input type="text" placeholder="Nombres" class="form-control" formControlName="nombres" aria-describedby="emailHelp">
     </div>
     <br>
     <div class="form-group">
+      <label for="">Apellidos:</label>
       <input type="text" placeholder="Apellidos" class="form-control" formControlName="apellidos">
     </div>
       <br>
     <div class="form-group">
-      <input type="email" placeholder="Correo" class="form-control" formControlName="email" aria-describedby="emailHelp">
+      <label for="">Correo electrónico:</label>
+      <input type="email" placeholder="Correo electrónico" class="form-control" formControlName="email" aria-describedby="emailHelp">
     </div>
     <br>
     <div class="form-group">
+      <label for="">Contraseña:</label>
       <input type="password" placeholder="Contraseña" class="form-control" formControlName="password" aria-describedby="emailHelp">
     </div>
     <br>

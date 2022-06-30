@@ -58,30 +58,32 @@
 .form_historico span {
 	font-size: 14px;
 }
-.form_historico button {
+.form_historico_button {
 	background-color: rgba(231, 112, 15, 0.87);
 	border: none;
 	border-radius: 5px;
 	cursor: pointer;
-	width: 30%;
-	font-size: 20px;
+	width: 100%;
+	font-size: 1erm;
 	padding: 5px; /*tamaño del boton*/
 	display: flex;
 	justify-content: center;
 	margin: 25px 0px; /*distancia entre el checbox y el boton*/
+	color: white;
+	text-decoration: none;
 	
 }
 
-h1, h4, h6{
+h3, h4, h6, p{
     text-align: center;
 	color: white;
 }
 
-.container-button-orden-servicio{
+
+.container-button{
     display: flex;
-	justify-content: baseline;
-	padding: 0px;
-	width: auto;
+	justify-content: center;
+	width: 100%;
 }
 
 .text{
@@ -93,6 +95,6 @@ h1, h4, h6{
 	width: 100%;
 }
 
-input{
-	
+.tamano_button{
+	width: 150px;
 }

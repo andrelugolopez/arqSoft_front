@@ -35,8 +35,9 @@
                           </a>
                           <ul class="dropdown-menu container-fluid " aria-labelledby="navbarDarkDropdownMenuLink">
                             <li><a class="nav-link" [routerLink]="['/equipos']">Equipos</a></li>
-                            <li><a class="nav-link" [routerLink]="['/perifericos']">Accesorios</a></li>
                             <li><a class="nav-link" [routerLink]="['/repuestos']">Repuestos </a></li>
+                            <li><a class="nav-link" [routerLink]="['/perifericos']">Accesorios</a></li>
+                            
                           </ul>
                         </li>
                       </ul>
@@ -66,9 +67,9 @@
                 <li class="nav-item">
                     <a class="nav-link" [routerLink]="['/carrito']"><img src="/assets/imagenes/IcoCarrito.png" width=25 id="logo"></a>
                 </li>
-                <li *ngIf="autorizacion.isLoggedIn() | async" class="nav-item active">
+                <!-- <li *ngIf="autorizacion.isLoggedIn() | async" class="nav-item active">
                     <a class="nav-link" [routerLink]="['/']"><span class="sr-only"></span></a>
-                  </li> 
+                  </li>  -->
 
             </ul>
         </div>

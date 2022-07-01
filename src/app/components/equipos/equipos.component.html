@@ -17,7 +17,7 @@
                 </div>
                     <div class="iconos">
                         <img src="/assets/imagenes/vaciar.png" class="imagen_anadir" (click)="quitarCarrito(productos.indexOf(producto))"/>
-                        <a [routerLink]="['/detalleProducto',producto.idproducto]"><img src="/assets/imagenes/VerMas.png" class="imagen_anadir"></a>
+                        <!-- <a [routerLink]="['/detalleProducto',producto.idproducto]"><img src="/assets/imagenes/VerMas.png" class="imagen_anadir"></a> -->
                         <img src="/assets/imagenes/agregar.png" class="imagen_anadir"(click)="Carrito(productos.indexOf(producto))"/>
                         
                        
@@ -29,7 +29,7 @@
  <div class="pagar">
     <div class="d-grid gap-2 col-2 mx-auto text-white">
         <button [routerLink]="['/carrito']" class="btn"(click)="pagar()">Pagar</button>
-        <button class="btn" type="button" (click)="formatearDiiconario()">Formatear diccionario</button>
+        <!-- <button class="btn" type="button" (click)="formatearDiiconario()">Formatear diccionario</button> -->
     </div>
  </div>
  

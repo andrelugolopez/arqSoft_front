@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { ClientService } from '../../services/client.service';
+import { ElementRef, ViewChild } from '@angular/core';
+
 
 @Component({
   selector: 'app-perifericos',

@@ -44,12 +44,14 @@ constructor(/*inyeccion de independencias*/
         this.mostrarFormulario = false;
         if(this.form.valid){
 
+
           // let data={/**/
           //   email:this.form.value.email,
           //   password:this.form.value.password,
           // }
 
           this.client.postRequest(environment.url+"/login",{
+
             email:this.form.value.email,
             password:this.form.value.password,
           }).subscribe(

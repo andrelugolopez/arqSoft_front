@@ -10,13 +10,12 @@
             </div>
         </div>
     </div>
-    
+
     <div class="d-grid gap-2 row mx-auto">
         <h2 class="card-text"> Total compra: {{total | currency:'COP':'$':'1.0'}}</h2>
 
         <button class="btn text-white" [routerLink]="['/menu-tienda']" type="button">Seguir comparando</button>
-        <button class="btn text-white" [routerLink]="['/']" type="button">Eliminar productos</button>
-        <!-- <button class="btn" [routerLink]="['/factura']" type="button">Pagar</button> -->
+        <button class="btn text-white" [routerLink]="['/']" type="button"(click)="autorizacion.eliminarProducto()">Eliminar productos</button>
     </div>
       
   </div>

@@ -20,6 +20,11 @@ export class RepuestosComponent implements OnInit {
       }
     }
 
+    transformToUppercase(key: string){
+      key = key.toLocaleLowerCase()
+      return key.charAt(0).toUpperCase() + key.slice(1)
+    }
+
     ngOnInit(){
         this.client.getRequestAllProducts(environment.url+'/productos?tipo=R').subscribe(
         (data: any) => {
@@ -28,6 +33,7 @@ export class RepuestosComponent implements OnInit {
           
           this.productos.forEach((element:any) => {
             element["cantidad"] = 1;
+            element["nombre"] = this.transformToUppercase(element["nombre"])
           });
     },
         error => console.log("Ha ocurrido un error en la llamada: ", error)

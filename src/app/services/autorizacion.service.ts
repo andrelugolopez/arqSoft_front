@@ -117,6 +117,10 @@ export class AutorizacionService {
     localStorage.removeItem('courrentCodigoR');
   }
 
+  private deletecarrito() : void {
+    localStorage.removeItem('carrito');
+  }
+
 
   getToken(): string | null{
     if (this.checkToken()){
@@ -135,10 +139,13 @@ export class AutorizacionService {
     this.deleteCourrentRol();
     this.deleteCourrentDoc();
     this.deleteCourrentCodigoR();
-
     this.isLogin.next(false);
   }
-  
+
+  eliminarProducto() : void {
+    this.deletecarrito();
+    
+  }
     //método que nos retorna el BehaviorSubject cómo un observable
     isLoggedIn() : Observable<boolean> {
       return this.isLogin.asObservable();

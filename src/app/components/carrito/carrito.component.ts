@@ -25,7 +25,7 @@ export class CarritoComponent implements OnInit {
   ){}
 
   ngOnInit(): void {
-  
+
     type Diccionario = { [key: string]: Producto }
     let diccionario: Diccionario = JSON.parse(localStorage.getItem('carrito')!)
     let totalVentas = 0;

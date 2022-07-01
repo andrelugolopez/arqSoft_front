@@ -82,6 +82,7 @@
 	font-size: 14px;
 }
 .form_fact button {
+	text-align: center;
 	background-color: rgba(231, 112, 15, 0.87);
 	color: #fff;
 	border: none;
@@ -90,7 +91,7 @@
 	width: 40%;
 	font-size: 20px;
 	padding: 5px; /*tamaño del boton*/
-	margin: 25px 0px; /*distancia entre el checbox y el boton*/
+	margin: 25px 120px; /*distancia entre el checbox y el boton*/
 }
 #CCompra{
 	text-align: center;

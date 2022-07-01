@@ -46,22 +46,18 @@ export class FacturaComponent implements OnInit {
       
     }
 
-
-
   onSubmit(){
     if (this.form.valid) {
       if (localStorage.getItem('into')){
         let carritof= localStorage.getItem('carrito')
         let f = JSON.parse(carritof)
         let diccionario = JSON.parse(localStorage.getItem('carrito')!)
-      for (const key in diccionario) {
-       
-          this.arreglo.push(diccionario[key])
-          
-      }
-      console.log("dicionario formateado en arreglo",  this.arreglo);
-
-
+        for (const key in diccionario) {
+        
+            this.arreglo.push(diccionario[key])
+            
+        }
+        console.log("dicionario formateado en arreglo",  this.arreglo);
         this.client.postRequest(environment.url+'/facturacion', {
           telefono: this.form.value.telefono,
           direccion: this.form.value.direccion,
@@ -69,41 +65,39 @@ export class FacturaComponent implements OnInit {
           municipio: this.form.value.municipio,
           pagos:this.form.value.pagos,
           data: this.arreglo
-
           }).subscribe(
-          (response: any) => {
-            console.log(response);
-            Swal.fire({
-              position: 'center',
-              icon: 'success',
-              title: 'Compra exitosa',
-              showConfirmButton: false,
-              timer: 2500
-      });
-            // localStorage.setItem('email', response.email)
-            // sessionStorage.setItem('pass', response.password)
-            // console.log(localStorage.getItem('email'));
-            // this.route.navigate( ['/ayuda']);
+            (response: any) => {
+              console.log(response);
+              Swal.fire({
+                position: 'center',
+                icon: 'success',
+                title: 'Compra exitosa',
+                showConfirmButton: false,
+                timer: 2500
+              });
         },
         (error) => {
           console.log(error.status);
         })
       }
       else{
-        
         this.route.navigate(['/login']);
       }
   }
   else {
+    console.log("pila esta etrando a otra cosa")
     console.log("Form error");
     Swal.fire({
-      position: 'top-end',
-      icon: 'error',
-      title: 'Algo salio mal, revisa campos',
-      showConfirmButton: false,
-      timer: 2500
-      })
+    position: 'top-end',
+    icon: 'error',
+    title: 'Algo salio mal, revisa campos',
+    showConfirmButton: false,
+    timer: 2500
+    })
+
    }
+   this.route.navigate(['/']);
+   this.autorizacion.deletecarrito();
 
 }
 

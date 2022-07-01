@@ -3,6 +3,8 @@ import { AutorizacionService } from '../../services/autorizacion.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ClientService } from '../../services/client.service';
+import Swal from 'sweetalert2';
+import { environment } from 'src/environments/environment';
 
 
 @Component({
@@ -48,11 +50,10 @@ export class FacturaComponent implements OnInit {
 
   onSubmit(){
     if (this.form.valid) {
-
-       let carritof= localStorage.getItem('carrito')
-       let f = JSON.parse(carritof)
-       
-       let diccionario = JSON.parse(localStorage.getItem('carrito')!)
+      if (localStorage.getItem('into')){
+        let carritof= localStorage.getItem('carrito')
+        let f = JSON.parse(carritof)
+        let diccionario = JSON.parse(localStorage.getItem('carrito')!)
       for (const key in diccionario) {
        
           this.arreglo.push(diccionario[key])
@@ -60,29 +61,50 @@ export class FacturaComponent implements OnInit {
       }
       console.log("dicionario formateado en arreglo",  this.arreglo);
 
-        this.client.postRequest('http://127.0.0.1:5000/facturacion', {
+
+        this.client.postRequest(environment.url+'/facturacion', {
           telefono: this.form.value.telefono,
           direccion: this.form.value.direccion,
           departamento: this.form.value.departamento,
           municipio: this.form.value.municipio,
           pagos:this.form.value.pagos,
           data: this.arreglo
-          
-      }).subscribe(
-        (response: any) => {
-          console.log(response);
 
-          // localStorage.setItem('email', response.email)
-          // sessionStorage.setItem('pass', response.password)
-          // console.log(localStorage.getItem('email'));
-          // this.route.navigate( ['/ayuda']);
-      },
-      (error) => {
-        console.log(error.status);
-      })
-    } else {
-      console.log("Form error");
-    }
+          }).subscribe(
+          (response: any) => {
+            console.log(response);
+            Swal.fire({
+              position: 'center',
+              icon: 'success',
+              title: 'Compra exitosa',
+              showConfirmButton: false,
+              timer: 2500
+      });
+            // localStorage.setItem('email', response.email)
+            // sessionStorage.setItem('pass', response.password)
+            // console.log(localStorage.getItem('email'));
+            // this.route.navigate( ['/ayuda']);
+        },
+        (error) => {
+          console.log(error.status);
+        })
+      }
+      else{
+        
+        this.route.navigate(['/login']);
+      }
   }
+  else {
+    console.log("Form error");
+    Swal.fire({
+      position: 'top-end',
+      icon: 'error',
+      title: 'Algo salio mal, revisa campos',
+      showConfirmButton: false,
+      timer: 2500
+      })
+   }
+
+}
 
 }

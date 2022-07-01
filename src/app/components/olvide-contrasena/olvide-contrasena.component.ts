@@ -4,6 +4,7 @@ import { AutorizacionService } from '../../services/autorizacion.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-olvide-contrasena',
@@ -40,7 +41,7 @@ export class OlvideContrasenaComponent implements OnInit {
         console.log('-> ',dataEmail.email);
         
 
-        this.client.postRequest("http://127.0.0.1:5000/tokenContrasena",dataEmail
+        this.client.postRequest(environment.url+"/tokenContrasena",dataEmail
           ).subscribe(
             (response:any)=>{
               console.log(response),

@@ -4,6 +4,7 @@ import { AutorizacionService } from '../../services/autorizacion.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
+import { environment } from 'src/environments/environment';
 // nombres usados para seguridad
 // envio de token = into
 // nombre de usuario = Nuat
@@ -43,7 +44,14 @@ constructor(/*inyeccion de independencias*/
         this.mostrarFormulario = false;
         if(this.form.valid){
 
-            this.client.postRequest("http://127.0.0.1:5000/login",{
+
+          // let data={/**/
+          //   email:this.form.value.email,
+          //   password:this.form.value.password,
+          // }
+
+          this.client.postRequest(environment.url+"/login",{
+
             email:this.form.value.email,
             password:this.form.value.password,
           }).subscribe(

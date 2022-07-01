@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { ActivatedRoute, ParamMap} from '@angular/router';
 import { AutorizacionService } from '../../services/autorizacion.service';
 import Swal from 'sweetalert2';
+import { environment } from 'src/environments/environment';
 
 
 
@@ -54,7 +55,7 @@ export class AdminArticulosComponent implements OnInit {
         imagen:this.form.value.imagen
       }
 
-      this.client.postRequest('http://127.0.0.1:5000/crearproducto',data,this.autorizacion.getToken())
+      this.client.postRequest(environment.url+'/crearproducto',data,this.autorizacion.getToken())
       .subscribe(
         async(data:any) => {
           console.log(data["data"])
@@ -102,7 +103,7 @@ export class AdminArticulosComponent implements OnInit {
 
         console.log("token",this.autorizacion.getToken())
   
-        this.client.postRequest('http://127.0.0.1:5000//actualizarProducto',data,this.autorizacion.getToken())
+        this.client.postRequest(environment.url+'/actualizarProducto',data,this.autorizacion.getToken())
         .subscribe(
           (data:any) => {
             console.log(data["data"]),
@@ -184,7 +185,7 @@ export class AdminArticulosComponent implements OnInit {
       }
     })  
 
-      this.client.getRequest('http://127.0.0.1:5000/eliminarproducto?idproe='+this.form.value.tipodispositivo+this.form.value.idproducto,this.autorizacion.getToken())
+      this.client.getRequest(environment.url+'/eliminarproducto?idproe='+this.form.value.tipodispositivo+this.form.value.idproducto,this.autorizacion.getToken())
       .pipe()
       .subscribe(
         (data: any) => {
@@ -208,7 +209,7 @@ export class AdminArticulosComponent implements OnInit {
     this.router.paramMap
       .subscribe((params : ParamMap) => {
 
-      this.client.getRequest(`http://127.0.0.1:5000/productoId?idproducto=`+this.form.value.tipodispositivo+this.form.value.idproducto)
+      this.client.getRequest(environment.url+`/productoId?idproducto=`+this.form.value.tipodispositivo+this.form.value.idproducto)
       .pipe()  
       .subscribe(
         (data: any) => {

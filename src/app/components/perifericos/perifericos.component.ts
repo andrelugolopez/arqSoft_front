@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { environment } from 'src/environments/environment';
 import { ClientService } from '../../services/client.service';
 import { ElementRef, ViewChild } from '@angular/core';
 
@@ -22,7 +23,7 @@ export class PerifericosComponent implements OnInit {
     }
 
     ngOnInit(){
-        this.client.getRequestAllProducts('http://localhost:5000/productos?tipo=P').subscribe(
+        this.client.getRequestAllProducts(environment.url+'/productos?tipo=P').subscribe(
         (data: any) => {
           this.productos = data["data"];
           console.log(333, this.productos);

@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { ActivatedRoute, ParamMap} from '@angular/router';
 import { AutorizacionService } from '../../services/autorizacion.service';
 import Swal from 'sweetalert2';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-asignacion-tecnico',
@@ -55,7 +56,7 @@ constructor(
     this.router.paramMap
     .subscribe((params : ParamMap) => {
 
-    this.client.getRequest(`http://127.0.0.1:5000/consultaDiagnostico?nombreTecnico=`+localStorage.getItem('courrentUser'))
+    this.client.getRequest(environment.url+`/consultaDiagnostico?nombreTecnico=`+localStorage.getItem('courrentUser'))
     .subscribe(    
       (data: any) => {
       this.ordenes = data["data"]
@@ -70,7 +71,7 @@ constructor(
     this.router.paramMap
     .subscribe((params : ParamMap) => {
       
-    this.client.getRequest(`http://127.0.0.1:5000/consultaOrdenServicio?orden=`+this.form.value.ordenServicio)
+    this.client.getRequest(environment.url+`/consultaOrdenServicio?orden=`+this.form.value.ordenServicio)
     .pipe()
     .subscribe(    
       (data: any) => this.fillForm(data["data"]),
@@ -97,7 +98,7 @@ constructor(
 
       Swal.fire('La información ha sido almacenada')
 
-    this.client.postRequest("http://127.0.0.1:5000/actualizarHistoria",data
+    this.client.postRequest(environment.url+"/actualizarHistoria",data
     ).subscribe(
       (data:any) => {
         console.log(data["data"]),

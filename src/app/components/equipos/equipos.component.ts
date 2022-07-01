@@ -1,6 +1,7 @@
 import { Component, OnInit} from '@angular/core';
 import { ClientService } from '../../services/client.service';
 import { ElementRef, ViewChild } from '@angular/core';
+import { environment } from 'src/environments/environment';
 
 
 @Component({
@@ -21,7 +22,7 @@ export class EquiposComponent implements OnInit {
     }
 
     ngOnInit(){
-        this.client.getRequestAllProducts('http://localhost:5000/productos?tipo=E').subscribe(
+        this.client.getRequestAllProducts(environment.url+'/productos?tipo=E').subscribe(
         (data: any) => {
           this.productos = data["data"];
           console.log(333, this.productos);
@@ -66,7 +67,6 @@ export class EquiposComponent implements OnInit {
       console.log( localStorage.getItem('carrito'), "carrito")
       
     }
-  
     cantidad(index: number, event: string){
       if(event == "+"){
         this.productos[index]["cantidad"] = this.productos[index]["cantidad"] + 1
@@ -80,7 +80,7 @@ export class EquiposComponent implements OnInit {
       //se convierte el carrito a objeto
       let carro =   JSON.parse(localStorage.getItem('carrito')!);
       console.log(carro);
-      
+
       //aca se hace algo asi postRequest(localhost:5000/pagar , carro)
     }
 
@@ -101,8 +101,6 @@ export class EquiposComponent implements OnInit {
 
 
 
-  
-  
 
     // ngOnInit(): void{
     //   this.pedirProductos();

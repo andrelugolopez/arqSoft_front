@@ -117,7 +117,7 @@ export class AutorizacionService {
     localStorage.removeItem('courrentCodigoR');
   }
 
-  private deletecarrito() : void {
+  public deletecarrito() : void {
     localStorage.removeItem('carrito');
   }
 

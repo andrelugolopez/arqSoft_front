@@ -3,6 +3,7 @@ import { ClientService } from '../../services/client.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-registro',
@@ -47,7 +48,7 @@ constructor(
         cedula:this.form.value.cedula
       }
 
-    this.client.postRequest("http://127.0.0.1:5000/register",data
+    this.client.postRequest(environment.url+"/register",data
     ).subscribe(
 
     async (response:any)=>{

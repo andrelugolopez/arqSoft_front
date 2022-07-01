@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { ActivatedRoute, ParamMap} from '@angular/router';
 import { AutorizacionService } from '../../services/autorizacion.service';
 import Swal from 'sweetalert2';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-cerrar-orden',
@@ -53,7 +54,7 @@ onSubmit(){
       Observacion:this.form.value.Observacion,
     }
 
-    this.client.postRequest("http://127.0.0.1:5000/actualizarSalida",data
+    this.client.postRequest(environment.url+"/actualizarSalida",data
     ).subscribe(
       (data:any) => {
         console.log(data["data"]),
@@ -80,7 +81,7 @@ changeInput(){
   this.router.paramMap
   .subscribe((params : ParamMap) => {
 
-  this.client.getRequest('http://127.0.0.1:5000/consultaEquipo?serial='+this.form.value.serial)
+  this.client.getRequest(environment.url+'/consultaEquipo?serial='+this.form.value.serial)
   .pipe()
   .subscribe(    
     (data: any) => this.fillForm(data["data"]),

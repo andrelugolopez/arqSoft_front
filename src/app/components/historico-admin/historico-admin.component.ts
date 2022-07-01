@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ClientService } from 'src/app/services/client.service';
 import { Router } from '@angular/router';
 import { ActivatedRoute, ParamMap} from '@angular/router';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-historico-admin',
@@ -52,7 +53,7 @@ export class HistoricoAdminComponent implements OnInit {
 
       this.router.paramMap
         .subscribe((params : ParamMap) => {
-        this.client.getRequest('http://127.0.0.1:5000/consultaEstadoOrden?orden='+this.form.value.ordenAbierta).subscribe(
+        this.client.getRequest(environment.url+'/consultaEstadoOrden?orden='+this.form.value.ordenAbierta).subscribe(
           (data: any) => {
             this.infoOrden = data["data"],
             console.log("informacion ordenes",this.infoOrden)
@@ -79,7 +80,7 @@ export class HistoricoAdminComponent implements OnInit {
 
       this.router.paramMap
         .subscribe((params : ParamMap) => {
-        this.client.getRequest('http://127.0.0.1:5000/consultaEstadoOrden?orden='+this.form.value.ordenCerrada).subscribe(
+        this.client.getRequest(environment.url+'/consultaEstadoOrden?orden='+this.form.value.ordenCerrada).subscribe(
           (data: any) => {
             this.info = data["data"],
             console.log("informacion ordenes",this.infoOrden)
@@ -108,7 +109,7 @@ export class HistoricoAdminComponent implements OnInit {
 
       this.router.paramMap
         .subscribe((params : ParamMap) => {
-        this.client.getRequest(`http://127.0.0.1:5000/consultaOrdenTecnicos?tecnico=${tecnico.nombtecnico}`).subscribe(
+        this.client.getRequest(environment.url+`/consultaOrdenTecnicos?tecnico=${tecnico.nombtecnico}`).subscribe(
           (data: any) => {
             this.ordenCerradas = data["data"],
             console.log("informacion",this.ordenCerradas)
@@ -132,7 +133,7 @@ export class HistoricoAdminComponent implements OnInit {
   
         this.router.paramMap
           .subscribe((params : ParamMap) => {
-          this.client.getRequest(`http://127.0.0.1:5000/consultaDiagnostico?nombreTecnico=${tecnico.nombtecnico}`).subscribe(
+          this.client.getRequest(environment.url+`/consultaDiagnostico?nombreTecnico=${tecnico.nombtecnico}`).subscribe(
             (data: any) => {
               this.ordenAbiertas = data["data"],
               console.log(data)
@@ -147,7 +148,7 @@ export class HistoricoAdminComponent implements OnInit {
 
 
     listTech(){
-      this.client.getRequest('http://127.0.0.1:5000/consultaTecnicos').subscribe(    
+      this.client.getRequest(environment.url+'/consultaTecnicos').subscribe(    
         (data: any) => {
         this.tecnicos = data["data"],
         console.log(data)

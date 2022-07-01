@@ -4,6 +4,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ClientService } from '../../services/client.service';
 import Swal from 'sweetalert2';
+import { environment } from 'src/environments/environment';
+
 
 @Component({
   selector: 'app-factura',
@@ -12,8 +14,10 @@ import Swal from 'sweetalert2';
 })
 export class FacturaComponent implements OnInit {
   productos=[];
+  arreglo=[];
   form: FormGroup;
   mostrarFormulario: boolean = true;
+
   
   constructor(
     public autorizacion: AutorizacionService,
@@ -49,16 +53,24 @@ export class FacturaComponent implements OnInit {
       if (localStorage.getItem('into')){
         let carritof= localStorage.getItem('carrito')
         let f = JSON.parse(carritof)
-        console.log(f, 77777);
+        let diccionario = JSON.parse(localStorage.getItem('carrito')!)
+      for (const key in diccionario) {
+       
+          this.arreglo.push(diccionario[key])
+          
+      }
+      console.log("dicionario formateado en arreglo",  this.arreglo);
 
-        this.client.postRequest('http://127.0.0.1:5000/facturacion', {
+
+        this.client.postRequest(environment.url+'/facturacion', {
           telefono: this.form.value.telefono,
           direccion: this.form.value.direccion,
           departamento: this.form.value.departamento,
           municipio: this.form.value.municipio,
           pagos:this.form.value.pagos,
-          data: f
-        }).subscribe(
+          data: this.arreglo
+
+          }).subscribe(
           (response: any) => {
             console.log(response);
             Swal.fire({
